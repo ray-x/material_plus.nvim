@@ -6,7 +6,7 @@ local material = {
   black = "#000000",
   red = "#F07178",
   green = "#C3E88D",
-  --lime =		'#98EE64',
+  --lime   =		'#98EE64',
   yellow = "#FFCB6B",
   blue = "#82AAFF",
   paleblue = "#B0C9FF",
@@ -20,6 +20,7 @@ local material = {
   cursor = "#FFCC00",
   none = "NONE"
 }
+
 local material_moonlight = {
   -- Common colors
 
@@ -28,20 +29,32 @@ local material_moonlight = {
   black = "#000000",
   red = "#ff757f",
   green = "#2df4c0",
-  --lime =		'#98EE64',
   yellow = "#ffc777",
   paleblue = "#d6e7f0",
-  cyan = "#a3ace2",
+  cyan = "#b994f1",
   blue = "#04d1f9",
   purple = "#b4a4f4",
-  --violet =		'#B66FFD',
   orange = "#f67f81",
   pink = "#ecb2f0",
+  bg = "#212337",
+  bg_alt = "#1B1E2B",
+  fg = "#e4f3fa",
+  text = "#757dac",
+  comments = "#7486d6",
+  selection = "#403c64",
+  contrast = "#1b1c2b",
+  active = "#414863",
+  border = "#414863",
+  line_numbers = "#5b6395",
+  highlight = "#a1abe0",
+  disabled = "#515772",
+  cursor = "#5cb4fc",
+  accent = "#a3ace1",
   error = "#FF5370",
   link = "#80CBC4",
-  cursor = "#5cb4fc",
   none = "NONE"
 }
+
 -- Style specific colors
 
 if vim.g.material_style == "darker" then
@@ -96,12 +109,12 @@ elseif vim.g.material_style == "palenight" then
   material.bg = "#292D3E"
   material.bg_alt = "#1B1E2B"
   material.fg = "#A6ACCD"
-  material.text = "#676E95"
+  material.text = "#717CB4"
   material.comments = "#676E95"
-  material.selection = "#717CB4"
+  material.selection = "#444267"
   material.contrast = "#202331"
   material.active = "#414863"
-  material.border = "#414863"
+  material.border = "#676E95"
   material.line_numbers = "#3A3F58"
   material.highlight = "#444267"
   material.disabled = "#515772"
@@ -122,7 +135,7 @@ elseif vim.g.material_style == "deep ocean" then
   material.highlight = "#1F2233"
   material.disabled = "#464B5D"
   material.accent = "#84FFFF"
-else
+elseif vim.g.material_style == "oceanic" then
   vim.g.material_style = "oceanic"
   -- Oceanic theme style
 
@@ -139,24 +152,8 @@ else
   material.highlight = "#425B67"
   material.disabled = "#415967"
   material.accent = "#009688"
-end
-
-if vim.g.material_style == "moonlight" then
-  -- Palenight theme style
-  vim.tbl_extend("force", material, material_moonlight)
-  material.bg = "#212539"
-  material.bg_alt = "#1B1E2B"
-  material.fg = "#e4f3fa"
-  material.text = "#757dac"
-  material.comments = "#7486d6"
-  material.selection = "#403c64"
-  material.contrast = "#1b1d2c"
-  material.active = "#414863"
-  material.border = "#414863"
-  material.line_numbers = "#5b6395"
-  material.highlight = "#a1abe0"
-  material.disabled = "#515772"
-  material.accent = "#a3ace1"
+elseif vim.g.material_style == "moonlight" then
+  vim.tbl_extend("force", material, material_moonlight, true)
 end
 
 -- Optional colors
@@ -168,6 +165,19 @@ if vim.g.material_contrast == false then
 else
   material.sidebar = material.bg_alt
   material.float = material.bg_alt
+end
+
+-- Enable custom variable colors
+if vim.g.material_variable_color == nil then
+  material.variable = material.gray
+else
+  material.variable = vim.g.material_variable_color
+end
+
+if vim.g.material_style == "lighter" then
+  material.title = material.black
+else
+  material.title = material.white
 end
 
 return material

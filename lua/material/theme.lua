@@ -78,9 +78,9 @@ theme.loadSyntax = function ()
 	end
 
 	if vim.g.material_italic_variables == true then
-		Identifier =				{fg = material.gray, bg = material.none, style = 'italic'}; -- any variable name
+		Identifier =				{fg = material.variable, bg = material.none, style = 'italic'}; -- any variable name
     else
-		Identifier =				{fg = material.gray}; -- any variable name
+		Identifier =				{fg = material.variable}; -- any variable name
     end
 
     return syntax
@@ -92,7 +92,7 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =			{ fg = material.fg, bg = material.float }, -- normal text and background color
+		NormalFloat =			{ fg = material.fg, bg = material.float }, -- normal text and background color for floating windows
 		ColorColumn =			{ fg = material.none, bg = material.active }, --  used for the columns set with 'colorcolumn'
 		Conceal =				{ fg = material.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =				{ fg = material.cursor, bg = material.none, style = 'reverse' }, -- the character under the cursor
@@ -102,8 +102,8 @@ theme.loadEditor = function ()
 		DiffChange =			{ fg = material.orange, bg = material.none, style = 'reverse' }, --  diff mode: Changed line
 		DiffDelete =			{ fg = material.red, bg = material.none, style = 'reverse' }, -- diff mode: Deleted line
 		DiffText =				{ fg = material.yellow, bg = material.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
-		EndOfBuffer =			{ fg = material.disabled },
-		ErrorMsg =				{ fg = material.error },
+		EndOfBuffer =			{ fg = material.disabled }, -- ~ lines at the end of a buffer
+		ErrorMsg =				{ fg = material.error }, -- error messages
 		Folded =				{ fg = material.disabled, material.none, style = 'italic' },
 		FoldColumn =			{ fg = material.blue },
 		IncSearch =				{ fg = material.highlight, bg = material.white, style = 'reverse' },
@@ -133,7 +133,7 @@ theme.loadEditor = function ()
 		TabLineFill =			{ fg = material.fg },
 		TablineSel =			{ fg = material.bg, bg = material.accent },
 		Tabline =				{ fg = material.fg },
-		Title =					{ fg = material.green, bg = material.none, style = 'bold' },
+		Title =					{ fg = material.title, bg = material.none, style = 'bold' },
 		Visual =				{ fg = material.none, bg = material.selection },
 		VisualNOS =				{ fg = material.none, bg = material.selection },
 		WarningMsg =			{ fg = material.yellow },
@@ -217,13 +217,12 @@ theme.loadTreeSitter = function ()
         TSConstMacro =              { fg = material.blue },    -- For constants that are defined by macros: `NULL` in C.
         TSError =                   { fg = material.error },    -- For syntax/parser errors.
         TSException =               { fg = material.yellow },    -- For exception related keywords.
-        TSField =                   { fg = material.gray }, -- For fields.
+        TSField =                   { fg = material.variable }, -- For fields.
         TSFloat =                   { fg = material.red },    -- For floats.
         TSFuncMacro =               { fg = material.blue },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
         TSInclude =                 { fg = material.cyan },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
         TSLabel =                   { fg = material.red }, -- For labels: `label:` in C and `:label:` in Lua.
         TSNamespace =               { fg = material.yellow },    -- For identifiers referring to modules and namespaces.
-        --TSNone =                    { },    -- TODO: docs
         TSNumber =                  { fg = material.orange },    -- For all numbers
         TSOperator =                { fg = material.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
         TSParameter =               { fg = material.paleblue }, -- For parameters of a function.
@@ -245,9 +244,10 @@ theme.loadTreeSitter = function ()
         TSEmphasis =                { fg = material.paleblue },    -- For text to be represented with emphasis.
         TSUnderline =               { fg = material.fg, bg = material.none, style = 'underline' },    -- For text to be represented with an underline.
         TSStrike =                  { },    -- For strikethrough text.
-        TSTitle =                   { fg = material.paleblue, bg = material.none, style = 'bold' },    -- Text that is part of a title.
+        TSTitle =                   { fg = material.title, bg = material.none, style = 'bold' },    -- Text that is part of a title.
         TSLiteral =                 { fg = material.fg },    -- Literal text.
         TSURI =                     { fg = material.link },    -- Any URI like a link or email.
+        --TSNone =                    { },    -- TODO: docs
     }
 
     -- Options:
@@ -282,11 +282,11 @@ theme.loadTreeSitter = function ()
     end
 
     if vim.g.material_italic_variables == true then
-        treesitter.TSVariable =                { fg = material.gray, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = material.gray, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = material.variable, style = 'italic' } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = material.variable, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
     else
-        treesitter.TSVariable =                { fg = material.gray } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = material.gray } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = material.variable } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = material.variable } -- Variable names that are defined by the languages, like `this` or `self`.
     end
 
     return treesitter
@@ -351,7 +351,7 @@ theme.loadPlugins = function()
         NeogitRemote =                          { fg = material.purple },
         NeogitHunkHeader =                      { fg = material.fg, bg = material.highlight },
         NeogitHunkHeaderHighlight =             { fg = material.blue, bg = material.contrast },
-        NeogitDiffContextHighlight =            { fg = material.bg_alt, bg = material.contrast },
+        NeogitDiffContextHighlight =            { fg = material.text, bg = material.contrast },
         NeogitDiffDeleteHighlight =             { fg = material.red },
         NeogitDiffAddHighlight =                { fg = material.green },
 
@@ -381,7 +381,7 @@ theme.loadPlugins = function()
         TelescopeNormal =                       { fg = material.fg, bg = material.float },
 
         -- NvimTree
-        NvimTreeRootFolder =                    { fg = material.blue, style = "bold" },
+        NvimTreeRootFolder =                    { fg = material.title, style = "italic" },
         NvimTreeGitDirty =                      { fg = material.yellow },
         NvimTreeGitNew =                        { fg = material.green },
         NvimTreeImageFile =                     { fg = material.yellow },
@@ -390,7 +390,7 @@ theme.loadPlugins = function()
         NvimTreeFolderName=                     { fg = material.paleblue },
         NvimTreeEmptyFolderName=                { fg = material.disabled },
         NvimTreeFolderIcon=                     { fg = material.accent },
-        NvimTreeIndentMarker =                  { fg  = material.border },
+        NvimTreeIndentMarker =                  { fg = material.disabled },
         LspDiagnosticsError =                   { fg = material.error },
         LspDiagnosticsWarning =                 { fg = material.yellow },
         LspDiagnosticsInformation =             { fg = material.paleblue },
@@ -438,6 +438,10 @@ theme.loadPlugins = function()
         -- Indent Blankline
         IndentBlanklineChar =                   { fg = material.highlight },
         IndentBlanklineContextChar =            { fg = material.disabled },
+
+        -- Nvim dap
+        DapBreakpoint =                         { fg = material.red },
+        DapStopped =                            { fg = material.green },
     }
 
     -- Options:
