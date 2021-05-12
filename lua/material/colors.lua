@@ -153,7 +153,7 @@ elseif vim.g.material_style == "oceanic" then
   material.disabled = "#415967"
   material.accent = "#009688"
 elseif vim.g.material_style == "moonlight" then
-  vim.tbl_extend("force", material, material_moonlight, true)
+  material = vim.tbl_extend("force", material, material_moonlight)
 end
 
 -- Optional colors
