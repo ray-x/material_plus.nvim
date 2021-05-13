@@ -2,16 +2,17 @@ local util = {}
 local material = require('material.theme')
 
 -- Go trough the table and highlight the group with the color values
-util.highlight = function (group, color)
-    local style = color.style and "gui=" .. color.style or "gui=NONE"
-    local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-    local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-    local sp = color.sp and "guisp=" .. color.sp or ""
+util.highlight = function(group, color)
+  local style = color.style and "gui=" .. color.style or "gui=NONE"
+  local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
+  local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
+  local sp = color.sp and "guisp=" .. color.sp or ""
 
-    local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
+  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg ..
+                 " " .. sp
 
-    vim.cmd(hl)
-    if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
+  vim.cmd(hl)
+  if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
 end
 
 -- Only define Material if it's the active colorshceme
@@ -23,28 +24,37 @@ function util.onColorScheme()
 end
 
 -- Change the background for the terminal and packer windows
-util.contrast = function ()
-    vim.cmd [[augroup Material]]
-    vim.cmd [[  autocmd!]]
-    vim.cmd [[  autocmd ColorScheme * lua require("material.util").onColorScheme()]]
-    vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
-    vim.cmd [[  autocmd FileType packer setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
-    vim.cmd [[  autocmd FileType qf setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
-    vim.cmd [[augroup end]]
+util.contrast = function()
+  vim.cmd [[augroup Material]]
+  vim.cmd [[  autocmd!]]
+  vim.cmd [[  autocmd ColorScheme * lua require("material.util").onColorScheme()]]
+  vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
+  vim.cmd [[  autocmd FileType packer setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
+  vim.cmd [[  autocmd FileType qf setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
+  vim.cmd [[augroup end]]
 end
 
 -- Load the theme
 function util.load()
-    -- Set the theme environment
-    vim.cmd("hi clear")
-    if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
-    vim.o.background = "dark"
-    vim.o.termguicolors = true
-    vim.g.colors_name = "material"
+  -- Set the theme environment
+  vim.cmd("hi clear")
+  if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
+  vim.o.background = "dark"
+  vim.o.termguicolors = true
+  vim.g.colors_name = "material"
 
-    -- Load plugins, treesitter and lsp async
-    local async
-    async = vim.loop.new_async(vim.schedule_wrap(function ()
+  local switch = {
+    "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight"
+  }
+  local v = math.random(1, #switch)
+  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false then
+    vim.g.material_style = switch[v]
+    print(switch[v])
+  end
+  -- Load plugins, treesitter and lsp async
+  local async
+  async = vim.loop.new_async(vim.schedule_wrap(
+                                 function()
         material.loadTerminal()
 
         -- imort tables for plugins, treesitter and lsp
@@ -53,35 +63,27 @@ function util.load()
         local lsp = material.loadLSP()
 
         for group, colors in pairs(plugins) do
-            util.highlight(group, colors)
+          util.highlight(group, colors)
         end
 
         for group, colors in pairs(treesitter) do
-            util.highlight(group, colors)
+          util.highlight(group, colors)
         end
 
-        for group, colors in pairs(lsp) do
-            util.highlight(group, colors)
-        end
-        if vim.g.material_contrast == true then
-            util.contrast()
-        end
+        for group, colors in pairs(lsp) do util.highlight(group, colors) end
+        if vim.g.material_contrast == true then util.contrast() end
         async:close()
 
-    end))
+      end))
 
-    -- load base theme
-    local editor = material.loadEditor()
-    local syntax = material.loadSyntax()
+  -- load base theme
+  local editor = material.loadEditor()
+  local syntax = material.loadSyntax()
 
-    for group, colors in pairs(editor) do
-        util.highlight(group, colors)
-    end
+  for group, colors in pairs(editor) do util.highlight(group, colors) end
 
-    for group, colors in pairs(syntax) do
-        util.highlight(group, colors)
-    end
-    async:send()
+  for group, colors in pairs(syntax) do util.highlight(group, colors) end
+  async:send()
 end
 
 return util

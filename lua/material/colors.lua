@@ -3,21 +3,66 @@ local material = {
 
   white = "#EEFFFF",
   gray = "#717CB4",
-  black = "#000000",
+  gray5 = "#5f496e",
+  gray7 = "#777087",
+  black = "#07050f",
+  dark = "#13113f",
+  neardark2 = "#282437",
   red = "#F07178",
+
+  red1 = "#ec5f67",
+  red2 = "#F92772",
+
+  crimson = "#DC143C",
+  darkred = "#821040",
+
+  violet1 = "#EE82EE",
+  tomato = "#FF6347",
+  cranberry = "#CD5C5C",
+  emerald = "#50c878",
+  sky = "#87ceeb",
   green = "#C3E88D",
-  --lime   =		'#98EE64',
+  lime = '#98EE64',
+  green1 = "#1aad16",
+  green2 = "#77d507",
+
   yellow = "#FFCB6B",
+  yellow1 = "#fbec9f",
+  yellow2 = "#bBa03A",
+  tan = "#DDCFBF",
+
   blue = "#82AAFF",
   paleblue = "#B0C9FF",
+  blue1 = "#10aef8",
+  blue2 = "#01d5f1",
   cyan = "#89DDFF",
+
+  hoki = "#5f7e97",
   purple = "#C792EA",
-  --violet =		'#B66FFD',
+  violet = '#B66FFD',
+
+  purple1 = "#ae81ef",
+  purple2 = "#9e71cf",
+  purple3 = "#7d2c9d",
+  purple4 = "#7202da",
+  darkpurple = "#57109a",
+  darkpurple2 = "#4d0c5d",
+
   orange = "#F78C6C",
+
+  coral = "#ff7f50",
   pink = "#FF9CAC",
+  pink1 = "#da71c2",
+  pink2 = "#f19bb6",
+  pink3 = "#fecbc9",
+
   error = "#FF5370",
   link = "#80CBC4",
   cursor = "#FFCC00",
+
+  bright = "#ddd0f4",
+
+  textdark = "#b4b0e0",
   none = "NONE"
 }
 
@@ -26,6 +71,7 @@ local material_moonlight = {
 
   white = "#EEFFFF",
   gray = "#a1abe0",
+
   black = "#000000",
   red = "#ff757f",
   green = "#2df4c0",
@@ -67,7 +113,8 @@ if vim.g.material_style == "darker" then
   material.comments = "#616161"
   material.selection = "#404040"
   material.contrast = "#1A1A1A"
-  material.active = "#323232"
+  material.active = "#2f2335"
+  material.more_active = "#523262"
   material.border = "#292929"
   material.line_numbers = "#424242"
   material.highlight = "#3F3F3F"
@@ -113,7 +160,8 @@ elseif vim.g.material_style == "palenight" then
   material.comments = "#676E95"
   material.selection = "#444267"
   material.contrast = "#202331"
-  material.active = "#414863"
+  material.active = "#414143"
+  material.more_active = "#414863"
   material.border = "#676E95"
   material.line_numbers = "#3A3F58"
   material.highlight = "#444267"
@@ -130,6 +178,7 @@ elseif vim.g.material_style == "deep ocean" then
   material.selection = "#1F2233"
   material.contrast = "#090B10"
   material.active = "#1A1C25"
+  material.more_active = "#3A3555"
   material.border = "#1f2233"
   material.line_numbers = "#3B3F51"
   material.highlight = "#1F2233"
@@ -147,6 +196,7 @@ elseif vim.g.material_style == "oceanic" then
   material.selection = "#546E7A"
   material.contrast = "#1E272C"
   material.active = "#314549"
+  material.more_active = "#415559"
   material.border = "#2A373E"
   material.line_numbers = "#37474F"
   material.highlight = "#425B67"
