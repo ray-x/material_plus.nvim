@@ -89,7 +89,7 @@ local material_moonlight = {
   comments = "#7486d6",
   selection = "#403c64",
   contrast = "#1b1c2b",
-  active = "#414863",
+  active = "#313843",
   border = "#414863",
   line_numbers = "#5b6395",
   highlight = "#a1abe0",
@@ -114,7 +114,7 @@ if vim.g.material_style == "darker" then
   material.selection = "#404040"
   material.contrast = "#1A1A1A"
   material.active = "#2f2335"
-  material.more_active = "#523262"
+  material.more_active = "#424252"
   material.border = "#292929"
   material.line_numbers = "#424242"
   material.highlight = "#3F3F3F"
@@ -160,7 +160,7 @@ elseif vim.g.material_style == "palenight" then
   material.comments = "#676E95"
   material.selection = "#444267"
   material.contrast = "#202331"
-  material.active = "#414143"
+  material.active = "#363743"
   material.more_active = "#414863"
   material.border = "#676E95"
   material.line_numbers = "#3A3F58"
@@ -188,15 +188,15 @@ elseif vim.g.material_style == "oceanic" then
   vim.g.material_style = "oceanic"
   -- Oceanic theme style
 
-  material.bg = "#263238"
-  material.bg_alt = "#192227"
+  material.bg = "#20272f"
+  material.bg_alt = "#192027"
   material.fg = "#B0BEC5"
   material.text = "#607D8B"
   material.comments = "#464B5D"
   material.selection = "#546E7A"
   material.contrast = "#1E272C"
-  material.active = "#314549"
-  material.more_active = "#415559"
+  material.active = "#273d3f"
+  material.more_active = "#375354"
   material.border = "#2A373E"
   material.line_numbers = "#37474F"
   material.highlight = "#425B67"

@@ -44,7 +44,7 @@ function util.load()
   vim.g.colors_name = "material"
 
   local switch = {
-    "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight"
+    "darker", "palenight", "oceanic", "deep ocean", "moonlight"
   }
   local v = math.random(1, #switch)
   if vim.g.material_style_fix == nil or vim.g.material_style_fix == false then
