@@ -54,27 +54,15 @@ theme.loadSyntax = function()
 
   -- Italic comments
   if vim.g.material_italic_comments == true then
-    syntax.Comment = {
-      fg = material.comments,
-      bg = material.none,
-      style = 'italic'
-    } -- italic comments
+    syntax.Comment = {fg = material.comments, bg = material.none, style = 'italic'} -- italic comments
   else
     syntax.Comment = {fg = material.comments} -- normal comments
   end
 
   -- Italic Keywords
   if vim.g.material_italic_keywords == true then
-    syntax.Conditional = {
-      fg = material.purple,
-      bg = material.none,
-      style = 'italic'
-    } -- italic if, then, else, endif, switch, etc.
-    syntax.Keyword = {
-      fg = material.purple,
-      bg = material.none,
-      style = 'italic'
-    } -- italic for, do, while, etc.
+    syntax.Conditional = {fg = material.purple, bg = material.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
+    syntax.Keyword = {fg = material.purple, bg = material.none, style = 'italic'} -- italic for, do, while, etc.
     syntax.Repeat = {fg = material.purple, bg = material.none, style = 'italic'} -- italic any other keyword
   else
     syntax.Conditional = {fg = material.purple} -- normal if, then, else, endif, switch, etc.
@@ -115,13 +103,9 @@ theme.loadEditor = function()
     DiffText = {fg = material.yellow, bg = material.none, style = 'reverse'}, -- diff mode: Changed text within a changed line
     EndOfBuffer = {fg = material.disabled}, -- ~ lines at the end of a buffer
     ErrorMsg = {fg = material.error}, -- error messages
-    Folded = {fg = material.disabled, material.none, style = 'italic'},
+    Folded = {fg = material.disabled, bg = material.none, style = 'italic'},
     FoldColumn = {fg = material.blue},
-    IncSearch = {
-      fg = material.highlight,
-      bg = material.white,
-      style = 'reverse'
-    },
+    IncSearch = {fg = material.highlight, bg = material.white, style = 'reverse'},
     LineNr = {fg = material.line_numbers},
     CursorLineNr = {fg = material.accent},
     MatchParen = {fg = material.yellow, bg = material.none, style = 'bold'},
@@ -133,34 +117,18 @@ theme.loadEditor = function()
     PmenuSbar = {fg = material.text, bg = material.contrast},
     PmenuThumb = {fg = material.fg, bg = material.accent},
     Question = {fg = material.green},
-    QuickFixLine = {fg = material.highlight, material.white, style = 'reverse'},
-    qfLineNr = {fg = material.highlight, material.white, style = 'reverse'},
+    QuickFixLine = {fg = material.highlight, bg = material.white, style = 'reverse'},
+    qfLineNr = {fg = material.highlight, bg = material.white, style = 'reverse'},
     Search = {fg = material.highlight, bg = material.white, style = 'reverse'},
     SpecialKey = {fg = material.purple},
-    SpellBad = {
-      fg = material.red,
-      bg = material.none,
-      style = 'italic,undercurl'
-    },
-    SpellCap = {
-      fg = material.blue,
-      bg = material.none,
-      style = 'italic,undercurl'
-    },
-    SpellLocal = {
-      fg = material.cyan,
-      bg = material.none,
-      style = 'italic,undercurl'
-    },
-    SpellRare = {
-      fg = material.purple,
-      bg = material.none,
-      style = 'italic,undercurl'
-    },
-    StatusLine = {fg = material.fg, bg = material.contrast},
+    SpellBad = {fg = material.red, bg = material.none, style = 'italic,undercurl'},
+    SpellCap = {fg = material.blue, bg = material.none, style = 'italic,undercurl'},
+    SpellLocal = {fg = material.cyan, bg = material.none, style = 'italic,undercurl'},
+    SpellRare = {fg = material.purple, bg = material.none, style = 'italic,undercurl'},
+    StatusLine = {fg = material.accent, bg = material.active},
     StatusLineNC = {fg = material.text, bg = material.disabled},
-    StatusLineTerm = {fg = material.fg, bg = material.contrast},
-    StatusLineTermNC = {fg = material.text, bg = material.disabled},
+    StatusLineTerm = {fg = material.fg, bg = material.active},
+    StatusLineTermNC = {fg = material.text, bg = material.bg},
     TabLineFill = {fg = material.fg},
     TablineSel = {fg = material.bg, bg = material.accent},
     Tabline = {fg = material.fg},
@@ -285,11 +253,7 @@ theme.loadTreeSitter = function()
 
   -- Italic comments
   if vim.g.material_italic_comments == true then
-    treesitter.TSComment = {
-      fg = material.comments,
-      bg = material.none,
-      style = 'italic'
-    } -- For comment blocks.
+    treesitter.TSComment = {fg = material.comments, bg = material.none, style = 'italic'} -- For comment blocks.
   else
     treesitter.TSComment = {fg = material.comments} -- For comment blocks.
   end
@@ -346,10 +310,7 @@ theme.loadLSP = function()
     LspDiagnosticsSignInformation = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
     LspDiagnosticsFloatingInformation = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextInformation = {fg = material.paleblue}, -- Virtual text "Information"
-    LspDiagnosticsUnderlineInformation = {
-      style = 'undercurl',
-      sp = material.paleblue
-    }, -- used to underline "Information" diagnostics.
+    LspDiagnosticsUnderlineInformation = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
     LspDiagnosticsDefaultHint = {fg = material.purple}, -- used for "Hint" diagnostic virtual text
     LspDiagnosticsSignHint = {fg = material.purple}, -- used for "Hint" diagnostic signs in sign column
     LspDiagnosticsFloatingHint = {fg = material.purple}, -- used for "Hint" diagnostic messages in the diagnostics float
@@ -413,7 +374,7 @@ theme.loadPlugins = function()
     TelescopePromptBorder = {fg = material.cyan},
     TelescopeResultsBorder = {fg = material.purple},
     TelescopePreviewBorder = {fg = material.green},
-    TelescopeSelectionCaret = {fg = material.purple},
+    TelescopeSelectionCaret = {fg = material.active},
     TelescopeSelection = {fg = material.purple},
     TelescopeMatching = {fg = material.cyan},
     TelescopeNormal = {fg = material.fg, bg = material.float},

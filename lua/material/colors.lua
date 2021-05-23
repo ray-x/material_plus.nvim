@@ -101,6 +101,42 @@ local material_moonlight = {
   none = "NONE"
 }
 
+local material_dracula = {
+  -- Common colors
+
+  white = "#FEF8F2",
+  gray = "#a1abe0",
+
+  black = "#101010",
+  red = "#ff555f",
+  green = "#50fa7b",
+  yellow = "#f1fa87",
+  paleblue = "#d6e7f0",
+  cyan = "#8be4f1",
+  blue = "#04d1f9",
+  purple = "#bd94f4",
+  orange = "#ff79c1",
+  pink = "#ff79c7",
+  bg = "#282a37",
+  bg_alt = "#21222c",
+  bg_darker = "#191a21",
+  fg = "#f4f3f2",
+  text = "#757dac",
+  comments = "#6476a6",
+  selection = "#443c64",
+  contrast = "#1b1c2b",
+  active = "#384147",
+  border = "#514463",
+  line_numbers = "#5b6395",
+  highlight = "#a1abe0",
+  disabled = "#515772",
+  cursor = "#7c44fc",
+  accent = "#a3ace1",
+  error = "#FF5370",
+  link = "#80CBC4",
+  none = "NONE"
+}
+
 -- Style specific colors
 
 if vim.g.material_style == "darker" then
@@ -204,6 +240,8 @@ elseif vim.g.material_style == "oceanic" then
   material.accent = "#009688"
 elseif vim.g.material_style == "moonlight" then
   material = vim.tbl_extend("force", material, material_moonlight)
+elseif vim.g.material_style == "dracula" then
+  material = vim.tbl_extend("force", material, material_dracula)
 end
 
 -- Optional colors

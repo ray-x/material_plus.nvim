@@ -22,6 +22,10 @@ I believe the basic color palettes is from [material.vim](https://github.com/kai
 
 ## moonlight.nvim
 ![moonlight](https://user-images.githubusercontent.com/71196912/117904602-a3a55e00-b29f-11eb-9fc0-ab585eafb46e.png)
+## Dracula
+From github.com/dracula/vim
+![Dracula](https://github.com/dracula/vim/blob/master/screenshot.png)
+
 Please check README of material.nvim project.
 
 ## Setup

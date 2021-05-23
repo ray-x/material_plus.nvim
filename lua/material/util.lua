@@ -8,11 +8,12 @@ util.highlight = function(group, color)
   local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
   local sp = color.sp and "guisp=" .. color.sp or ""
 
-  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg ..
-                 " " .. sp
+  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
 
   vim.cmd(hl)
-  if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
+  if color.link then
+    vim.cmd("highlight! link " .. group .. " " .. color.link)
+  end
 end
 
 -- Only define Material if it's the active colorshceme
@@ -38,14 +39,14 @@ end
 function util.load()
   -- Set the theme environment
   vim.cmd("hi clear")
-  if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
+  if vim.fn.exists("syntax_on") then
+    vim.cmd("syntax reset")
+  end
   vim.o.background = "dark"
   vim.o.termguicolors = true
   vim.g.colors_name = "material"
 
-  local switch = {
-    "darker", "palenight", "oceanic", "deep ocean", "moonlight"
-  }
+  local switch = {"darker", "palenight", "oceanic", "deep ocean", "moonlight", "darcula"}
   local v = math.random(1, #switch)
   if vim.g.material_style_fix == nil or vim.g.material_style_fix == false then
     vim.g.material_style = switch[v]
@@ -53,36 +54,43 @@ function util.load()
   end
   -- Load plugins, treesitter and lsp async
   local async
-  async = vim.loop.new_async(vim.schedule_wrap(
-                                 function()
-        material.loadTerminal()
+  async = vim.loop.new_async(vim.schedule_wrap(function()
+    material.loadTerminal()
 
-        -- imort tables for plugins, treesitter and lsp
-        local plugins = material.loadPlugins()
-        local treesitter = material.loadTreeSitter()
-        local lsp = material.loadLSP()
+    -- imort tables for plugins, treesitter and lsp
+    local plugins = material.loadPlugins()
+    local treesitter = material.loadTreeSitter()
+    local lsp = material.loadLSP()
 
-        for group, colors in pairs(plugins) do
-          util.highlight(group, colors)
-        end
+    for group, colors in pairs(plugins) do
+      util.highlight(group, colors)
+    end
 
-        for group, colors in pairs(treesitter) do
-          util.highlight(group, colors)
-        end
+    for group, colors in pairs(treesitter) do
+      util.highlight(group, colors)
+    end
 
-        for group, colors in pairs(lsp) do util.highlight(group, colors) end
-        if vim.g.material_contrast == true then util.contrast() end
-        async:close()
+    for group, colors in pairs(lsp) do
+      util.highlight(group, colors)
+    end
+    if vim.g.material_contrast == true then
+      util.contrast()
+    end
+    async:close()
 
-      end))
+  end))
 
   -- load base theme
   local editor = material.loadEditor()
   local syntax = material.loadSyntax()
 
-  for group, colors in pairs(editor) do util.highlight(group, colors) end
+  for group, colors in pairs(editor) do
+    util.highlight(group, colors)
+  end
 
-  for group, colors in pairs(syntax) do util.highlight(group, colors) end
+  for group, colors in pairs(syntax) do
+    util.highlight(group, colors)
+  end
   async:send()
 end
 
