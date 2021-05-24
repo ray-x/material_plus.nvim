@@ -6,16 +6,16 @@ theme.loadSyntax = function()
   -- Syntax highlight groups
 
   local syntax = {
-    Type = {fg = material.purple}, -- int, long, char, etc.
-    StorageClass = {fg = material.cyan}, -- static, register, volatile, etc.
-    Structure = {fg = material.puple}, -- struct, union, enum, etc.
+    Type = {fg = material.type}, -- int, long, char, etc.
+    StorageClass = {fg = material.class or material.cyan}, -- static, register, volatile, etc.
+    Structure = {fg = material.structure or material.puple}, -- struct, union, enum, etc.
     Constant = {fg = material.yellow}, -- any constant
-    String = {fg = material.green, bg = material.none, style = 'italic'}, -- Any string
+    String = {fg = material.string or material.green, bg = material.none, style = 'italic'}, -- Any string
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
-    Number = {fg = material.coral}, -- a number constant: 5
+    Number = {fg = material.number or material.coral}, -- a number constant: 5
     Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
     Float = {fg = material.pink1}, -- a floating point constant: 2.3e10
-    Statement = {fg = material.pink}, -- any statement
+    Statement = {fg = material.statement or material.pink}, -- any statement
     Label = {fg = material.purple}, -- case, default, etc.
     Operator = {fg = material.cyan}, -- sizeof", "+", "*", etc.
     Exception = {fg = material.purple2}, -- try, catch, throw
@@ -62,19 +62,27 @@ theme.loadSyntax = function()
   -- Italic Keywords
   if vim.g.material_italic_keywords == true then
     syntax.Conditional = {fg = material.purple, bg = material.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
-    syntax.Keyword = {fg = material.purple, bg = material.none, style = 'italic'} -- italic for, do, while, etc.
+    syntax.Keyword = {
+      fg = material.keyword or material.purple,
+      bg = material.none,
+      style = 'italic'
+    } -- italic for, do, while, etc.
     syntax.Repeat = {fg = material.purple, bg = material.none, style = 'italic'} -- italic any other keyword
   else
     syntax.Conditional = {fg = material.purple} -- normal if, then, else, endif, switch, etc.
-    syntax.Keyword = {fg = material.purple} -- normal for, do, while, etc.
+    syntax.Keyword = {fg = material.keyword or material.purple} -- normal for, do, while, etc.
     syntax.Repeat = {fg = material.purple} -- normal any other keyword
   end
 
   -- Italic Function names
   if vim.g.material_italic_functions == true then
-    syntax.Function = {fg = material.blue, bg = material.none, style = 'italic'} -- italic funtion names
+    syntax.Function = {
+      fg = material.func or material.blue,
+      bg = material.none,
+      style = 'italic,bold'
+    } -- italic funtion names
   else
-    syntax.Function = {fg = material.blue} -- normal function names
+    syntax.Function = {fg = material.func or material.blue, style = 'bold'} -- normal function names
   end
 
   if vim.g.material_italic_variables == true then
@@ -222,7 +230,7 @@ theme.loadTreeSitter = function()
     TSInclude = {fg = material.cyan}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSLabel = {fg = material.green1}, -- For labels: `label:` in C and `:label:` in Lua.
     TSNamespace = {fg = material.yellow1}, -- For identifiers referring to modules and namespaces.
-    TSNumber = {fg = material.yellow2}, -- For all numbers
+    TSNumber = {fg = material.number or material.yellow2}, -- For all numbers
     TSOperator = {fg = material.cyan}, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = {fg = material.blue2}, -- For parameters of a function.
     TSParameterReference = {fg = material.paleblue}, -- For references to parameters of a function.
@@ -230,11 +238,11 @@ theme.loadTreeSitter = function()
     TSPunctDelimiter = {fg = material.cyan}, -- For delimiters ie: `.`
     TSPunctBracket = {fg = material.pink2}, -- For brackets and parens.
     TSPunctSpecial = {fg = material.purple1}, -- For special punctutation that does not fall in the catagories before.
-    TSString = {fg = material.green}, -- For strings.
+    TSString = {fg = material.string or material.green}, -- For strings.
     TSStringRegex = {fg = material.pink2}, -- For regexes.
     TSStringEscape = {fg = material.disabled}, -- For escape characters within a string.
     TSSymbol = {fg = material.yellow}, -- For identifiers referring to symbols or atoms.
-    TSType = {fg = material.purple}, -- For types.
+    TSType = {fg = material.type}, -- For types.
     TSTypeBuiltin = {fg = material.purple1}, -- For builtin types.
     TSTag = {fg = material.red1}, -- Tags like html tag names.
     TSTagDelimiter = {fg = material.yellow2}, -- Tag delimiter like `<` `>` `/`
@@ -260,22 +268,22 @@ theme.loadTreeSitter = function()
 
   if vim.g.material_italic_keywords == true then
     treesitter.TSConditional = {fg = material.purple, style = 'italic'} -- For keywords related to conditionnals.
-    treesitter.TSKeyword = {fg = material.purple, style = 'italic'} -- For keywords that don't fall in previous categories.
+    treesitter.TSKeyword = {fg = material.keyword or material.purple, style = 'italic,bold'} -- For keywords that don't fall in previous categories.
     treesitter.TSRepeat = {fg = material.purple, style = 'italic'} -- For keywords related to loops.
-    treesitter.TSKeywordFunction = {fg = material.purple, style = 'italic'} -- For keywords used to define a fuction.
+    treesitter.TSKeywordFunction = {fg = material.purple, style = 'italic,bolkd'} -- For keywords used to define a fuction.
   else
     treesitter.TSConditional = {fg = material.purple} -- For keywords related to conditionnals.
-    treesitter.TSKeyword = {fg = material.purple} -- For keywords that don't fall in previous categories.
+    treesitter.TSKeyword = {fg = material.keyword or material.purple} -- For keywords that don't fall in previous categories.
     treesitter.TSRepeat = {fg = material.purple} -- For keywords related to loops.
-    treesitter.TSKeywordFunction = {fg = material.purple} -- For keywords used to define a fuction.
+    treesitter.TSKeywordFunction = {fg = material.func or material.purple} -- For keywords used to define a fuction.
   end
 
   if vim.g.material_italic_functions == true then
-    treesitter.TSFunction = {fg = material.blue, style = 'italic'} -- For fuction (calls and definitions).
-    treesitter.TSMethod = {fg = material.blue, style = 'italic'} -- For method calls and definitions.
+    treesitter.TSFunction = {fg = material.func or material.blue, style = 'italic'} -- For fuction (calls and definitions).
+    treesitter.TSMethod = {fg = material.func or material.blue, style = 'italic'} -- For method calls and definitions.
     treesitter.TSFuncBuiltin = {fg = material.cyan, style = 'italic'} -- For builtin functions: `table.insert` in Lua.
   else
-    treesitter.TSFunction = {fg = material.blue} -- For fuction (calls and definitions).
+    treesitter.TSFunction = {fg = material.func or material.blue} -- For fuction (calls and definitions).
     treesitter.TSMethod = {fg = material.blue} -- For method calls and definitions.
     treesitter.TSFuncBuiltin = {fg = material.cyan} -- For builtin functions: `table.insert` in Lua.
   end
@@ -316,9 +324,9 @@ theme.loadLSP = function()
     LspDiagnosticsFloatingHint = {fg = material.purple}, -- used for "Hint" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextHint = {fg = material.purple}, -- Virtual text "Hint"
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {fg = material.accent, bg = material.highlight}, -- used for highlighting "text" references
-    LspReferenceRead = {fg = material.accent, bg = material.highlight}, -- used for highlighting "read" references
-    LspReferenceWrite = {fg = material.accent, bg = material.highlight} -- used for highlighting "write" references
+    LspReferenceText = {fg = material.string or "green", bg = material.highlight}, -- used for highlighting "text" references
+    LspReferenceRead = {fg = material.salmon or material.accent, bg = material.highlight}, -- used for highlighting "read" references
+    LspReferenceWrite = {fg = material.keyword or "yellow", bg = "MistyRose"} -- used for highlighting "write" references
   }
 
   return lsp

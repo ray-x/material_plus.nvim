@@ -49,7 +49,8 @@ local material = {
   darkpurple2 = "#4d0c5d",
 
   orange = "#F78C6C",
-
+  red_orange = "#af5f5f",
+  dark_orange = "#af5f00",
   coral = "#ff7f50",
   pink = "#FF9CAC",
   pink1 = "#da71c2",
@@ -59,7 +60,7 @@ local material = {
   error = "#FF5370",
   link = "#80CBC4",
   cursor = "#FFCC00",
-
+  type = "#C789E0",
   bright = "#ddd0f4",
 
   textdark = "#b4b0e0",
@@ -86,8 +87,11 @@ local material_moonlight = {
   bg_alt = "#1B1E2B",
   fg = "#e4f3fa",
   text = "#757dac",
+  type = '#b08af0',
   comments = "#7486d6",
   selection = "#403c64",
+  structure = "HotPink",
+  class = "PaleVioletRed",
   contrast = "#1b1c2b",
   active = "#313843",
   border = "#414863",
@@ -121,14 +125,23 @@ local material_dracula = {
   bg_alt = "#21222c",
   bg_darker = "#191a21",
   fg = "#f4f3f2",
-  text = "#757dac",
+  text = "#a5adec",
+  func = "#5FF67D",
+  statement = "#a98934",
+  field = "#9373A5",
+  string = "#FAC739",
+  keyword = "#FE77C0",
+  structure = "DeepPink",
+  class = "salmon",
+  const = "#9876AA",
   comments = "#6476a6",
-  selection = "#443c64",
+  number = "#6897BB",
+  selection = "#141c14",
   contrast = "#1b1c2b",
-  active = "#384147",
+  active = "#32363F",
   border = "#514463",
   line_numbers = "#5b6395",
-  highlight = "#a1abe0",
+  highlight = "#716f90",
   disabled = "#515772",
   cursor = "#7c44fc",
   accent = "#a3ace1",
@@ -136,6 +149,55 @@ local material_dracula = {
   link = "#80CBC4",
   none = "NONE"
 }
+material_dracula['type'] = '#ef67a0'
+
+local material_dracula_blood = {
+  -- Common colors
+
+  white = "#EEE8EE",
+  gray = "#a1abe0",
+
+  black = "#101010",
+  red = "#E74946",
+  salmon = "F7856E",
+  green = "#8FA867",
+  teal = "#4DB380",
+  yellow = "#FFC66B",
+  paleblue = "#d6e7f0",
+  cyan = "#299999",
+  blue = "#5594EC",
+  purple = "#A781BB",
+  orange = "#D7933B",
+  magenta = "#D194C7",
+  pink = "#ff79c7",
+  bg = "#262627",
+  bg_alt = "#2C2C34",
+  bg_darker = "#191a21",
+  fg = "#CED1D4",
+
+  statement = material.dark_orange,
+  func = "MediumSeaGreen",
+  text = "#b5adfc",
+  comments = "#6A6A6A",
+  keyword = "#CC4832",
+  nunmber = "#6897BB",
+  field = "#9373A5",
+  string = "#F0C366",
+  const = "#9876CA",
+  selection = "#101021",
+  contrast = "#1b1c2b",
+  active = "#2f2f33",
+  border = "#414245",
+  line_numbers = "#5b3345",
+  highlight = "#616b70",
+  disabled = "#3f4456",
+  cursor = "#7c44fc",
+  accent = "#a3ace1",
+  error = "#EF4360",
+  link = "#80CBC4",
+  none = "NONE"
+}
+material_dracula_blood['type'] = material_dracula_blood.orange
 
 -- Style specific colors
 
@@ -242,6 +304,8 @@ elseif vim.g.material_style == "moonlight" then
   material = vim.tbl_extend("force", material, material_moonlight)
 elseif vim.g.material_style == "dracula" then
   material = vim.tbl_extend("force", material, material_dracula)
+elseif vim.g.material_style == "dracula_blood" then
+  material = vim.tbl_extend("force", material, material_dracula_blood)
 end
 
 -- Optional colors

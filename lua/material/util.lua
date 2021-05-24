@@ -46,9 +46,13 @@ function util.load()
   vim.o.termguicolors = true
   vim.g.colors_name = "material"
 
-  local switch = {"darker", "palenight", "oceanic", "deep ocean", "moonlight", "darcula"}
+  local switch = {
+    "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
+    "material"
+  }
   local v = math.random(1, #switch)
-  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false then
+  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false and
+      not vim.g.material_style then
     vim.g.material_style = switch[v]
     print(switch[v])
   end

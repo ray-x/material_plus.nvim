@@ -24,12 +24,13 @@ I believe the basic color palettes is from [material.vim](https://github.com/kai
 ![moonlight](https://user-images.githubusercontent.com/71196912/117904602-a3a55e00-b29f-11eb-9fc0-ab585eafb46e.png)
 ## Dracula
 From github.com/dracula/vim
-![Dracula](https://github.com/dracula/vim/blob/master/screenshot.png)
+![dracula](https://user-images.githubusercontent.com/1681295/119281006-36b69e80-bc77-11eb-82f4-bc6c0b546251.jpg)
 
 Please check README of material.nvim project.
 
 ## Setup
 ```vim
 material_style_fix=v:true  "disable random loading
-material_style="moonlight"  "load moonlight every time
+material_style="moonlight"  "load moonlight every time or
+" other theme: dracula, oceanic, dracula_blood, 'deep ocean' darker, palenight
 ```
