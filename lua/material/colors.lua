@@ -127,7 +127,7 @@ local material_dracula = {
   fg = "#f4f3f2",
   text = "#a5adec",
   func = "#5FF67D",
-  statement = "#a98934",
+  statement = "#a94934",
   field = "#9373A5",
   string = "#FAC739",
   keyword = "#FE77C0",
@@ -136,9 +136,10 @@ local material_dracula = {
   const = "#9876AA",
   comments = "#6476a6",
   number = "#6897BB",
-  selection = "#141c14",
+  selection = "#444c54",
   contrast = "#1b1c2b",
-  active = "#32363F",
+  active = "#363B40",
+  more_active = "#3d3f4f",
   border = "#514463",
   line_numbers = "#5b6395",
   highlight = "#716f90",
@@ -147,9 +148,9 @@ local material_dracula = {
   accent = "#a3ace1",
   error = "#FF5370",
   link = "#80CBC4",
+  type = "#ef67a0",
   none = "NONE"
 }
-material_dracula['type'] = '#ef67a0'
 
 local material_dracula_blood = {
   -- Common colors
@@ -158,46 +159,47 @@ local material_dracula_blood = {
   gray = "#a1abe0",
 
   black = "#101010",
-  red = "#E74946",
+  red = "#E73926",
   salmon = "F7856E",
-  green = "#8FA867",
+  green = "#8FE067",
   teal = "#4DB380",
   yellow = "#FFC66B",
   paleblue = "#d6e7f0",
   cyan = "#299999",
   blue = "#5594EC",
   purple = "#A781BB",
-  orange = "#D7933B",
-  magenta = "#D194C7",
-  pink = "#ff79c7",
+  orange = "#DA632B",
+  magenta = "#D184C7",
+  pink = "#fe69c7",
   bg = "#262627",
   bg_alt = "#2C2C34",
   bg_darker = "#191a21",
   fg = "#CED1D4",
-
+  bg2 = "#103b41",
   statement = material.dark_orange,
-  func = "MediumSeaGreen",
-  text = "#b5adfc",
+  func = "PaleGreen",
+  text = "#c5ddfc",
   comments = "#6A6A6A",
   keyword = "#CC4832",
   nunmber = "#6897BB",
   field = "#9373A5",
   string = "#F0C366",
   const = "#9876CA",
-  selection = "#101021",
+  selection = "#443031",
   contrast = "#1b1c2b",
-  active = "#2f2f33",
+  active = "#343032",
+  more_active = "#503f4f",
   border = "#414245",
-  line_numbers = "#5b3345",
+  line_numbers = "#473735",
   highlight = "#616b70",
   disabled = "#3f4456",
   cursor = "#7c44fc",
   accent = "#a3ace1",
   error = "#EF4360",
   link = "#80CBC4",
+  type = "#F070C0",
   none = "NONE"
 }
-material_dracula_blood['type'] = material_dracula_blood.orange
 
 -- Style specific colors
 

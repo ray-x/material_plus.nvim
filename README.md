@@ -2,6 +2,7 @@
 This repo is a combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
+- Dracula & Dracula_blood theme
 - tweaks
 
 ## Why this repo:
