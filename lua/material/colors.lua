@@ -2,6 +2,7 @@ local material = {
   -- Common colors
 
   white = "#EEFFFF",
+  light_gray = "#A1ACD4",
   gray = "#717CB4",
   gray5 = "#5f496e",
   gray7 = "#777087",
@@ -93,6 +94,7 @@ local material_moonlight = {
   structure = "HotPink",
   class = "PaleVioletRed",
   contrast = "#1b1c2b",
+  less_active = "#28222f",
   active = "#313843",
   border = "#414863",
   line_numbers = "#5b6395",
@@ -127,17 +129,23 @@ local material_dracula = {
   fg = "#f4f3f2",
   text = "#a5adec",
   func = "#5FF67D",
+  method = "#7FE65D",
+  variable = "#F5E2ED",
   statement = "#a94934",
   field = "#9373A5",
   string = "#FAC739",
-  keyword = "#FE77C0",
+  keyword = "#FE57C0",
+  keyword_func = "#FEC750",
+  condition = "#EF70A0",
   structure = "DeepPink",
   class = "salmon",
   const = "#9876AA",
+  bracket = "#f8f6AA",
   comments = "#6476a6",
   number = "#6897BB",
   selection = "#444c54",
   contrast = "#1b1c2b",
+  less_active = "#302f3f",
   active = "#363B40",
   more_active = "#3d3f4f",
   border = "#514463",
@@ -171,24 +179,31 @@ local material_dracula_blood = {
   orange = "#DA632B",
   magenta = "#D184C7",
   pink = "#fe69c7",
-  bg = "#262627",
+  bg = "#272822",
   bg_alt = "#2C2C34",
   bg_darker = "#191a21",
-  fg = "#CED1D4",
+  fg = "#E8E8E3",
   bg2 = "#103b41",
   statement = material.dark_orange,
   func = "PaleGreen",
+  method = "#A0E210",
   text = "#c5ddfc",
   comments = "#6A6A6A",
   keyword = "#CC4832",
+  variable = "#F5D2DD",
   nunmber = "#6897BB",
   field = "#9373A5",
   string = "#F0C366",
   const = "#9876CA",
+
+  condition = "#EF70A0",
+  class = "salmon",
   selection = "#443031",
+  bracket = "#f8f6AA",
   contrast = "#1b1c2b",
-  active = "#343032",
-  more_active = "#503f4f",
+  less_active = "#343032",
+  active = "#2D2E27",
+  more_active = "#383a3e",
   border = "#414245",
   line_numbers = "#473735",
   highlight = "#616b70",
@@ -198,6 +213,94 @@ local material_dracula_blood = {
   error = "#EF4360",
   link = "#80CBC4",
   type = "#F070C0",
+  none = "NONE"
+}
+
+local material_monokai = {
+  -- Common colors
+
+  white = "#E8E8E3",
+  white2 = "#d8d8d3",
+  gray = "#8F908A",
+  lightgray = "#575b61",
+
+  black = "#272822",
+
+  darkgrey = "#64645e",
+  warmgrey = "#75715E",
+
+  pink = "#F92772",
+  green = "#A6E22D",
+  aqua = "#66d9ef",
+  yellow = "#E6DB74",
+  orange = "#FD9720",
+  purple = "#ae81ff",
+  red = "#e73c50",
+  purered = "#ff0000",
+  darkred = "#5f0000",
+
+  addfg = "#d7ffaf",
+  addbg = "#5f875f",
+  delfg = "#ff8b8b",
+  delbg = "#f75f5f",
+  changefg = "#d7d7ff",
+  changebg = "#5f5f87",
+
+  cyan = "#A1EFE4",
+  br_green = "#9EC400",
+  br_yellow = "#E7C547",
+  br_blue = "#7AA6DA",
+  br_purple = "#B77EE0",
+  br_cyan = "#54CED6",
+  br_white = "#FFFFFF",
+
+  salmon = "F7856E",
+  teal = "#4DB380",
+  paleblue = "#d6e7f0",
+  blue = "#5594EC",
+  magenta = "#D184C7",
+  bg = "#262632",
+  bg_alt = "#2C2C34",
+  bg_darker = "#191a21",
+  fg = "#CED1D4",
+  bg2 = "#103b41",
+  statement = "#F82773",
+  symbol = "#E8E8E3",
+  operator = "#E03077",
+  label = "#E03077",
+  condition = "#EF3060",
+  keyword = "#E03077",
+  func = "#AEE23F",
+  method = "#A0E210",
+  text = "#d5edfc",
+  comments = "#75715E",
+  nunmber = "#ae8eff",
+  char = "#E6DB74",
+  variable = "#F5F2FD",
+  parameter = material.orange,
+  class = "#A0E21D",
+  typedef = "#6570EF",
+
+  field = "#E373A5",
+  bool = "#E04480",
+  string = "#F0C366",
+  const = "#A876FA",
+  selection = "#575b61",
+  search_fg = "#353536",
+  search_bg = "#E6DB74",
+  contrast = "#1b1c2b",
+  less_active = "#343032",
+  active = "#343032",
+  more_active = "#503f4f",
+  border = "#414245",
+  line_numbers = "#473735",
+  highlight = "#616b70",
+  disabled = "#3f4456",
+  cursor = "#7c44fc",
+  accent = "#66d9ef",
+  error = "#EF4360",
+  link = "#80CBC4",
+  type = "#66d9ef",
   none = "NONE"
 }
 
@@ -213,6 +316,8 @@ if vim.g.material_style == "darker" then
   material.comments = "#616161"
   material.selection = "#404040"
   material.contrast = "#1A1A1A"
+
+  material.less_active = "#24262a"
   material.active = "#2f2335"
   material.more_active = "#424252"
   material.border = "#292929"
@@ -230,6 +335,7 @@ elseif vim.g.material_style == "lighter" then
   material.comments = "#AABFC9"
   material.selection = "#80CBC4"
   material.contrast = "#EEEEEE"
+  material.less_active = "#44566a"
   material.active = "#E7E7E8"
   material.border = "#D3E1E8"
   material.line_numbers = "#CFD8DC"
@@ -260,6 +366,7 @@ elseif vim.g.material_style == "palenight" then
   material.comments = "#676E95"
   material.selection = "#444267"
   material.contrast = "#202331"
+  material.less_active = "#303145"
   material.active = "#363743"
   material.more_active = "#414863"
   material.border = "#676E95"
@@ -277,6 +384,7 @@ elseif vim.g.material_style == "deep ocean" then
   material.comments = "#464B5D"
   material.selection = "#1F2233"
   material.contrast = "#090B10"
+  material.less_active = "#131625"
   material.active = "#1A1C25"
   material.more_active = "#3A3555"
   material.border = "#1f2233"
@@ -294,6 +402,8 @@ elseif vim.g.material_style == "oceanic" then
   material.text = "#607D8B"
   material.comments = "#464B5D"
   material.selection = "#546E7A"
+
+  material.less_active = "#252f35"
   material.contrast = "#1E272C"
   material.active = "#273d3f"
   material.more_active = "#375354"
@@ -308,6 +418,9 @@ elseif vim.g.material_style == "dracula" then
   material = vim.tbl_extend("force", material, material_dracula)
 elseif vim.g.material_style == "dracula_blood" then
   material = vim.tbl_extend("force", material, material_dracula_blood)
+
+elseif vim.g.material_style == "monokai" then
+  material = vim.tbl_extend("force", material, material_monokai)
 end
 
 -- Optional colors
@@ -322,10 +435,10 @@ else
 end
 
 -- Enable custom variable colors
-if vim.g.material_variable_color == nil then
-  material.variable = material.gray
-else
+if vim.g.material_variable_color ~= nil then
   material.variable = vim.g.material_variable_color
+else
+  material.variable = material.variable or material.light_gray
 end
 
 if vim.g.material_style == "lighter" then

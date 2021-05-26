@@ -20,7 +20,7 @@ end
 local toggle_style = function()
   local switch = {
     "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight", "dracula",
-    "dracula_blood"
+    "dracula_blood", "monokai"
   }
   vim.g.material_style_switch = (vim.g.material_style_switch % table.getn(switch)) + 1
   change_style(switch[vim.g.material_style_switch])

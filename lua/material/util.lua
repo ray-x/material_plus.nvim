@@ -48,11 +48,11 @@ function util.load()
 
   local switch = {
     "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-    "material"
+    "material", "monokai"
   }
   local v = math.random(1, #switch)
-  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false and
-      not vim.g.material_style then
+  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false
+      and not vim.g.material_style then
     vim.g.material_style = switch[v]
     print(switch[v])
   end

@@ -1,9 +1,11 @@
 # 🌊 material.nvim
-This repo is a combination of
+This repo built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
+
+Later on I added
 - Dracula & Dracula_blood theme
-- tweaks
+- Monokai
 
 ## Why this repo:
 - They are of the same origin and should be in the same repo.
@@ -23,15 +25,32 @@ I believe the basic color palettes is from [material.vim](https://github.com/kai
 
 ## moonlight.nvim
 ![moonlight](https://user-images.githubusercontent.com/71196912/117904602-a3a55e00-b29f-11eb-9fc0-ab585eafb46e.png)
+
 ## Dracula
-From github.com/dracula/vim
-![dracula](https://user-images.githubusercontent.com/1681295/119281006-36b69e80-bc77-11eb-82f4-bc6c0b546251.jpg)
 
-Please check README of material.nvim project.
+Color palettes from [github.com/dracula/vim](https://github.com/dracula/vim)
+![darcula](https://user-images.githubusercontent.com/1681295/119607837-61038a00-be38-11eb-99b0-48fa7118044f.jpg)
 
-## Setup
+## Monokai
+Color palettes from [colors/monokai.vim](https://github.com/crusoexia/vim-monokai)
+
+
+![monokai](https://user-images.githubusercontent.com/1681295/119609635-3ff06880-be3b-11eb-9394-00ca016abe0b.png)
+
+
+
+Please check README of material.nvim project for setups.
+
+## Example Setup
 ```vim
-material_style_fix=v:true  "disable random loading
-material_style="moonlight"  "load moonlight every time or
-" other theme: dracula, oceanic, dracula_blood, 'deep ocean' darker, palenight
+let material_italic_comments = true
+let material_italic_keywords = false
+let material_italic_functions = false
+let material_italic_variables = false
+let material_contrast = true
+let material_borders = false
+let material_disable_background = false
+let material_style_fix=v:true  "disable random loading
+let material_style="moonlight"  "load moonlight everytime or
+" other theme: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai
 ```

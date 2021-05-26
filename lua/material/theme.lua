@@ -9,27 +9,27 @@ theme.loadSyntax = function()
     Type = {fg = material.type}, -- int, long, char, etc.
     StorageClass = {fg = material.class or material.cyan}, -- static, register, volatile, etc.
     Structure = {fg = material.structure or material.puple}, -- struct, union, enum, etc.
-    Constant = {fg = material.yellow}, -- any constant
+    Constant = {fg = material.const or material.yellow}, -- any constant
     String = {fg = material.string or material.green, bg = material.none, style = 'italic'}, -- Any string
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
     Number = {fg = material.number or material.coral}, -- a number constant: 5
     Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
     Float = {fg = material.pink1}, -- a floating point constant: 2.3e10
     Statement = {fg = material.statement or material.pink}, -- any statement
-    Label = {fg = material.purple}, -- case, default, etc.
-    Operator = {fg = material.cyan}, -- sizeof", "+", "*", etc.
+    Label = {fg = material.label or material.purple}, -- case, default, etc.
+    Operator = {fg = material.operator or material.cyan}, -- sizeof", "+", "*", etc.
     Exception = {fg = material.purple2}, -- try, catch, throw
     PreProc = {fg = material.purple}, -- generic Preprocessor
     Include = {fg = material.blue}, -- preprocessor #include
     Define = {fg = material.pink}, -- preprocessor #define
     Macro = {fg = material.cyan}, -- same as Define
-    Typedef = {fg = material.red}, -- A typedef
+    Typedef = {fg = material.typedef or material.red}, -- A typedef
     PreCondit = {fg = material.paleblue}, -- preprocessor #if, #else, #endif, etc.
     Special = {fg = material.red}, -- any special symbol
     SpecialChar = {fg = material.pink}, -- special character in a constant
     Tag = {fg = material.lime}, -- you can use CTRL-] on this
     Delimiter = {fg = material.blue1}, -- character that needs attention like , or .
-    SpecialComment = {fg = material.gray}, -- special things inside a comment
+    SpecialComment = {fg = material.comments or material.gray}, -- special things inside a comment
     Debug = {fg = material.red}, -- debugging statements
     Underlined = {fg = material.link, bg = material.none, style = 'underline'}, -- text that stands out, HTML links
     Ignore = {fg = material.disabled}, -- left blank, hidden
@@ -86,9 +86,9 @@ theme.loadSyntax = function()
   end
 
   if vim.g.material_italic_variables == true then
-    Identifier = {fg = material.variable, bg = material.none, style = 'italic'}; -- any variable name
+    syntax.Identifier = {fg = material.variable, bg = material.none, style = 'italic'}; -- any variable name
   else
-    Identifier = {fg = material.variable}; -- any variable name
+    syntax.Identifier = {fg = material.variable}; -- any variable name
   end
 
   return syntax
@@ -127,7 +127,11 @@ theme.loadEditor = function()
     Question = {fg = material.green},
     QuickFixLine = {fg = material.highlight, bg = material.white, style = 'reverse'},
     qfLineNr = {fg = material.highlight, bg = material.white, style = 'reverse'},
-    Search = {fg = material.highlight, bg = material.white, style = 'reverse'},
+    Search = {
+      fg = material.search_fg or material.highlight,
+      bg = material.search_bg or material.white,
+      style = 'reverse'
+    },
     SpecialKey = {fg = material.purple},
     SpellBad = {fg = material.red, bg = material.none, style = 'italic,undercurl'},
     SpellCap = {fg = material.blue, bg = material.none, style = 'italic,undercurl'},
@@ -216,32 +220,32 @@ theme.loadTreeSitter = function()
   local treesitter = {
     TSAnnotation = {fg = material.red}, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute = {fg = material.yellow}, -- (unstable) TODO: docs
-    TSBoolean = {fg = material.coral}, -- For booleans.
-    TSCharacter = {fg = material.orange}, -- For characters.
+    TSBoolean = {fg = material.bool or material.coral}, -- For booleans.
+    TSCharacter = {fg = material.char or material.orange}, -- For characters.
     TSConstructor = {fg = material.purple}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSConstant = {fg = material.yellow}, -- For constants
-    TSConstBuiltin = {fg = material.blue}, -- For constant that are built in the language: `nil` in Lua.
+    TSConstant = {fg = material.const or material.yellow}, -- For constants
+    TSConstBuiltin = {fg = material.const or material.blue}, -- For constant that are built in the language: `nil` in Lua.
     TSConstMacro = {fg = material.blue1}, -- For constants that are defined by macros: `NULL` in C.
     TSError = {fg = material.error}, -- For syntax/parser errors.
     TSException = {fg = material.yellow}, -- For exception related keywords.
-    TSField = {fg = material.variable}, -- For fields.
+    TSField = {fg = material.variable or material.blue1}, -- For fields.
     TSFloat = {fg = material.red}, -- For floats.
     TSFuncMacro = {fg = material.blue}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = {fg = material.cyan}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSLabel = {fg = material.green1}, -- For labels: `label:` in C and `:label:` in Lua.
     TSNamespace = {fg = material.yellow1}, -- For identifiers referring to modules and namespaces.
     TSNumber = {fg = material.number or material.yellow2}, -- For all numbers
-    TSOperator = {fg = material.cyan}, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = {fg = material.blue2}, -- For parameters of a function.
+    TSOperator = {fg = material.operator or material.cyan}, -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter = {fg = material.parameter or material.blue2}, -- For parameters of a function.
     TSParameterReference = {fg = material.paleblue}, -- For references to parameters of a function.
     TSProperty = {fg = material.blue1}, -- Same as `TSField`.
     TSPunctDelimiter = {fg = material.cyan}, -- For delimiters ie: `.`
-    TSPunctBracket = {fg = material.pink2}, -- For brackets and parens.
+    TSPunctBracket = {fg = material.bracket or material.pink2}, -- For brackets and parens.
     TSPunctSpecial = {fg = material.purple1}, -- For special punctutation that does not fall in the catagories before.
     TSString = {fg = material.string or material.green}, -- For strings.
     TSStringRegex = {fg = material.pink2}, -- For regexes.
     TSStringEscape = {fg = material.disabled}, -- For escape characters within a string.
-    TSSymbol = {fg = material.yellow}, -- For identifiers referring to symbols or atoms.
+    TSSymbol = {fg = material.symbol or material.yellow}, -- For identifiers referring to symbols or atoms.
     TSType = {fg = material.type}, -- For types.
     TSTypeBuiltin = {fg = material.purple1}, -- For builtin types.
     TSTag = {fg = material.red1}, -- Tags like html tag names.
@@ -250,7 +254,8 @@ theme.loadTreeSitter = function()
     TSTextReference = {fg = material.tan}, -- FIXME
     TSEmphasis = {fg = material.paleblue}, -- For text to be represented with emphasis.
     TSUnderline = {fg = material.fg, bg = material.none, style = 'underline'}, -- For text to be represented with an underline.
-    TSStrike = {}, -- For strikethrough text.
+    TSStrike = {fg = material.gray}, -- For strikethrough text.
+    TSCurrentScope = {bg = material.less_active or material.active},
     TSTitle = {fg = material.title, bg = material.none, style = 'bold'}, -- Text that is part of a title.
     TSLiteral = {fg = material.fg}, -- Literal text.
     TSURI = {fg = material.link} -- Any URI like a link or email.
@@ -267,25 +272,31 @@ theme.loadTreeSitter = function()
   end
 
   if vim.g.material_italic_keywords == true then
-    treesitter.TSConditional = {fg = material.purple, style = 'italic'} -- For keywords related to conditionnals.
+    treesitter.TSConditional = {fg = material.condition or material.purple, style = 'italic'} -- For keywords related to conditionnals.
     treesitter.TSKeyword = {fg = material.keyword or material.purple, style = 'italic,bold'} -- For keywords that don't fall in previous categories.
-    treesitter.TSRepeat = {fg = material.purple, style = 'italic'} -- For keywords related to loops.
-    treesitter.TSKeywordFunction = {fg = material.purple, style = 'italic,bolkd'} -- For keywords used to define a fuction.
+    treesitter.TSRepeat = {fg = material.condition or material.purple, style = 'italic'} -- For keywords related to loops.
+    treesitter.TSKeywordFunction = {
+      fg = material.keyword_func or material.keyword or material.purple,
+      style = 'italic,bold'
+    } -- For keywords used to define a fuction.
   else
-    treesitter.TSConditional = {fg = material.purple} -- For keywords related to conditionnals.
-    treesitter.TSKeyword = {fg = material.keyword or material.purple} -- For keywords that don't fall in previous categories.
-    treesitter.TSRepeat = {fg = material.purple} -- For keywords related to loops.
-    treesitter.TSKeywordFunction = {fg = material.func or material.purple} -- For keywords used to define a fuction.
+    treesitter.TSConditional = {fg = material.condition or material.purple} -- For keywords related to conditionnals.
+    treesitter.TSKeyword = {fg = material.keyword or material.purple, style = 'bold'} -- For keywords that don't fall in previous categories.
+    treesitter.TSRepeat = {fg = material.condition or material.purple} -- For keywords related to loops.
+    treesitter.TSKeywordFunction = {
+      fg = material.keyword_func or material.keyword or material.purple,
+      style = 'bold'
+    } -- For keywords used to define a fuction.
   end
 
   if vim.g.material_italic_functions == true then
     treesitter.TSFunction = {fg = material.func or material.blue, style = 'italic'} -- For fuction (calls and definitions).
-    treesitter.TSMethod = {fg = material.func or material.blue, style = 'italic'} -- For method calls and definitions.
-    treesitter.TSFuncBuiltin = {fg = material.cyan, style = 'italic'} -- For builtin functions: `table.insert` in Lua.
+    treesitter.TSMethod = {fg = material.method or material.func or material.blue, style = 'italic'} -- For method calls and definitions.
+    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan, style = 'italic'} -- For builtin functions: `table.insert` in Lua.
   else
     treesitter.TSFunction = {fg = material.func or material.blue} -- For fuction (calls and definitions).
-    treesitter.TSMethod = {fg = material.blue} -- For method calls and definitions.
-    treesitter.TSFuncBuiltin = {fg = material.cyan} -- For builtin functions: `table.insert` in Lua.
+    treesitter.TSMethod = {fg = material.method or material.blue} -- For method calls and definitions.
+    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan} -- For builtin functions: `table.insert` in Lua.
   end
 
   if vim.g.material_italic_variables == true then
