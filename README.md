@@ -45,13 +45,14 @@ The sublime 4.0 default color scheme
 Color palettes from [twolfson/sublime-files](https://github.com/twolfson/sublime-files/blob/master/Packages/Color%20Scheme%20-%20Default/Mariana.sublime-color-scheme)
 
 
-![mariana](https://user-images.githubusercontent.com/1681295/119807590-a0100900-bf26-11eb-8964-0635c01e5fc2.jpg)
+![mariana2](https://user-images.githubusercontent.com/1681295/119898862-b600e680-bf85-11eb-84c1-727e5add5a18.jpg)
 
 Please check README of material.nvim project for setups.
 
 ## Example Setup
 ```vim
 let material_italic_comments = true
+let material_italic_string = false
 let material_italic_keywords = false
 let material_italic_functions = false
 let material_italic_variables = false

@@ -10,7 +10,7 @@ theme.loadSyntax = function()
     StorageClass = {fg = material.class or material.cyan}, -- static, register, volatile, etc.
     Structure = {fg = material.structure or material.puple}, -- struct, union, enum, etc.
     Constant = {fg = material.const or material.yellow}, -- any constant
-    String = {fg = material.string or material.green, bg = material.none, style = 'italic'}, -- Any string
+    String = {fg = material.string or material.green, bg = material.none}, -- Any string
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
     Number = {fg = material.number or material.coral}, -- a number constant: 5
     Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
@@ -31,9 +31,9 @@ theme.loadSyntax = function()
     Delimiter = {fg = material.blue1}, -- character that needs attention like , or .
     SpecialComment = {fg = material.comments or material.gray}, -- special things inside a comment
     Debug = {fg = material.red}, -- debugging statements
-    Underlined = {fg = material.link, bg = material.none, style = 'underline'}, -- text that stands out, HTML links
+    Underlined = {fg = material.link, bg = material.none, style = 'undercurl'}, -- text that stands out, HTML links
     Ignore = {fg = material.disabled}, -- left blank, hidden
-    Error = {fg = material.error, bg = material.none, style = 'bold,underline'}, -- any erroneous construct
+    Error = {fg = material.error, bg = material.none, style = 'bold,undercurl'}, -- any erroneous construct
     Todo = {fg = material.yellow, bg = material.none, style = 'bold,italic'}, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     htmlLink = {fg = material.link, style = "underline"},
@@ -57,6 +57,11 @@ theme.loadSyntax = function()
     syntax.Comment = {fg = material.comments, bg = material.none, style = 'italic'} -- italic comments
   else
     syntax.Comment = {fg = material.comments} -- normal comments
+  end
+
+  -- Italic string
+  if vim.g.material_italic_string == true then
+    syntax.String.style = 'italic'
   end
 
   -- Italic Keywords
@@ -105,13 +110,13 @@ theme.loadEditor = function()
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor
     CursorIM = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- like Cursor, but used when in IME mode
     Directory = {fg = material.blue, bg = material.none}, -- directory names (and other special names in listings)
-    DiffAdd = {fg = material.green, bg = material.none, style = 'reverse'}, -- diff mode: Added line
-    DiffChange = {fg = material.orange, bg = material.none, style = 'reverse'}, --  diff mode: Changed line
+    DiffAdd = {fg = material.green, bg = material.none, style = 'undercurl'}, -- diff mode: Added line
+    DiffChange = {fg = material.orange, bg = material.none, style = 'undercurl,reverse'}, --  diff mode: Changed line
     DiffDelete = {fg = material.red, bg = material.none, style = 'reverse'}, -- diff mode: Deleted line
     DiffText = {fg = material.yellow, bg = material.none, style = 'reverse'}, -- diff mode: Changed text within a changed line
     EndOfBuffer = {fg = material.disabled}, -- ~ lines at the end of a buffer
     ErrorMsg = {fg = material.error}, -- error messages
-    Folded = {fg = material.link, bg = material.none, style = 'italic'},
+    Folded = {fg = material.link, bg = material.none, style = 'bold'},
     FoldColumn = {fg = material.blue},
     IncSearch = {fg = material.highlight, bg = material.white, style = 'reverse'},
     LineNr = {fg = material.line_numbers},
@@ -133,10 +138,10 @@ theme.loadEditor = function()
       style = 'reverse'
     },
     SpecialKey = {fg = material.purple},
-    SpellBad = {fg = material.red, bg = material.none, style = 'italic,undercurl'},
-    SpellCap = {fg = material.blue, bg = material.none, style = 'italic,undercurl'},
-    SpellLocal = {fg = material.cyan, bg = material.none, style = 'italic,undercurl'},
-    SpellRare = {fg = material.purple, bg = material.none, style = 'italic,undercurl'},
+    SpellBad = {fg = material.red, bg = material.none, style = 'undercurl'},
+    SpellCap = {fg = material.blue, bg = material.none, style = 'undercurl'},
+    SpellLocal = {fg = material.cyan, bg = material.none, style = 'undercurl'},
+    SpellRare = {fg = material.purple, bg = material.none, style = 'undercurl'},
     StatusLine = {fg = material.accent, bg = material.active},
     StatusLineNC = {fg = material.text, bg = material.disabled},
     StatusLineTerm = {fg = material.fg, bg = material.active},

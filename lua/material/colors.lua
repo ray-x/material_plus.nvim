@@ -338,6 +338,7 @@ local mariana_colors = {
   blue5 = "#5FB4B4",
   blue6 = "#A6ACB9",
   blue7 = "#3F4455",
+  blue8 = "#2F3455",
 
   cyan = "#A1EFE4",
   br_green = "#9EC400",
@@ -391,7 +392,7 @@ local mariana = {
   border = mariana_colors.blue4,
   line_numbers = mariana_colors.blue4,
   highlight = "#616b70",
-  disabled = mariana_colors.blue2,
+  disabled = mariana_colors.blue4,
   cursor = "#7c44fc",
   accent = mariana_colors.white3,
   error = "#EF4360",
@@ -400,6 +401,9 @@ local mariana = {
   none = "NONE"
 }
 
+if not vim.g then
+  error("only nvim 5.0 supported")
+end
 -- Style specific colors
 
 if vim.g.material_style == "darker" then
