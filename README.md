@@ -1,4 +1,7 @@
 # 🌊 material +.nvim
+
+Neovim 5.0+ required
+
 This repo built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
