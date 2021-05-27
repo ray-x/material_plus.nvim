@@ -111,7 +111,7 @@ theme.loadEditor = function()
     DiffText = {fg = material.yellow, bg = material.none, style = 'reverse'}, -- diff mode: Changed text within a changed line
     EndOfBuffer = {fg = material.disabled}, -- ~ lines at the end of a buffer
     ErrorMsg = {fg = material.error}, -- error messages
-    Folded = {fg = material.disabled, bg = material.none, style = 'italic'},
+    Folded = {fg = material.link, bg = material.none, style = 'italic'},
     FoldColumn = {fg = material.blue},
     IncSearch = {fg = material.highlight, bg = material.white, style = 'reverse'},
     LineNr = {fg = material.line_numbers},
@@ -241,7 +241,7 @@ theme.loadTreeSitter = function()
     TSProperty = {fg = material.blue1}, -- Same as `TSField`.
     TSPunctDelimiter = {fg = material.cyan}, -- For delimiters ie: `.`
     TSPunctBracket = {fg = material.bracket or material.pink2}, -- For brackets and parens.
-    TSPunctSpecial = {fg = material.purple1}, -- For special punctutation that does not fall in the catagories before.
+    TSPunctSpecial = {fg = material.punctutation or material.purple1}, -- For special punctutation that does not fall in the catagories before.
     TSString = {fg = material.string or material.green}, -- For strings.
     TSStringRegex = {fg = material.pink2}, -- For regexes.
     TSStringEscape = {fg = material.disabled}, -- For escape characters within a string.

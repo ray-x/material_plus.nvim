@@ -38,6 +38,12 @@ Color palettes from [colors/monokai.vim](https://github.com/crusoexia/vim-monoka
 ![monokai](https://user-images.githubusercontent.com/1681295/119609635-3ff06880-be3b-11eb-9394-00ca016abe0b.png)
 
 
+## Mariana
+The sublime 4.0 default color scheme
+Color palettes from [twolfson/sublime-files](https://github.com/twolfson/sublime-files/blob/master/Packages/Color%20Scheme%20-%20Default/Mariana.sublime-color-scheme)
+
+
+![mariana](https://user-images.githubusercontent.com/1681295/119807590-a0100900-bf26-11eb-8964-0635c01e5fc2.jpg)
 
 Please check README of material.nvim project for setups.
 
@@ -52,5 +58,5 @@ let material_borders = false
 let material_disable_background = false
 let material_style_fix=v:true  "disable random loading
 let material_style="moonlight"  "load moonlight everytime or
-" other theme: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai
+" other theme: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana
 ```

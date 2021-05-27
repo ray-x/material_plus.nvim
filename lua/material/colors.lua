@@ -9,8 +9,8 @@ local material = {
   black = "#07050f",
   dark = "#13113f",
   neardark2 = "#282437",
-  red = "#F07178",
 
+  red = "#F07178",
   red1 = "#ec5f67",
   red2 = "#F92772",
 
@@ -304,6 +304,102 @@ local material_monokai = {
   none = "NONE"
 }
 
+local mariana_colors = {
+  -- Common colors
+  white = "#FFFFFF",
+  white2 = "#F7F7F7",
+  white3 = "#D8DEE9",
+  grey = "#333333",
+  lightgray = "#575b61",
+
+  black = "#000000",
+
+  darkgrey = "#64645e",
+  warmgrey = "#75715E",
+
+  pink = "#C695C6",
+  green = "#99C794",
+  aqua = "#66d9ef",
+  yellow = "#E6DB74",
+  orange = "#F9AE58",
+  orange2 = "#EE932B",
+  orange3 = "#FAC761",
+  purple = "#ae81ff",
+  red = "#EC5F66",
+  red2 = "#F97B58",
+  purered = "#ff0000",
+  darkred = "#5f0000",
+
+  blue = "#6699CC",
+  blue1 = "#6699CC",
+  blue2 = "#4E5A65",
+  blue3 = "#343D46",
+  blue4 = "#647382",
+  blue5 = "#5FB4B4",
+  blue6 = "#A6ACB9",
+  blue7 = "#3F4455",
+
+  cyan = "#A1EFE4",
+  br_green = "#9EC400",
+  br_yellow = "#E7C547",
+  br_blue = "#7AA6DA",
+  br_purple = "#B77EE0",
+  br_cyan = "#54CED6",
+  br_white = "#FFFFFF",
+
+  salmon = "F7856E",
+  teal = "#4DB380",
+  paleblue = "#d6e7f0",
+  magenta = "#D184C7"
+}
+local mariana = {
+  bg = mariana_colors.blue3,
+  bg_alt = "#2C2C34",
+  bg_darker = "#191a21",
+  fg = mariana_colors.white3,
+  bg2 = "#103b41",
+  statement = "#F82773",
+  symbol = mariana_colors.red,
+  operator = mariana_colors.red2,
+  label = mariana_colors.orange,
+  condition = mariana_colors.red,
+  keyword = mariana_colors.red,
+  func = mariana_colors.blue5,
+  method = mariana_colors.pink,
+  text = "#D8DEE9",
+  comments = mariana_colors.blue6,
+  nunmber = mariana_colors.orange,
+  char = mariana_colors.pink,
+  variable = mariana_colors.white3,
+  parameter = material.orange,
+  class = mariana_colors.pink,
+  typedef = mariana_colors.blue5,
+  punctutation = mariana_colors.blue5,
+
+  field = mariana_colors.blue6,
+  bool = "#E04480",
+  string = mariana_colors.green,
+  const = mariana_colors.red,
+  selection = "#575b61",
+  search_fg = mariana_colors.grey,
+  search_bg = mariana_colors.orange3,
+  contrast = "#1b1c2b",
+  less_active = mariana_colors.blue7,
+  bracket = mariana_colors.orange,
+  active = mariana_colors.blue2,
+  more_active = mariana_colors.blue5,
+  border = mariana_colors.blue4,
+  line_numbers = mariana_colors.blue4,
+  highlight = "#616b70",
+  disabled = mariana_colors.blue2,
+  cursor = "#7c44fc",
+  accent = mariana_colors.white3,
+  error = "#EF4360",
+  link = "#80CBC4",
+  type = "#66d9ef",
+  none = "NONE"
+}
+
 -- Style specific colors
 
 if vim.g.material_style == "darker" then
@@ -421,6 +517,9 @@ elseif vim.g.material_style == "dracula_blood" then
 
 elseif vim.g.material_style == "monokai" then
   material = vim.tbl_extend("force", material, material_monokai)
+elseif vim.g.material_style == "mariana" then
+  material = vim.tbl_extend("force", material, mariana_colors)
+  material = vim.tbl_extend("force", material, mariana)
 end
 
 -- Optional colors
