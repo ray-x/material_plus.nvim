@@ -1,23 +1,25 @@
-# 🌊 material.nvim
+# 🌊 material +.nvim
 This repo built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
 
-Later on I added
+I added:
 - Dracula & Dracula_blood theme
 - Monokai
+- Mariana
 
 ## Why this repo:
 - They are of the same origin and should be in the same repo.
 - Removed all the gif/png from .git and repo to save 20MB when cloning for the first time.
 - Add additional colors to the color scheme. The original design each scheme has 32 colors. En-riched to 64
-- Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight randomly )
+- Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
+monokai, mariana randomly )
 
 ## Credits:
-- [marko-cerovac](https://github.com/marko-cerovac)
-- [shaunsingh](https://github.com/shaunsingh)
+- [marko-cerovac](https://github.com/marko-cerovac) For the material color palettes. The lua color scheme framework
+- [shaunsingh](https://github.com/shaunsingh)  For the moonlight color schema
 
-I believe the basic color palettes is from [material.vim](https://github.com/kaicataldo/material.vim)
+I believe the basic color palettes of material is from [material.vim](https://github.com/kaicataldo/material.vim)
 
 ## material.vim
 
