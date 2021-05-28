@@ -31,12 +31,12 @@ theme.loadSyntax = function()
     Delimiter = {fg = material.blue1}, -- character that needs attention like , or .
     SpecialComment = {fg = material.comments or material.gray}, -- special things inside a comment
     Debug = {fg = material.red}, -- debugging statements
-    Underlined = {fg = material.link, bg = material.none, style = 'undercurl'}, -- text that stands out, HTML links
+    Underlined = {fg = material.link, bg = material.none, style = 'undercurl', sp = material.blue}, -- text that stands out, HTML links
     Ignore = {fg = material.disabled}, -- left blank, hidden
-    Error = {fg = material.error, bg = material.none, style = 'bold,undercurl'}, -- any erroneous construct
+    Error = {fg = material.error, bg = material.none, style = 'bold,undercurl', sp = material.pink}, -- any erroneous construct
     Todo = {fg = material.yellow, bg = material.none, style = 'bold,italic'}, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-    htmlLink = {fg = material.link, style = "underline"},
+    htmlLink = {fg = material.link, style = "underline", sp = material.blue},
     htmlH1 = {fg = material.cyan, style = "bold"},
     htmlH2 = {fg = material.red, style = "bold"},
     htmlH3 = {fg = material.green, style = "bold"},
@@ -110,8 +110,13 @@ theme.loadEditor = function()
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor
     CursorIM = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- like Cursor, but used when in IME mode
     Directory = {fg = material.blue, bg = material.none}, -- directory names (and other special names in listings)
-    DiffAdd = {fg = material.green, bg = material.none, style = 'undercurl'}, -- diff mode: Added line
-    DiffChange = {fg = material.orange, bg = material.none, style = 'undercurl,reverse'}, --  diff mode: Changed line
+    DiffAdd = {fg = material.green, bg = material.none, style = 'undercurl', sp = material.active}, -- diff mode: Added line
+    DiffChange = {
+      fg = material.orange,
+      bg = material.none,
+      style = 'undercurl,reverse',
+      sp = material.red
+    }, --  diff mode: Changed line
     DiffDelete = {fg = material.red, bg = material.none, style = 'reverse'}, -- diff mode: Deleted line
     DiffText = {fg = material.yellow, bg = material.none, style = 'reverse'}, -- diff mode: Changed text within a changed line
     EndOfBuffer = {fg = material.disabled}, -- ~ lines at the end of a buffer
@@ -138,8 +143,8 @@ theme.loadEditor = function()
       style = 'reverse'
     },
     SpecialKey = {fg = material.purple},
-    SpellBad = {fg = material.red, bg = material.none, style = 'undercurl'},
-    SpellCap = {fg = material.blue, bg = material.none, style = 'undercurl'},
+    SpellBad = {fg = material.red, bg = material.none, style = 'undercurl', sp = material.orange},
+    SpellCap = {fg = material.blue, bg = material.none, style = 'undercurl', sp = material.green},
     SpellLocal = {fg = material.cyan, bg = material.none, style = 'undercurl'},
     SpellRare = {fg = material.purple, bg = material.none, style = 'undercurl'},
     StatusLine = {fg = material.accent, bg = material.active},
