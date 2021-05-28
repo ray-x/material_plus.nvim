@@ -145,7 +145,7 @@ theme.loadEditor = function()
     StatusLine = {fg = material.accent, bg = material.active},
     StatusLineNC = {fg = material.text, bg = material.disabled},
     StatusLineTerm = {fg = material.fg, bg = material.active},
-    StatusLineTermNC = {fg = material.text, bg = material.bg},
+    StatusLineTermNC = {fg = material.text, bg = material.disabled},
     TabLineFill = {fg = material.fg},
     TablineSel = {fg = material.bg, bg = material.accent},
     Tabline = {fg = material.fg},

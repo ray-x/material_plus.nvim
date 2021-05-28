@@ -339,6 +339,7 @@ local mariana_colors = {
   blue6 = "#A6ACB9",
   blue7 = "#3F4455",
   blue8 = "#2F3455",
+  blue9 = "#303040",
 
   cyan = "#A1EFE4",
   br_green = "#9EC400",
@@ -355,8 +356,8 @@ local mariana_colors = {
 }
 local mariana = {
   bg = mariana_colors.blue3,
-  bg_alt = "#2C2C34",
-  bg_darker = "#191a21",
+  bg_alt = mariana_colors.blue9,
+  bg_darker = mariana_colors.blue8,
   fg = mariana_colors.white3,
   bg2 = "#103b41",
   statement = "#F82773",
