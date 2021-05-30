@@ -230,7 +230,7 @@ theme.loadTreeSitter = function()
   local treesitter = {
     TSAnnotation = {fg = material.red}, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute = {fg = material.yellow}, -- (unstable) TODO: docs
-    TSBoolean = {fg = material.bool or material.coral}, -- For booleans.
+    TSBoolean = {fg = material.bool or material.coral, style = 'italic'}, -- For booleans.
     TSCharacter = {fg = material.char or material.orange}, -- For characters.
     TSConstructor = {fg = material.purple}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSConstant = {fg = material.const or material.yellow}, -- For constants
