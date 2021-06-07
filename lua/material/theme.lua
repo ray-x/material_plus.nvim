@@ -34,7 +34,7 @@ theme.loadSyntax = function()
     Underlined = {fg = material.link, bg = material.none, style = 'undercurl', sp = material.blue}, -- text that stands out, HTML links
     Ignore = {fg = material.disabled}, -- left blank, hidden
     Error = {fg = material.error, bg = material.none, style = 'bold,undercurl', sp = material.pink}, -- any erroneous construct
-    Todo = {fg = material.yellow, bg = material.none, style = 'bold,italic'}, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo = {fg = material.yellow, bg = material.bg_alt or material.search_bg, style = 'bold,italic'}, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     htmlLink = {fg = material.link, style = "underline", sp = material.blue},
     htmlH1 = {fg = material.cyan, style = "bold"},
@@ -105,6 +105,7 @@ theme.loadEditor = function()
 
   local editor = {
     NormalFloat = {fg = material.fg, bg = material.float}, -- normal text and background color for floating windows
+    FloatBorder = {fg = material.fg, bg = material.float},
     ColorColumn = {fg = material.none, bg = material.active}, --  used for the columns set with 'colorcolumn'
     Conceal = {fg = material.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor
@@ -143,10 +144,15 @@ theme.loadEditor = function()
       style = 'reverse'
     },
     SpecialKey = {fg = material.purple},
-    SpellBad = {fg = material.red, bg = material.none, style = 'undercurl', sp = material.orange},
-    SpellCap = {fg = material.blue, bg = material.none, style = 'undercurl', sp = material.green},
+    SpellBad = {fg = material.orange, bg = material.none, style = 'undercurl', sp = material.red},
+    SpellCap = {fg = material.blue, bg = material.none, style = 'undercurl', sp = material.violet},
     SpellLocal = {fg = material.cyan, bg = material.none, style = 'undercurl'},
-    SpellRare = {fg = material.purple, bg = material.none, style = 'undercurl'},
+    SpellRare = {
+      fg = material.purple,
+      bg = material.none,
+      style = 'undercurl',
+      sp = material.darkred
+    },
     StatusLine = {fg = material.accent, bg = material.active},
     StatusLineNC = {fg = material.text, bg = material.disabled},
     StatusLineTerm = {fg = material.fg, bg = material.active},
@@ -163,7 +169,7 @@ theme.loadEditor = function()
     CursorLine = {fg = material.none, bg = material.active},
     ToolbarLine = {fg = material.fg, bg = material.bg_alt},
     ToolbarButton = {fg = material.fg, bg = material.none, style = 'bold'},
-    NormalMode = {fg = material.accent, bg = material.none, style = 'reverse'},
+    NormalMode = {fg = material.accent, bg = material.bg, style = 'reverse'},
     InsertMode = {fg = material.green, bg = material.none, style = 'reverse'},
     ReplacelMode = {fg = material.red, bg = material.none, style = 'reverse'},
     VisualMode = {fg = material.purple, bg = material.none, style = 'reverse'},
@@ -300,13 +306,16 @@ theme.loadTreeSitter = function()
   end
 
   if vim.g.material_italic_functions == true then
-    treesitter.TSFunction = {fg = material.func or material.blue, style = 'italic'} -- For fuction (calls and definitions).
-    treesitter.TSMethod = {fg = material.method or material.func or material.blue, style = 'italic'} -- For method calls and definitions.
-    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan, style = 'italic'} -- For builtin functions: `table.insert` in Lua.
+    treesitter.TSFunction = {fg = material.func or material.blue, style = 'italic,bold'} -- For fuction (calls and definitions).
+    treesitter.TSMethod = {
+      fg = material.method or material.func or material.blue,
+      style = 'italic,bold'
+    } -- For method calls and definitions.
+    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan, style = 'italic,bold'} -- For builtin functions: `table.insert` in Lua.
   else
-    treesitter.TSFunction = {fg = material.func or material.blue} -- For fuction (calls and definitions).
-    treesitter.TSMethod = {fg = material.method or material.blue} -- For method calls and definitions.
-    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan} -- For builtin functions: `table.insert` in Lua.
+    treesitter.TSFunction = {fg = material.func or material.blue, style = 'bold'} -- For fuction (calls and definitions).
+    treesitter.TSMethod = {fg = material.method or material.blue, style = 'bold'} -- For method calls and definitions.
+    treesitter.TSFuncBuiltin = {fg = material.func or material.cyan, style = 'bold'} -- For builtin functions: `table.insert` in Lua.
   end
 
   if vim.g.material_italic_variables == true then
@@ -345,9 +354,9 @@ theme.loadLSP = function()
     LspDiagnosticsFloatingHint = {fg = material.purple}, -- used for "Hint" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextHint = {fg = material.purple}, -- Virtual text "Hint"
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {fg = material.string or "green", bg = material.highlight}, -- used for highlighting "text" references
-    LspReferenceRead = {fg = material.salmon or material.accent, bg = material.highlight}, -- used for highlighting "read" references
-    LspReferenceWrite = {fg = material.keyword or "yellow", bg = "MistyRose"} -- used for highlighting "write" references
+    LspReferenceText = {fg = material.string or "green", bg = material.highlight, gui = 'bold,undercurl'}, -- used for highlighting "text" references
+    LspReferenceRead = {fg = material.accent or material.salmon, bg = material.highlight, gui = 'bold,undercurl'}, -- used for highlighting "read" references
+    LspReferenceWrite = {fg = material.keyword or "yellow", bg = material.search_bg, gui = 'bold,undercurl'} -- used for highlighting "write" references
   }
 
   return lsp
