@@ -248,6 +248,9 @@ theme.loadTreeSitter = function()
     TSFloat = {fg = material.red}, -- For floats.
     TSFuncMacro = {fg = material.blue}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = {fg = material.cyan}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+
+    TSDefinitionUsage = {fg = material.accent or material.salmon, style = 'bold,undercurl', sp = 'white'}, -- used for highlighting "read" references
+    TSDefinition = {fg = material.keyword or "yellow", style = 'bold,undercurl', sp = 'red'}, -- used for highlighting "write" references
     TSLabel = {fg = material.green1}, -- For labels: `label:` in C and `:label:` in Lua.
     TSNamespace = {fg = material.yellow1}, -- For identifiers referring to modules and namespaces.
     TSNumber = {fg = material.number or material.yellow2}, -- For all numbers
@@ -354,9 +357,9 @@ theme.loadLSP = function()
     LspDiagnosticsFloatingHint = {fg = material.purple}, -- used for "Hint" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextHint = {fg = material.purple}, -- Virtual text "Hint"
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {fg = material.string or "green", bg = material.highlight, gui = 'bold,undercurl'}, -- used for highlighting "text" references
-    LspReferenceRead = {fg = material.accent or material.salmon, bg = material.highlight, gui = 'bold,undercurl'}, -- used for highlighting "read" references
-    LspReferenceWrite = {fg = material.keyword or "yellow", bg = material.search_bg, gui = 'bold,undercurl'} -- used for highlighting "write" references
+    LspReferenceText = {fg = material.string or "green", style = 'bold,undercurl', sp = 'white'}, -- used for highlighting "text" references
+    LspReferenceRead = {fg = material.accent or material.salmon, style = 'bold,undercurl', sp = 'textdark'}, -- used for highlighting "read" references
+    LspReferenceWrite = {fg = material.keyword or "yellow", bg = material.disabled, style = 'bold,undercurl', sp = 'red2'} -- used for highlighting "write" references
   }
 
   return lsp
