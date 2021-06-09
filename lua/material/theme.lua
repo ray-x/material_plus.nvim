@@ -124,7 +124,7 @@ theme.loadEditor = function()
     ErrorMsg = {fg = material.error}, -- error messages
     Folded = {fg = material.link, bg = material.none, style = 'bold'},
     FoldColumn = {fg = material.blue},
-    IncSearch = {fg = material.highlight, bg = material.white, style = 'reverse'},
+    IncSearch = {fg = material.white, bg = material.highlight, style = 'bold,reverse'},
     LineNr = {fg = material.line_numbers},
     CursorLineNr = {fg = material.accent},
     MatchParen = {fg = material.yellow, bg = material.none, style = 'bold'},
@@ -249,7 +249,12 @@ theme.loadTreeSitter = function()
     TSFuncMacro = {fg = material.blue}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = {fg = material.cyan}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 
-    TSDefinitionUsage = {fg = material.accent or material.salmon, style = 'bold,undercurl', sp = 'white'}, -- used for highlighting "read" references
+    TSDefinitionUsage = {
+      fg = material.accent or material.salmon,
+      style = 'bold,undercurl',
+      sp = 'white'
+    }, -- used for highlighting "read" references
+
     TSDefinition = {fg = material.keyword or "yellow", style = 'bold,undercurl', sp = 'red'}, -- used for highlighting "write" references
     TSLabel = {fg = material.green1}, -- For labels: `label:` in C and `:label:` in Lua.
     TSNamespace = {fg = material.yellow1}, -- For identifiers referring to modules and namespaces.
@@ -354,12 +359,19 @@ theme.loadLSP = function()
     LspDiagnosticsUnderlineInformation = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
     LspDiagnosticsDefaultHint = {fg = material.purple}, -- used for "Hint" diagnostic virtual text
     LspDiagnosticsSignHint = {fg = material.purple}, -- used for "Hint" diagnostic signs in sign column
-    LspDiagnosticsFloatingHint = {fg = material.purple}, -- used for "Hint" diagnostic messages in the diagnostics float
-    LspDiagnosticsVirtualTextHint = {fg = material.purple}, -- Virtual text "Hint"
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
     LspReferenceText = {fg = material.string or "green", style = 'bold,undercurl', sp = 'white'}, -- used for highlighting "text" references
-    LspReferenceRead = {fg = material.accent or material.salmon, style = 'bold,undercurl', sp = 'textdark'}, -- used for highlighting "read" references
-    LspReferenceWrite = {fg = material.keyword or "yellow", bg = material.disabled, style = 'bold,undercurl', sp = 'red2'} -- used for highlighting "write" references
+    LspReferenceRead = {
+      fg = material.accent or material.salmon,
+      style = 'bold,undercurl',
+      sp = 'textdark'
+    }, -- used for highlighting "read" references
+    LspReferenceWrite = {
+      fg = material.keyword or "yellow",
+      bg = material.disabled,
+      style = 'bold,undercurl',
+      sp = 'red2'
+    } -- used for highlighting "write" references
   }
 
   return lsp
