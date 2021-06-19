@@ -105,7 +105,7 @@ theme.loadEditor = function()
 
   local editor = {
     NormalFloat = {fg = material.fg, bg = material.float}, -- normal text and background color for floating windows
-    FloatBorder = {fg = material.fg, bg = material.float},
+    FloatBorder = {fg = material.comments, bg = material.less_active},
     ColorColumn = {fg = material.none, bg = material.active}, --  used for the columns set with 'colorcolumn'
     Conceal = {fg = material.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor
@@ -140,7 +140,7 @@ theme.loadEditor = function()
     qfLineNr = {fg = material.highlight, bg = material.white, style = 'reverse'},
     Search = {
       fg = material.search_fg or material.highlight,
-      bg = material.search_bg or material.white,
+      bg = material.search_bg or material.yellow,
       style = 'reverse'
     },
     SpecialKey = {fg = material.purple},
@@ -360,11 +360,11 @@ theme.loadLSP = function()
     LspDiagnosticsDefaultHint = {fg = material.purple}, -- used for "Hint" diagnostic virtual text
     LspDiagnosticsSignHint = {fg = material.purple}, -- used for "Hint" diagnostic signs in sign column
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {fg = material.string or "green", style = 'bold,undercurl', sp = 'white'}, -- used for highlighting "text" references
+    LspReferenceText = {fg = material.string or "green", style = 'bold,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
     LspReferenceRead = {
       fg = material.accent or material.salmon,
       style = 'bold,undercurl',
-      sp = 'textdark'
+      sp = 'lime'
     }, -- used for highlighting "read" references
     LspReferenceWrite = {
       fg = material.keyword or "yellow",
