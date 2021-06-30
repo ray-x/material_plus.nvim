@@ -1,19 +1,18 @@
 # 🌊 material +.nvim
 
-Neovim 5.0+ required
+A collection of material colorscheme for neovim (Neovim 5.0+ required)
 
 This repo built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
 
-I added:
+With additional colorschemes:
 - Dracula & Dracula_blood theme
 - Monokai
-- Mariana
+- Mariana (The latest Sublime (Build 4) builtin color scheme)
 
 ## Why this repo:
-- They are of the same origin and should be in the same repo.
-- Removed all the gif/png from .git and repo to save 20MB when cloning for the first time.
+- Removed all the gif/png from .git repo to save 20MB diskspace.
 - Add additional colors to the color scheme. The original design each scheme has 32 colors. En-riched to 64
 - Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
 monokai, mariana randomly )
@@ -65,4 +64,22 @@ let material_disable_background = false
 let material_style_fix=v:true  "disable random loading
 let material_style="moonlight"  "load moonlight everytime or
 " other theme: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana
+```
+
+Toggle style
+
+```
+:colorscheme material        " this allow pickup a colorscheme randomly
+```
+
+or
+
+```
+:lua require('material.functions').toggle_style()
+```
+
+Change to specific style
+
+```
+lua require('material.functions').change_style("dracula_blood")
 ```
