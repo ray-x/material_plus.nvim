@@ -201,9 +201,16 @@ theme.loadEditor = function()
 
   -- Remove window split borders
   if vim.g.material_borders == true then
-    editor.VertSplit = {fg = material.border}
+    editor.VertSplit = {fg = material.border} -- the column separating vertically split windows
   else
-    editor.VertSplit = {fg = material.bg}
+    editor.VertSplit = {fg = material.bg} -- the column separating vertically split windows
+  end
+
+  -- Set End of Buffer lines (~)
+  if vim.g.material_hide_eob == true then
+    editor.EndOfBuffer = {fg = material.bg} -- ~ lines at the end of a buffer
+  else
+    editor.EndOfBuffer = {fg = material.disabled} -- ~ lines at the end of a buffer
   end
 
   return editor
@@ -388,14 +395,17 @@ theme.loadPlugins = function()
     LspTroubleCount = {fg = material.purple, bg = material.active},
     LspTroubleNormal = {fg = material.fg, bg = material.sidebar},
 
+    -- Nvim-Compe
+    CompeDocumentation = {fg = material.text, bg = material.contrast},
+
     -- Diff
     diffAdded = {fg = material.green},
     diffRemoved = {fg = material.red},
-    diffChanged = {fg = material.yellow},
-    diffOldFile = {fg = material.yelow},
-    diffNewFile = {fg = material.orange},
-    diffFile = {fg = material.blue},
-    diffLine = {fg = material.comments},
+    diffChanged = {fg = material.blue},
+    diffOldFile = {fg = material.text},
+    diffNewFile = {fg = material.title},
+    diffFile = {fg = material.gray},
+    diffLine = {fg = material.cyan},
     diffIndexLine = {fg = material.purple},
 
     -- Neogit
@@ -409,40 +419,45 @@ theme.loadPlugins = function()
 
     -- GitGutter
     GitGutterAdd = {fg = material.green}, -- diff mode: Added line |diff.txt|
-    GitGutterChange = {fg = material.yellow}, -- diff mode: Changed line |diff.txt|
+    GitGutterChange = {fg = material.blue}, -- diff mode: Changed line |diff.txt|
     GitGutterDelete = {fg = material.red}, -- diff mode: Deleted line |diff.txt|
 
     -- GitSigns
     GitSignsAdd = {fg = material.green}, -- diff mode: Added line |diff.txt|
     GitSignsAddNr = {fg = material.green}, -- diff mode: Added line |diff.txt|
     GitSignsAddLn = {fg = material.green}, -- diff mode: Added line |diff.txt|
-    GitSignsChange = {fg = material.yellow}, -- diff mode: Changed line |diff.txt|
-    GitSignsChangeNr = {fg = material.yellow}, -- diff mode: Changed line |diff.txt|
-    GitSignsChangeLn = {fg = material.yellow}, -- diff mode: Changed line |diff.txt|
+    GitSignsChange = {fg = material.blue}, -- diff mode: Changed line |diff.txt|
+    GitSignsChangeNr = {fg = material.blue}, -- diff mode: Changed line |diff.txt|
+    GitSignsChangeLn = {fg = material.blue}, -- diff mode: Changed line |diff.txt|
     GitSignsDelete = {fg = material.red}, -- diff mode: Deleted line |diff.txt|
     GitSignsDeleteNr = {fg = material.red}, -- diff mode: Deleted line |diff.txt|
     GitSignsDeleteLn = {fg = material.red}, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
+    TelescopeNormal = {fg = material.fg, bg = material.bg},
     TelescopePromptBorder = {fg = material.cyan},
     TelescopeResultsBorder = {fg = material.purple},
     TelescopePreviewBorder = {fg = material.green},
-    TelescopeSelectionCaret = {fg = material.active},
-    TelescopeSelection = {fg = material.purple},
+    TelescopeSelectionCaret = {fg = material.purple},
+    TelescopeSelection = {fg = material.purple, bg = material.active},
     TelescopeMatching = {fg = material.cyan},
-    TelescopeNormal = {fg = material.fg, bg = material.float},
 
     -- NvimTree
     NvimTreeRootFolder = {fg = material.title, style = "italic"},
-    NvimTreeGitDirty = {fg = material.yellow},
+    NvimTreeFolderName = {fg = material.text},
+    NvimTreeFolderIcon = {fg = material.accent},
+    NvimTreeEmptyFolderName = {fg = material.disabled},
+    NvimTreeOpenedFolderName = {fg = material.accent, style = "italic"},
+    NvimTreeIndentMarker = {fg = material.disabled},
+    NvimTreeGitDirty = {fg = material.blue},
     NvimTreeGitNew = {fg = material.green},
+    NvimTreeGitStaged = {fg = material.comments},
+    NvimTreeGitDeleted = {fg = material.red},
+    NvimTreeOpenedFile = {fg = material.accent},
     NvimTreeImageFile = {fg = material.yellow},
+    NvimTreeMarkdownFile = {fg = material.pink},
     NvimTreeExecFile = {fg = material.green},
     NvimTreeSpecialFile = {fg = material.purple, style = "underline"},
-    NvimTreeFolderName = {fg = material.paleblue},
-    NvimTreeEmptyFolderName = {fg = material.disabled},
-    NvimTreeFolderIcon = {fg = material.accent},
-    NvimTreeIndentMarker = {fg = material.disabled},
     LspDiagnosticsError = {fg = material.error},
     LspDiagnosticsWarning = {fg = material.yellow},
     LspDiagnosticsInformation = {fg = material.paleblue},

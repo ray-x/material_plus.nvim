@@ -48,7 +48,7 @@ function util.load()
 
   local switch = {
     "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-    "material", "monokai"
+    "monokai"
   }
   local v = math.random(1, #switch)
   if vim.g.material_style_fix == nil or vim.g.material_style_fix == false
@@ -61,16 +61,11 @@ function util.load()
   async = vim.loop.new_async(vim.schedule_wrap(function()
     material.loadTerminal()
 
-    -- imort tables for plugins, treesitter and lsp
+    -- imort tables for plugins and lsp
     local plugins = material.loadPlugins()
-    local treesitter = material.loadTreeSitter()
     local lsp = material.loadLSP()
 
     for group, colors in pairs(plugins) do
-      util.highlight(group, colors)
-    end
-
-    for group, colors in pairs(treesitter) do
       util.highlight(group, colors)
     end
 
@@ -87,12 +82,17 @@ function util.load()
   -- load base theme
   local editor = material.loadEditor()
   local syntax = material.loadSyntax()
+  local treesitter = material.loadTreeSitter()
 
   for group, colors in pairs(editor) do
     util.highlight(group, colors)
   end
 
   for group, colors in pairs(syntax) do
+    util.highlight(group, colors)
+  end
+
+  for group, colors in pairs(treesitter) do
     util.highlight(group, colors)
   end
   async:send()

@@ -6,13 +6,7 @@ end
 -- Change_style takes a style name as a parameter and switches to that style
 local change_style = function(style)
   vim.g.material_style = style
-  -- print("Material style: ", style)
-  --[[ package.loaded['material'] = nil
-     package.loaded['material.util'] = nil
-     package.loaded['material.theme'] = nil
-     package.loaded['material.colors'] = nil
-     package.loaded['material.functions'] = nil
-     require('material').set() ]]
+  print("Material style: ", style)
   vim.cmd [[colorscheme material]]
 end
 
@@ -26,4 +20,13 @@ local toggle_style = function()
   change_style(switch[vim.g.material_style_switch])
 end
 
-return {change_style = change_style, toggle_style = toggle_style}
+local toggle_eob = function()
+  if vim.g.material_hide_eob == nil then
+    vim.g.material_hide_eob = true
+  else
+    vim.g.material_hide_eob = nil
+  end
+  vim.cmd [[colorscheme material]]
+end
+
+return {change_style = change_style, toggle_style = toggle_style, toggle_eob = toggle_eob}

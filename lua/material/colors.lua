@@ -543,16 +543,42 @@ else
 end
 
 -- Enable custom variable colors
-if vim.g.material_variable_color ~= nil then
-  material.variable = vim.g.material_variable_color
+if vim.g.material_variable_color == nil then
+  material.variable = material.variable or material.gray
 else
-  material.variable = material.variable or material.light_gray
+  material.variable = vim.g.material_variable_color
 end
 
-if vim.g.material_style == "lighter" then
+-- Set black titles for lighter style
+if vim.g.material_style == 'lighter' then
   material.title = material.black
 else
   material.title = material.white
+end
+
+-- Apply user defined colors
+
+-- Check if vim.g.material_custom_colors = is a table
+if type(vim.g.material_custom_colors) == "table" then
+  -- Iterate trough the table
+  for key, value in pairs(vim.g.material_custom_colors) do
+    -- If the key doesn't exist:
+    if not material[key] then
+      error("Color " .. key .. " does not exist")
+    end
+    -- If it exists and the sting starts with a "#"
+    if string.sub(value, 1, 1) == "#" then
+      -- Hex override
+      material[key] = value
+      -- IF it doesn't, dont accept it
+    else
+      -- Another group
+      if not material[value] then
+        error("Color " .. value .. " does not exist")
+      end
+      material[key] = material[value]
+    end
+  end
 end
 
 return material
