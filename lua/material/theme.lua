@@ -269,7 +269,7 @@ theme.loadTreeSitter = function()
     TSOperator = {fg = material.operator or material.cyan}, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = {fg = material.parameter or material.blue2}, -- For parameters of a function.
     TSParameterReference = {fg = material.paleblue}, -- For references to parameters of a function.
-    TSProperty = {fg = material.blue1}, -- Same as `TSField`.
+    TSProperty = {fg = material.field or material.blue1}, -- Same as `TSField`.
     TSPunctDelimiter = {fg = material.cyan}, -- For delimiters ie: `.`
     TSPunctBracket = {fg = material.bracket or material.pink2}, -- For brackets and parens.
     TSPunctSpecial = {fg = material.punctutation or material.purple1}, -- For special punctutation that does not fall in the catagories before.

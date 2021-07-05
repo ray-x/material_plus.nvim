@@ -13,7 +13,7 @@ local material = {
   red = "#F07178",
   red1 = "#ec5f67",
   red2 = "#F92772",
-
+  caramel = "#f9c37a",
   crimson = "#DC143C",
   darkred = "#821040",
 
@@ -192,7 +192,7 @@ local material_dracula_blood = {
   func = "PaleGreen",
   method = "#A0E210",
   text = "#c5ddfc",
-  comments = "#6A6A6A",
+  comments = "#8A6A6A",
   keyword = "#CC4832",
   variable = "#F5D2DD",
   nunmber = "#6897BB",
@@ -406,6 +406,110 @@ local mariana = {
   none = "NONE"
 }
 
+local emerald_colors = {
+  -- Common colors
+  white = "#EEFFFF",
+  white2 = "#E7F7F7",
+  white3 = "#D8EED9",
+  grey = "#233323",
+  darkgray = "#476b61",
+
+  black = "#011002",
+
+  caramel = "#f9c37a",
+  lightgrey = "#64645e",
+  warmgrey = "#657150",
+
+  brown = "#925632",
+  pink = "#C695C6",
+  green = "#147816",
+  blue = "#6675ea",
+  aqua = "#66c9cf",
+  yellow = "#e29d04",
+  yellow2 = "#c2ad54",
+  orange = "#F9AE58",
+  orange2 = "#cd8b59",
+  purple = "#ae81ff",
+  red = "#EC5F66",
+  red2 = "#F97B58",
+  purered = "#ff0000",
+  darkred = "#5f0000",
+
+  green1 = "#0FC192",
+  green2 = "#caefb3",
+  green3 = "#abce00",
+  green4 = "#648c01",
+  green5 = "#2f5f02",
+  green6 = "#589d62",
+  green7 = "#1A554e",
+  green8 = "#C6Dc93",
+  green9 = "#1A310e",
+  greena = "#10210e",
+  greenb = "#046806",
+  greenc = "#065836",
+
+  cyan = "#A1EFE4",
+  br_green = "#9EC400",
+  br_yellow = "#E7C547",
+  br_yellow2 = "#d0ac7a",
+  br_blue = "#7AA6DA",
+  br_purple = "#B77EE0",
+  br_cyan = "#54CED6",
+  br_white = "#FFFFFF",
+
+  salmon = "F7856E",
+  teal = "#4DB380",
+  paleblue = "#d6e7f0",
+  magenta = "#D184C7"
+}
+local emerald = {
+  bg = emerald_colors.black,
+  bg_alt = emerald_colors.green9,
+  bg_darker = emerald_colors.greena,
+  fg = emerald_colors.white3,
+  bg2 = "#103b41",
+  statement = "#DbB0A0",
+  symbol = emerald_colors.yellow2,
+  operator = emerald_colors.red2,
+  label = emerald_colors.orange,
+  condition = emerald_colors.br_yellow2,
+  keyword = emerald_colors.green1,
+  func = emerald_colors.br_yellow,
+  method = emerald_colors.pink,
+  text = "#e0C2C0",
+  comments = emerald_colors.green,
+  nunmber = emerald_colors.orange2,
+  char = emerald_colors.aqua,
+  variable = emerald_colors.white3,
+  parameter = material.orange,
+  class = emerald_colors.pink,
+  typedef = emerald_colors.green5,
+  punctutation = emerald_colors.green4,
+
+  field = emerald_colors.caramel,
+  bool = "#C06431",
+  string = emerald_colors.green6,
+  const = emerald_colors.pink,
+  selection = "#575b61",
+  search_fg = emerald_colors.orange2,
+  search_bg = emerald_colors.grey,
+  contrast = "#1b1c2b",
+  less_active = emerald_colors.greena,
+  bracket = emerald_colors.orange,
+  active = emerald_colors.green9,
+  more_active = emerald_colors.green5,
+  border = emerald_colors.green1,
+  line_numbers = emerald_colors.greenb,
+  highlight = "#315b40",
+  disabled = emerald_colors.darkgray,
+  cursor = "#a0d2ac",
+  accent = emerald_colors.br_green,
+  error = "#CA1414",
+  link = "#80CB84",
+  type = "#66d9af",
+  none = "NONE"
+}
+
 if not vim.g then
   error("only nvim 5.0 supported")
 end
@@ -468,7 +572,7 @@ elseif vim.g.material_style == "palenight" then
   material.bg_alt = "#1B1E2B"
   material.fg = "#A6ACCD"
   material.text = "#717CB4"
-  material.comments = "#676E95"
+  material.comments = "#878EA5"
   material.selection = "#444267"
   material.contrast = "#202331"
   material.less_active = "#303145"
@@ -486,7 +590,7 @@ elseif vim.g.material_style == "deep ocean" then
   material.bg_alt = "#090B10"
   material.fg = "#8F93A2"
   material.text = "#717CB4"
-  material.comments = "#464B5D"
+  material.comments = "#666B7D"
   material.selection = "#1F2233"
   material.contrast = "#090B10"
   material.less_active = "#131625"
@@ -505,7 +609,7 @@ elseif vim.g.material_style == "oceanic" then
   material.bg_alt = "#192027"
   material.fg = "#B0BEC5"
   material.text = "#607D8B"
-  material.comments = "#464B5D"
+  material.comments = "#666B8D"
   material.selection = "#546E7A"
 
   material.less_active = "#252f35"
@@ -529,6 +633,9 @@ elseif vim.g.material_style == "monokai" then
 elseif vim.g.material_style == "mariana" then
   material = vim.tbl_extend("force", material, mariana_colors)
   material = vim.tbl_extend("force", material, mariana)
+elseif vim.g.material_style == "emerald" then
+  material = vim.tbl_extend("force", material, emerald_colors)
+  material = vim.tbl_extend("force", material, emerald)
 end
 
 -- Optional colors

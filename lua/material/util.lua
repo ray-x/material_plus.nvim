@@ -48,14 +48,16 @@ function util.load()
 
   local switch = {
     "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-    "monokai"
+    "monokai", "emerald"
   }
   local v = math.random(1, #switch)
-  if vim.g.material_style_fix == nil or vim.g.material_style_fix == false
-      and not vim.g.material_style then
+  vim.g.material_style_fix = vim.g.material_style_fix or true
+  vim.g.material_style = vim.g.material_style or "mariana"
+  if vim.g.material_style_fix == false and not vim.g.material_style then
     vim.g.material_style = switch[v]
     print(switch[v])
   end
+
   -- Load plugins, treesitter and lsp async
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()

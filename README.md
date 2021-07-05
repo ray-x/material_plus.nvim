@@ -51,6 +51,9 @@ Color palettes from [twolfson/sublime-files](https://github.com/twolfson/sublime
 
 Please check README of material.nvim project for setups.
 
+## Emerald
+![emerald](https://user-images.githubusercontent.com/1681295/124419554-0fd4a780-dda1-11eb-8fec-20eadac51e4b.png)
+
 ## Example Setup
 ```vim
 let material_italic_comments = true
