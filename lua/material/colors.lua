@@ -358,6 +358,7 @@ local mariana_colors = {
   paleblue = "#d6e7f0",
   magenta = "#D184C7"
 }
+
 local mariana = {
   bg = mariana_colors.blue3,
   bg_alt = mariana_colors.blue9,
@@ -391,6 +392,7 @@ local mariana = {
   search_bg = mariana_colors.grey,
   contrast = "#1b1c2b",
   less_active = mariana_colors.blue7,
+  float = mariana_colors.orange,
   bracket = mariana_colors.orange,
   active = mariana_colors.blue2,
   more_active = mariana_colors.blue5,
@@ -462,6 +464,7 @@ local emerald_colors = {
   paleblue = "#d6e7f0",
   magenta = "#D184C7"
 }
+
 local emerald = {
   bg = emerald_colors.black,
   bg_alt = emerald_colors.green9,
@@ -479,6 +482,7 @@ local emerald = {
   text = "#e0C2C0",
   comments = emerald_colors.green,
   nunmber = emerald_colors.orange2,
+  float = emerald_colors.orange,
   char = emerald_colors.aqua,
   variable = emerald_colors.white3,
   parameter = material.orange,

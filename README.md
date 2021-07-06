@@ -1,27 +1,29 @@
 # 🌊 material +.nvim
 
-A collection of material colorscheme for neovim (Neovim 5.0+ required)
+A collection of material colorscheme for neovim (Neovim 5.0+ required), written in lua.
 
-This repo built based on combination of
+This repo was orignally built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
 
-With additional colorschemes:
+Later on following colorschemes was added:
 - Dracula & Dracula_blood theme
 - Monokai
 - Mariana (The latest Sublime (Build 4) builtin color scheme)
+- Emerald (Low contrast green color scheme)
 
 ## Why this repo:
-- Removed all the gif/png from .git repo to save 20MB diskspace.
-- Add additional colors to the color scheme. The original design each scheme has 32 colors. En-riched to 64
+- Cleaner repo
+- All-In-One
+- More colors
 - Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
-monokai, mariana randomly )
+monokai, mariana, emerald randomly )
 
 ## Credits:
 - [marko-cerovac](https://github.com/marko-cerovac) For the material color palettes. The lua color scheme framework
 - [shaunsingh](https://github.com/shaunsingh)  For the moonlight color schema
 
-I believe the basic color palettes of material is from [material.vim](https://github.com/kaicataldo/material.vim)
+The basic color palettes of material is from [material.vim](https://github.com/kaicataldo/material.vim)
 
 ## material.vim
 
@@ -44,15 +46,26 @@ Color palettes from [colors/monokai.vim](https://github.com/crusoexia/vim-monoka
 
 ## Mariana
 The sublime 4.0 default color scheme
+
 Color palettes from [twolfson/sublime-files](https://github.com/twolfson/sublime-files/blob/master/Packages/Color%20Scheme%20-%20Default/Mariana.sublime-color-scheme)
 
+![mariana](https://preview.redd.it/efzsm1gf0n171.jpg?width=1520&format=pjpg&auto=webp&s=aafb09e752f7fdc9afe3a3a13d069fda2eddc06d)
 
 ![mariana2](https://user-images.githubusercontent.com/1681295/119898862-b600e680-bf85-11eb-84c1-727e5add5a18.jpg)
+
 
 Please check README of material.nvim project for setups.
 
 ## Emerald
+
+I head green can reduce eye strain :-P
+
 ![emerald](https://user-images.githubusercontent.com/1681295/124419554-0fd4a780-dda1-11eb-8fec-20eadac51e4b.png)
+
+
+## Supported Plugins
+
+All the plugins supported by material.nvim, e.g. Treesitter, LSP, Telescope, NvimTree...
 
 ## Example Setup
 ```vim
@@ -66,7 +79,7 @@ let material_borders = false
 let material_disable_background = false
 let material_style_fix=v:true  "disable random loading
 let material_style="moonlight"  "load moonlight everytime or
-" other theme: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana
+" other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald
 ```
 
 Toggle style

@@ -14,7 +14,7 @@ theme.loadSyntax = function()
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
     Number = {fg = material.number or material.coral}, -- a number constant: 5
     Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
-    Float = {fg = material.pink1}, -- a floating point constant: 2.3e10
+    Float = {fg = material.number or material.pink1}, -- a floating point constant: 2.3e10
     Statement = {fg = material.statement or material.pink}, -- any statement
     Label = {fg = material.label or material.purple}, -- case, default, etc.
     Operator = {fg = material.operator or material.cyan}, -- sizeof", "+", "*", etc.
@@ -252,7 +252,7 @@ theme.loadTreeSitter = function()
     TSError = {fg = material.error}, -- For syntax/parser errors.
     TSException = {fg = material.yellow}, -- For exception related keywords.
     TSField = {fg = material.variable or material.blue1}, -- For fields.
-    TSFloat = {fg = material.red}, -- For floats.
+    TSFloat = {fg = material.float or material.red}, -- For floats.
     TSFuncMacro = {fg = material.blue}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude = {fg = material.cyan}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 
@@ -278,7 +278,7 @@ theme.loadTreeSitter = function()
     TSStringEscape = {fg = material.disabled}, -- For escape characters within a string.
     TSSymbol = {fg = material.symbol or material.yellow}, -- For identifiers referring to symbols or atoms.
     TSType = {fg = material.type}, -- For types.
-    TSTypeBuiltin = {fg = material.purple1}, -- For builtin types.
+    TSTypeBuiltin = {fg = material.purple1, style = 'bold'}, -- For builtin types.
     TSTag = {fg = material.red1}, -- Tags like html tag names.
     TSTagDelimiter = {fg = material.yellow2}, -- Tag delimiter like `<` `>` `/`
     TSText = {fg = material.text}, -- For strings considered text in a markup language.
@@ -305,7 +305,7 @@ theme.loadTreeSitter = function()
   if vim.g.material_italic_keywords == true then
     treesitter.TSConditional = {fg = material.condition or material.purple, style = 'italic'} -- For keywords related to conditionnals.
     treesitter.TSKeyword = {fg = material.keyword or material.purple, style = 'italic,bold'} -- For keywords that don't fall in previous categories.
-    treesitter.TSRepeat = {fg = material.condition or material.purple, style = 'italic'} -- For keywords related to loops.
+    treesitter.TSRepeat = {fg = material.condition or material.purple, style = 'italic,bold'} -- For keywords related to loops.
     treesitter.TSKeywordFunction = {
       fg = material.keyword_func or material.keyword or material.purple,
       style = 'italic,bold'
@@ -313,7 +313,7 @@ theme.loadTreeSitter = function()
   else
     treesitter.TSConditional = {fg = material.condition or material.purple} -- For keywords related to conditionnals.
     treesitter.TSKeyword = {fg = material.keyword or material.purple, style = 'bold'} -- For keywords that don't fall in previous categories.
-    treesitter.TSRepeat = {fg = material.condition or material.purple} -- For keywords related to loops.
+    treesitter.TSRepeat = {fg = material.condition or material.purple, style = 'bold'} -- For keywords related to loops.
     treesitter.TSKeywordFunction = {
       fg = material.keyword_func or material.keyword or material.purple,
       style = 'bold'
