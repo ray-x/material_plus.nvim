@@ -60,9 +60,10 @@ Please check README of material.nvim project for setups.
 
 I head green can reduce eye strain :-P
 
-![emerald](https://user-images.githubusercontent.com/1681295/124419554-0fd4a780-dda1-11eb-8fec-20eadac51e4b.png)
+![emerald](https://user-images.githubusercontent.com/1681295/125885744-b19b33e7-cb7c-452c-9def-9a1c4db59603.jpg)
 
-
+## Middlenight_blue
+![middlenight_blue](https://user-images.githubusercontent.com/1681295/125889413-ad5e4b35-d274-4b6d-a8d2-a074628c0d93.jpg)
 ## Supported Plugins
 
 All the plugins supported by material.nvim, e.g. Treesitter, LSP, Telescope, NvimTree...
@@ -79,7 +80,7 @@ let material_borders = false
 let material_disable_background = false
 let material_style_fix=v:true  "disable random loading
 let material_style="moonlight"  "load moonlight everytime or
-" other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald
+" other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald, middlenight_blue
 ```
 
 Toggle style

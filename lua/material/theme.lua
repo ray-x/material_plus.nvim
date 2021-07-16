@@ -66,15 +66,23 @@ theme.loadSyntax = function()
 
   -- Italic Keywords
   if vim.g.material_italic_keywords == true then
-    syntax.Conditional = {fg = material.purple, bg = material.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
+    syntax.Conditional = {
+      fg = material.condition or material.purple,
+      bg = material.none,
+      style = 'italic'
+    } -- italic if, then, else, endif, switch, etc.
     syntax.Keyword = {
       fg = material.keyword or material.purple,
       bg = material.none,
       style = 'italic'
     } -- italic for, do, while, etc.
-    syntax.Repeat = {fg = material.purple, bg = material.none, style = 'italic'} -- italic any other keyword
+    syntax.Repeat = {
+      fg = material.condition or material.purple,
+      bg = material.none,
+      style = 'italic'
+    } -- italic any other keyword
   else
-    syntax.Conditional = {fg = material.purple} -- normal if, then, else, endif, switch, etc.
+    syntax.Conditional = {fg = material.condition or material.purple} -- normal if, then, else, endif, switch, etc.
     syntax.Keyword = {fg = material.keyword or material.purple} -- normal for, do, while, etc.
     syntax.Repeat = {fg = material.purple} -- normal any other keyword
   end
@@ -110,7 +118,7 @@ theme.loadEditor = function()
     Conceal = {fg = material.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor
     CursorIM = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- like Cursor, but used when in IME mode
-    Directory = {fg = material.blue, bg = material.none}, -- directory names (and other special names in listings)
+    Directory = {fg = material.directory or material.blue, bg = material.none}, -- directory names (and other special names in listings)
     DiffAdd = {fg = material.green, bg = material.none, style = 'undercurl', sp = material.active}, -- diff mode: Added line
     DiffChange = {
       fg = material.orange,
@@ -282,7 +290,7 @@ theme.loadTreeSitter = function()
     TSTag = {fg = material.red1}, -- Tags like html tag names.
     TSTagDelimiter = {fg = material.yellow2}, -- Tag delimiter like `<` `>` `/`
     TSText = {fg = material.text}, -- For strings considered text in a markup language.
-    TSTextReference = {fg = material.tan}, -- FIXME
+    TSTextReference = {fg = material.bg_alt}, -- FIXME
     TSEmphasis = {fg = material.paleblue}, -- For text to be represented with emphasis.
     TSUnderline = {fg = material.fg, bg = material.none, style = 'underline'}, -- For text to be represented with an underline.
     TSStrike = {fg = material.gray}, -- For strikethrough text.
