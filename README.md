@@ -58,11 +58,12 @@ Please check README of material.nvim project for setups.
 
 ## Emerald
 
-I head green can reduce eye strain :-P
+I heard green can reduce eye strain :-P
 
 ![emerald](https://user-images.githubusercontent.com/1681295/125885744-b19b33e7-cb7c-452c-9def-9a1c4db59603.jpg)
 
 ## Middlenight_blue
+
 ![middlenight_blue](https://user-images.githubusercontent.com/1681295/125889413-ad5e4b35-d274-4b6d-a8d2-a074628c0d93.jpg)
 ## Supported Plugins
 
