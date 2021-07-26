@@ -14,7 +14,7 @@ theme.loadSyntax = function()
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
     Number = {fg = material.number or material.coral}, -- a number constant: 5
     Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
-    Float = {fg = material.number or material.pink1}, -- a floating point constant: 2.3e10
+    Float = {fg = material.float or material.number}, -- a floating point constant: 2.3e10
     Statement = {fg = material.statement or material.pink}, -- any statement
     Label = {fg = material.label or material.purple}, -- case, default, etc.
     Operator = {fg = material.operator or material.cyan}, -- sizeof", "+", "*", etc.
@@ -112,7 +112,7 @@ theme.loadEditor = function()
   -- Editor highlight groups
 
   local editor = {
-    NormalFloat = {fg = material.fg, bg = material.float}, -- normal text and background color for floating windows
+    NormalFloat = {fg = material.fg, bg = material.floating}, -- normal text and background color for floating windows
     FloatBorder = {fg = material.comments, bg = material.less_active},
     ColorColumn = {fg = material.none, bg = material.active}, --  used for the columns set with 'colorcolumn'
     Conceal = {fg = material.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -476,8 +476,8 @@ theme.loadPlugins = function()
     WhichKeyGroup = {fg = material.text},
     WhichKeyDesc = {fg = material.blue, style = 'italic'},
     WhichKeySeperator = {fg = material.fg},
-    WhichKeyFloating = {bg = material.float},
-    WhichKeyFloat = {bg = material.float},
+    WhichKeyFloating = {bg = material.floating},
+    WhichKeyFloat = {bg = material.floating},
 
     -- LspSaga
     DiagnosticError = {fg = material.error},

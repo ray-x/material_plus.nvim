@@ -758,10 +758,10 @@ end
 -- Enable contrast sidebars, floating windows and popup menus
 if vim.g.material_contrast == false then
   material.sidebar = material.bg
-  material.float = material.bg
+  material.floating = material.bg
 else
   material.sidebar = material.bg_alt
-  material.float = material.bg_alt
+  material.floating = material.bg_alt
 end
 
 -- Enable custom variable colors
