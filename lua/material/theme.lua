@@ -13,7 +13,7 @@ theme.loadSyntax = function()
     String = {fg = material.string or material.green, bg = material.none}, -- Any string
     Character = {fg = material.orange}, -- any character constant: 'c', '\n'
     Number = {fg = material.number or material.coral}, -- a number constant: 5
-    Boolean = {fg = material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
+    Boolean = {fg = material.bool or material.orange, style = 'italic'}, -- a boolean constant: TRUE, false
     Float = {fg = material.float or material.number}, -- a floating point constant: 2.3e10
     Statement = {fg = material.statement or material.pink}, -- any statement
     Label = {fg = material.label or material.purple}, -- case, default, etc.
