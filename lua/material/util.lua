@@ -46,20 +46,7 @@ function util.load()
   vim.o.termguicolors = true
   vim.g.colors_name = "material"
 
-  local themes = {
-    "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-    "monokai", "emerald", "middlenight_blue"
-  }
-  local v = math.random(1, #themes)
-  if vim.g.material_style_fix == nil then
-    vim.g.material_style_fix = true
-  end
-  if not vim.g.material_style_fix and not vim.g.material_style then
-    vim.g.material_style = themes[v]
-    print(themes[v])
-  end
 
-  vim.g.material_style = vim.g.material_style or "mariana"
   -- Load plugins, treesitter and lsp async
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()

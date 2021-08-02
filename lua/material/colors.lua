@@ -625,8 +625,25 @@ local middlenight_blue = {
 if not vim.g then
   error("only nvim 5.0 supported")
 end
--- Style specific colors
 
+local themes = {
+  "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
+  "monokai", "emerald", "middlenight_blue"
+}
+if vim.g.material_style_fix == nil then
+  vim.g.material_style_fix = true
+end
+if not vim.g.material_style_fix and vim.g.material_style == nil then
+  local v = math.random(1, #themes)
+  vim.g.material_style = themes[v]
+  print(vim.g.material_style)
+end
+
+vim.g.material_style = vim.g.material_style or "mariana"
+
+print("theme", vim.g.material_style)
+
+-- Style specific colors
 if vim.g.material_style == "darker" then
   -- Darker theme style
 
