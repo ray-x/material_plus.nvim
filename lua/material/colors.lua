@@ -652,7 +652,7 @@ if vim.g.material_style == "darker" then
   material.fg = "#B0BEC5"
   material.text = "#727272"
   material.comments = "#616161"
-  material.selection = "#404040"
+  material.selection = "#373839"
   material.contrast = "#1A1A1A"
 
   material.less_active = "#24262a"
@@ -702,7 +702,7 @@ elseif vim.g.material_style == "palenight" then
   material.fg = "#A6ACCD"
   material.text = "#717CB4"
   material.comments = "#878EA5"
-  material.selection = "#444267"
+  material.selection = "#343257"
   material.contrast = "#202331"
   material.less_active = "#303145"
   material.active = "#363743"
@@ -739,7 +739,7 @@ elseif vim.g.material_style == "oceanic" then
   material.fg = "#B0BEC5"
   material.text = "#607D8B"
   material.comments = "#666B8D"
-  material.selection = "#546E7A"
+  material.selection = "#344E5A"
 
   material.less_active = "#252f35"
   material.contrast = "#1E272C"
