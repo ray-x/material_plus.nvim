@@ -114,6 +114,8 @@ theme.loadEditor = function()
   local editor = {
     NormalFloat = {fg = material.fg, bg = material.floating}, -- normal text and background color for floating windows
     FloatBorder = {fg = material.comments, bg = material.less_active},
+    FloatShadow = {bg = material.black, blend = 36},
+    FloatShadowThrough = {bg = material.black, blend = 66},
     ColorColumn = {fg = material.none, bg = material.active}, --  used for the columns set with 'colorcolumn'
     Conceal = {fg = material.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {fg = material.cursor, bg = material.none, style = 'reverse'}, -- the character under the cursor

@@ -7,8 +7,9 @@ util.highlight = function(group, color)
   local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
   local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
   local sp = color.sp and "guisp=" .. color.sp or ""
+  local blend = color.blend and "blend=" .. tostring(color.blend) or ""
 
-  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
+  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. blend
 
   vim.cmd(hl)
   if color.link then
@@ -45,7 +46,6 @@ function util.load()
   vim.o.background = "dark"
   vim.o.termguicolors = true
   vim.g.colors_name = "material"
-
 
   -- Load plugins, treesitter and lsp async
   local async

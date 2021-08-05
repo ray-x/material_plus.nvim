@@ -2,7 +2,7 @@
 
 A collection of material colorscheme for neovim (Neovim 5.0+ required), written in lua.
 
-This repo was orignally built based on combination of
+This colorscheme was orignally built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
 
@@ -11,13 +11,16 @@ Later on following colorschemes was added:
 - Monokai
 - Mariana (The latest Sublime (Build 4) builtin color scheme)
 - Emerald (Low contrast green color scheme)
+- Middlenight_blue (The theme to use in middle night)
 
 ## Why this repo:
-- Cleaner repo
+- Smaller and cleaner repo as I do not include jpg/gif
 - All-In-One
 - More colors
 - Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
 monokai, mariana, emerald randomly )
+- Tracking latest neovim/lsp/treesitter updates. e.g. `NormalFloat`, `FloatShadow`, `LspReferenceRead/Write`
+- Random loading
 
 ## Credits:
 - [marko-cerovac](https://github.com/marko-cerovac) For the material color palettes. The lua color scheme framework
