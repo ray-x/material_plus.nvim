@@ -164,9 +164,9 @@ theme.loadEditor = function()
       sp = material.darkred
     },
     StatusLine = {fg = material.accent, bg = material.active},
-    StatusLineNC = {fg = material.text, bg = material.disabled},
+    StatusLineNC = {fg = material.text, bg = material.less_active},
     StatusLineTerm = {fg = material.fg, bg = material.active},
-    StatusLineTermNC = {fg = material.text, bg = material.disabled},
+    StatusLineTermNC = {fg = material.text, bg = material.less_active},
     TabLineFill = {fg = material.fg},
     TablineSel = {fg = material.bg, bg = material.accent},
     Tabline = {fg = material.fg},
