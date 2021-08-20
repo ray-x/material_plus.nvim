@@ -1,20 +1,19 @@
-# 🌊 material +.nvim
+# 🌊 material + nvim
 
 A collection of material colorscheme for neovim (Neovim 5.0+ required), written in lua.
 
-This colorscheme was orignally built based on combination of
+This colorscheme plugin was orignally built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim)
 
-Later on following colorschemes was added:
+I added following colorschemes:
 - Dracula & Dracula_blood theme
-- Monokai
+- Monokai (Based on Sublime Build 3)
 - Mariana (The latest Sublime (Build 4) builtin color scheme)
 - Emerald (Low contrast green color scheme)
 - Middlenight_blue (The theme to use in middle night)
 
 ## Why this repo:
-- Smaller and cleaner repo as I do not include jpg/gif
 - All-In-One
 - More colors
 - Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
@@ -84,6 +83,9 @@ let material_borders = false
 let material_disable_background = false
 let material_style_fix=v:true  "disable random loading
 let material_style="moonlight"  "load moonlight everytime or
+let material_darker_contrast=v:true
+let material_italic_keywords=false
+let material_italic_functions=false
 " other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald, middlenight_blue
 ```
 

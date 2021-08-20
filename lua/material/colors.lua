@@ -16,6 +16,7 @@ local material = {
   caramel = "#f9c37a",
   crimson = "#DC143C",
   darkred = "#821040",
+  darkred2 = '#dc6068',
 
   violet1 = "#EE82EE",
   tomato = "#FF6347",
@@ -46,7 +47,8 @@ local material = {
   purple2 = "#9e71cf",
   purple3 = "#7d2c9d",
   purple4 = "#7202da",
-  darkpurple = "#57109a",
+  purple5 = '#b480d6',
+  darkpurple = "#57308a",
   darkpurple2 = "#4d0c5d",
 
   orange = "#F78C6C",
@@ -65,6 +67,14 @@ local material = {
   bright = "#ddd0f4",
 
   textdark = "#b4b0e0",
+
+  -- Dark colors
+  darkgreen = '#abcf76',
+  darkyellow = '#e6b455',
+  darkblue = '#6e98eb',
+  darkcyan = '#71c6e7',
+  darkorange = '#e2795b',
+
   none = "NONE"
 }
 
@@ -663,6 +673,11 @@ if vim.g.material_style == "darker" then
   material.highlight = "#3F3F3F"
   material.disabled = "#474747"
   material.accent = "#FF9800"
+  if vim.g.material_darker_contrast == true then
+    -- Lighter theme style with high contrast
+    material.comments = '#757575'
+    material.line_numbers = '#5C5C5C'
+  end
 elseif vim.g.material_style == "lighter" then
   -- Lighter theme style
 

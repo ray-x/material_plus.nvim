@@ -142,7 +142,7 @@ theme.loadEditor = function()
     MoreMsg = {fg = material.accent},
     NonText = {fg = material.disabled},
     Pmenu = {fg = material.text, bg = material.contrast},
-    PmenuSel = {fg = material.accent, bg = material.more_active, style = 'bold'},
+    PmenuSel = {fg = material.accent, bg = material.more_active, style = 'bold,italic'},
     PmenuSbar = {fg = material.text, bg = material.contrast},
     PmenuThumb = {fg = material.fg, bg = material.accent},
     Question = {fg = material.green},
@@ -257,10 +257,10 @@ theme.loadTreeSitter = function()
     TSCharacter = {fg = material.char or material.orange}, -- For characters.
     TSConstructor = {fg = material.purple}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSConstant = {fg = material.const or material.yellow}, -- For constants
-    TSConstBuiltin = {fg = material.const or material.blue}, -- For constant that are built in the language: `nil` in Lua.
-    TSConstMacro = {fg = material.blue1}, -- For constants that are defined by macros: `NULL` in C.
+    TSConstBuiltin = {fg = material.const or material.red}, -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro = {fg = material.red}, -- For constants that are defined by macros: `NULL` in C.
     TSError = {fg = material.error}, -- For syntax/parser errors.
-    TSException = {fg = material.yellow}, -- For exception related keywords.
+    TSException = {fg = material.red3}, -- For exception related keywords.
     TSField = {fg = material.variable or material.blue1}, -- For fields.
     TSFloat = {fg = material.float or material.red}, -- For floats.
     TSFuncMacro = {fg = material.blue}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
@@ -349,6 +349,12 @@ theme.loadTreeSitter = function()
   else
     treesitter.TSVariable = {fg = material.variable} -- Any variable name that does not have another highlight.
     treesitter.TSVariableBuiltin = {fg = material.variable} -- Variable names that are defined by the languages, like `this` or `self`.
+  end
+
+  if vim.g.material_italic_strings == true then
+    treesitter.TSString = {fg = material.green, bg = material.none, style = 'italic'} -- For strings.
+  else
+    treesitter.TSString = {fg = material.green} -- For strings.
   end
 
   return treesitter
@@ -518,7 +524,16 @@ theme.loadPlugins = function()
 
     -- Nvim dap
     DapBreakpoint = {fg = material.red},
-    DapStopped = {fg = material.green}
+    DapStopped = {fg = material.green},
+
+    -- Hop
+    HopNextKey = {fg = material.accent, style = 'bold'},
+    HopNextKey1 = {fg = material.purple, style = 'bold'},
+    HopNextKey2 = {fg = material.blue},
+    HopUnmatched = {fg = material.comments},
+
+    -- Fern
+    FernBranchText = {fg = material.blue}
   }
 
   -- Options:
