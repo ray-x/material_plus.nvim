@@ -466,7 +466,7 @@ theme.loadPlugins = function()
     NvimTreeOpenedFolderName = {fg = material.accent, style = "italic"},
     NvimTreeIndentMarker = {fg = material.disabled},
     NvimTreeGitDirty = {fg = material.blue},
-    NvimTreeGitNew = {fg = material.green},
+    NvimTreeGitNew = {fg = material.lime},
     NvimTreeGitStaged = {fg = material.comments},
     NvimTreeGitDeleted = {fg = material.red},
     NvimTreeOpenedFile = {fg = material.accent},

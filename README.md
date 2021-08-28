@@ -1,6 +1,6 @@
 # 🌊 material + nvim
 
-A collection of material colorscheme for neovim (Neovim 5.0+ required), written in lua.
+A collection of material style colorschemes for neovim (Neovim 5.0+ required), written in lua.
 
 This colorscheme plugin was orignally built based on combination of
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
@@ -15,10 +15,11 @@ I added following colorschemes:
 
 ## Why this repo:
 - All-In-One
-- More colors
+- Smaller/cleaner repo with more colors and more schemas
+- Better contrast
 - Colorscheme color random loading  (loading from Deep ocean, Oceanic, Palenight, Lighter, Darker, moonlight, dracula,
-monokai, mariana, emerald randomly )
-- Tracking latest neovim/lsp/treesitter updates. e.g. `NormalFloat`, `FloatShadow`, `LspReferenceRead/Write`
+monokai, mariana, emerald, middlenight_blue randomly )
+- Tracking latest neovim/lsp/treesitter highlight updates. e.g. `NormalFloat`, `FloatShadow`, `LspReferenceRead/Write`
 - Random loading
 
 ## Credits:
@@ -67,6 +68,7 @@ I heard green can reduce eye strain :-P
 ## Middlenight_blue
 
 ![middlenight_blue](https://user-images.githubusercontent.com/1681295/125889413-ad5e4b35-d274-4b6d-a8d2-a074628c0d93.jpg)
+
 ## Supported Plugins
 
 All the plugins supported by material.nvim, e.g. Treesitter, LSP, Telescope, NvimTree...
