@@ -137,7 +137,11 @@ theme.loadEditor = function()
     IncSearch = {fg = material.white, bg = material.highlight, style = 'bold,reverse'},
     LineNr = {fg = material.line_numbers},
     CursorLineNr = {fg = material.accent},
-    MatchParen = {fg = material.yellow, bg = material.none, style = 'bold'},
+    MatchParen = {
+      fg = material.yellow,
+      bg = material.active or material.none,
+      style = 'bold,underline'
+    },
     ModeMsg = {fg = material.accent},
     MoreMsg = {fg = material.accent},
     NonText = {fg = material.disabled},
@@ -352,9 +356,7 @@ theme.loadTreeSitter = function()
   end
 
   if vim.g.material_italic_strings == true then
-    treesitter.TSString = {fg = material.green, bg = material.none, style = 'italic'} -- For strings.
-  else
-    treesitter.TSString = {fg = material.green} -- For strings.
+    treesitter.TSString.style = 'italic' -- For strings.
   end
 
   return treesitter
@@ -383,9 +385,9 @@ theme.loadLSP = function()
     LspDiagnosticsDefaultHint = {fg = material.purple}, -- used for "Hint" diagnostic virtual text
     LspDiagnosticsSignHint = {fg = material.purple}, -- used for "Hint" diagnostic signs in sign column
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {fg = material.string or "green", style = 'bold,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
+    LspReferenceText = {style = 'bold,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
     LspReferenceRead = {
-      fg = material.accent or material.salmon,
+      -- fg = material.accent or material.salmon,
       style = 'bold,undercurl',
       sp = 'lime'
     }, -- used for highlighting "read" references

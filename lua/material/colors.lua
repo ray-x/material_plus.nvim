@@ -452,7 +452,7 @@ local emerald_colors = {
   green3 = "#abce00",
   green4 = "#648c01",
   green5 = "#2f5f02",
-  green6 = "#589d62",
+  green6 = "#58bd62",
   green7 = "#1A554e",
   green8 = "#C6Dc93",
   green9 = "#132a15",
@@ -497,7 +497,7 @@ local emerald = {
   variable = emerald_colors.white3,
   parameter = material.orange,
   class = emerald_colors.pink,
-  typedef = emerald_colors.green5,
+  typedef = emerald_colors.teal,
   punctutation = emerald_colors.green4,
 
   field = emerald_colors.caramel,
@@ -615,11 +615,11 @@ local middlenight_blue = {
   active = "#303051",
   more_active = "#3f3671",
   border = "#140928",
-  line_numbers = "#8d9296",
-  highlight = "#315b40",
+  line_numbers = "#4d5286",
+  highlight = "#212b50",
   disabled = "#434363",
   cursor = "#a0d2ac",
-  accent = "#bebdbd",
+  accent = "#8eadbd",
   error = "#961e20",
   link = "#80CB84",
   type = "#66d9af",
@@ -640,12 +640,12 @@ end
 if not vim.g.material_style_fix and vim.g.material_style == nil then
   local v = math.random(1, #themes)
   vim.g.material_style = themes[v]
-  print(vim.g.material_style)
+  -- print(vim.g.material_style)
 end
 
 vim.g.material_style = vim.g.material_style or "mariana"
 
-print("theme", vim.g.material_style)
+-- print("theme", vim.g.material_style)
 
 -- Style specific colors
 if vim.g.material_style == "darker" then
