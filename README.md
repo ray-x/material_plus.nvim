@@ -12,6 +12,7 @@ I added following colorschemes:
 - Mariana (The latest Sublime (Build 4) builtin color scheme)
 - Emerald (Low contrast green color scheme)
 - Middlenight_blue (The theme to use in middle night)
+- Earlysummer
 
 ## Why this repo:
 - All-In-One
@@ -68,6 +69,12 @@ I heard green can reduce eye strain :-P
 ## Middlenight_blue
 
 ![middlenight_blue](https://user-images.githubusercontent.com/1681295/125889413-ad5e4b35-d274-4b6d-a8d2-a074628c0d93.jpg)
+
+## Earlysummer
+
+Colorful colorscheme
+
+![Earlysummer](https://user-images.githubusercontent.com/1681295/132972253-45584b1f-d2f1-46f1-a9f7-f1d5bf89ec64.jpg)
 
 ## Supported Plugins
 

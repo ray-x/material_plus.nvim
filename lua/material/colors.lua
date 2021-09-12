@@ -585,10 +585,11 @@ local middlenight_blue = {
   symbol = "#757db3",
   operator = middlenight_blue_colors.red2,
   label = middlenight_blue_colors.orange,
-  condition = middlenight_blue_colors.br_yellow2,
+  condition = middlenight_blue_colors.cyan,
   keyword = "#cc5f50",
-  func = "#ebbf8c",
-  method = "",
+  keyword_func = middlenight_blue_colors.br_purple,
+  func = middlenight_blue_colors.purple,
+  method = middlenight_blue_colors.pink,
   text = "#d0d5db",
   comments = "#7171d3",
   nunmber = "#bbb55b",
@@ -626,13 +627,116 @@ local middlenight_blue = {
   none = "NONE"
 }
 
+local earlysummer_colors = {
+  -- Common colors
+  white = "#EEFFFF",
+  white2 = "#E7F7F7",
+  white3 = "#D8EED9",
+  grey = "#d3d3d3",
+  darkgray = "#476b61",
+
+  black = "#011002",
+
+  caramel = "#ffa37a",
+  lightgrey = "#64645e",
+  warmgrey = "#657150",
+
+  brown = "#925632",
+  pink = "#ff95b6",
+  redwine = '#e95680',
+  green = "#76da84",
+  blue = "#5f95ea",
+  blue2 = "#80e5fa",
+  blue3 = "#90f5fa",
+  aqua = "#66c9cf",
+  yellow = "#ffca94",
+  yellow2 = "#c2ad54",
+  orange = "#D99E58",
+  orange2 = "#cd8b59",
+  purple = "#d191ff",
+  red = "#eF5F86",
+  red1 = "#FF9F96",
+  red2 = "#F97B58",
+  purered = "#ff0000",
+  darkred = "#5f0000",
+
+  green1 = "#0FC192",
+  green2 = "#caefb3",
+  green3 = "#abce00",
+  dark_green = "#a0be70",
+  cyan = "#39DFE4",
+  br_green = "#9EC400",
+  br_yellow = "#E7C547",
+  br_yellow2 = "#d0ac7a",
+  br_blue = "#7AA6DA",
+  br_purple = "#B77EE0",
+  br_cyan = "#54CED6",
+  br_white = "#FFFFFF",
+
+  salmon = "F7856E",
+  teal = "#4DB380",
+  paleblue = "#d6e7f0",
+  magenta = "#D184C7"
+}
+
+local earlysummer = {
+  bg = "#292a38",
+  bg_alt = "#303050",
+  bg_darker = "#201636",
+  fg = "#bbccdd",
+  statement = earlysummer_colors.red1,
+  symbol = earlysummer_colors.yellow,
+  operator = earlysummer_colors.redwine,
+  label = earlysummer_colors.orange,
+  condition = earlysummer_colors.megenta,
+  keyword = earlysummer_colors.red,
+  keyword_func = earlysummer_colors.purple,
+  func = earlysummer_colors.blue2,
+  method = earlysummer_colors.br_cyan,
+  text = "#e0d5eb",
+  comments = earlysummer_colors.warmgrey,
+  nunmber = earlysummer_colors.brown,
+  float = earlysummer_colors.orange,
+  char = earlysummer_colors.aqua,
+  variable = earlysummer_colors.blue,
+  parameter = earlysummer_colors.pink,
+  class = earlysummer_colors.orange2,
+  typedef = earlysummer_colors.red2,
+  punctutation = earlysummer_colors.br_blue,
+
+  field = earlysummer_colors.caramel,
+  bool = "#C06431",
+  string = earlysummer_colors.br_green,
+  const = earlysummer_colors.cyan,
+  directory = earlysummer_colors.blue,
+
+  selection = "#544062",
+  search_fg = earlysummer_colors.orange,
+  search_bg = "#303010",
+  contrast = "#1b1c2b",
+  less_active = "#241f2a",
+  bracket = earlysummer_colors.orange,
+  active = "#203831",
+  more_active = "#4f5681",
+  border = "#342948",
+  line_numbers = "#3d4256",
+  highlight = "#314b50",
+  disabled = "#434363",
+  cursor = "#a0d2ac",
+  accent = "#8eadbd",
+  error = earlysummer_colors.red2,
+  link = "#80CB84",
+  type = "#66d9af",
+  none = "NONE"
+}
+
 if not vim.g then
   error("only nvim 5.0 supported")
 end
 
 local themes = {
   "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-  "monokai", "emerald", "middlenight_blue"
+  "monokai", "emerald", "middlenight_blue", "earlysummer"
 }
 if vim.g.material_style_fix == nil then
   vim.g.material_style_fix = true
@@ -765,7 +869,6 @@ elseif vim.g.material_style == "dracula" then
   material = vim.tbl_extend("force", material, material_dracula)
 elseif vim.g.material_style == "dracula_blood" then
   material = vim.tbl_extend("force", material, material_dracula_blood)
-
 elseif vim.g.material_style == "monokai" then
   material = vim.tbl_extend("force", material, material_monokai)
 elseif vim.g.material_style == "mariana" then
@@ -774,9 +877,18 @@ elseif vim.g.material_style == "mariana" then
 elseif vim.g.material_style == "emerald" then
   material = vim.tbl_extend("force", material, emerald_colors)
   material = vim.tbl_extend("force", material, emerald)
-else -- if vim.g.material_style == "middlenight_blue" then
+elseif vim.g.material_style == "middlenight_blue" then
   material = vim.tbl_extend("force", material, middlenight_blue_colors)
   material = vim.tbl_extend("force", material, middlenight_blue)
+elseif vim.g.material_style == "earlysummer" then
+  material = vim.tbl_extend("force", material, earlysummer_colors)
+  material = vim.tbl_extend("force", material, earlysummer)
+elseif vim.g.material_style == "middlenight_blue" then
+  material = vim.tbl_extend("force", material, middlenight_blue_colors)
+  material = vim.tbl_extend("force", material, middlenight_blue)
+else
+  material = vim.tbl_extend("force", material, material_monokai_colors)
+  material = vim.tbl_extend("force", material, material_monokai)
 end
 
 -- Optional colors
