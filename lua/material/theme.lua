@@ -382,8 +382,8 @@ theme.loadLSP = function()
     LspDiagnosticsFloatingInformation = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
     LspDiagnosticsVirtualTextInformation = {fg = material.paleblue}, -- Virtual text "Information"
     LspDiagnosticsUnderlineInformation = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
-    LspDiagnosticsDefaultHint = {fg = material.purple}, -- used for "Hint" diagnostic virtual text
-    LspDiagnosticsSignHint = {fg = material.purple}, -- used for "Hint" diagnostic signs in sign column
+    LspDiagnosticsDefaultHint = {fg = material.link}, -- used for "Hint" diagnostic virtual text
+    LspDiagnosticsSignHint = {fg = material.link}, -- used for "Hint" diagnostic signs in sign column
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
     LspReferenceText = {style = 'bold,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
     LspReferenceRead = {

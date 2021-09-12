@@ -12,7 +12,7 @@ I added following colorschemes:
 - Mariana (The latest Sublime (Build 4) builtin color scheme)
 - Emerald (Low contrast green color scheme)
 - Middlenight_blue (The theme to use in middle night)
-- Earlysummer
+- Earlysummer (more vivid colors)
 
 ## Why this repo:
 - All-In-One

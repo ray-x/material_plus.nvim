@@ -716,16 +716,16 @@ local earlysummer = {
   contrast = "#1b1c2b",
   less_active = "#241f2a",
   bracket = earlysummer_colors.orange,
-  active = "#203831",
+  active = "#303041",
   more_active = "#4f5681",
   border = "#342948",
   line_numbers = "#3d4256",
-  highlight = "#314b50",
+  highlight = "#4f4b60",
   disabled = "#434363",
   cursor = "#a0d2ac",
   accent = "#8eadbd",
   error = earlysummer_colors.red2,
-  link = "#80CB84",
+  link = "#505BC4",
   type = "#66d9af",
   none = "NONE"
 }
@@ -887,7 +887,6 @@ elseif vim.g.material_style == "middlenight_blue" then
   material = vim.tbl_extend("force", material, middlenight_blue_colors)
   material = vim.tbl_extend("force", material, middlenight_blue)
 else
-  material = vim.tbl_extend("force", material, material_monokai_colors)
   material = vim.tbl_extend("force", material, material_monokai)
 end
 
