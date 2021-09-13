@@ -782,31 +782,39 @@ elseif vim.g.material_style == "lighter" then
   material.bg = "#EAEADA"
   material.bg_alt = "#CFCFAF"
   material.fg = "#546E7A"
-  material.text = "#94A7B0"
+  material.text = "#94A7A0"
   material.comments = "#AABFC9"
   material.selection = "#80CBC4"
   material.contrast = "#DEDEDE"
-  material.less_active = "#E4E4D0"
-  material.active = "#E7E7E8"
+  material.less_active = "#E4E4D3"
+  material.active = "#E0E0D3"
   material.border = "#D3E1E8"
   material.line_numbers = "#CFD8DC"
   material.highlight = "#D7D7C8"
   material.disabled = "#A2A4A5"
   material.cursor = "#272727"
   material.accent = "#00BCD4"
+  material.parameter = "#5193a8"
 
   material.white = "#FFFFFF"
   material.gray = "#717CB4"
   material.black = "#000000"
   material.red = "#E53935"
   material.green = "#91B859"
+  material.green1 = "#71B839"
   material.yellow = "#F6A434"
+  material.yellow2 = "#B69414"
   material.blue = "#6182B8"
+  material.blue1 = "#5182D8"
   material.paleblue = "#8796B0"
   material.cyan = "#39ADB5"
   material.purple = "#7C4DFF"
   material.orange = "#F76D47"
   material.pink = "#FF5370"
+  material.violet = "#945eb8"
+
+  material.keyword = material.orange
+
 elseif vim.g.material_style == "palenight" then
   -- Palenight theme style
 
