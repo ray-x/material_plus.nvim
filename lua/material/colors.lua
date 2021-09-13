@@ -162,7 +162,7 @@ local material_dracula = {
   border = "#514463",
   line_numbers = "#5b6395",
   highlight = "#716f90",
-  disabled = "#614752",
+  disabled = "#615752",
   cursor = "#7c44fc",
   accent = "#a34c81",
   error = "#FF5370",
@@ -220,7 +220,7 @@ local material_dracula_blood = {
   border = "#414245",
   line_numbers = "#473735",
   highlight = "#616b70",
-  disabled = "#6f2436",
+  disabled = "#6f5456",
   cursor = "#7c44fc",
   accent = "#a34ca1",
   error = "#EF4360",
@@ -308,7 +308,7 @@ local material_monokai = {
   border = "#414245",
   line_numbers = "#473735",
   highlight = "#616b70",
-  disabled = "#3f4456",
+  disabled = "#4f5466",
   cursor = "#7c44fc",
   accent = "#66d9ef",
   error = "#EF4360",
@@ -618,7 +618,7 @@ local middlenight_blue = {
   border = "#140928",
   line_numbers = "#4d5286",
   highlight = "#212b50",
-  disabled = "#434363",
+  disabled = middlenight_blue_colors.darkgray,
   cursor = "#a0d2ac",
   accent = "#8eadbd",
   error = "#961e20",
@@ -721,7 +721,7 @@ local earlysummer = {
   border = "#342948",
   line_numbers = "#3d4256",
   highlight = "#4f4b60",
-  disabled = "#434363",
+  disabled = earlysummer_colors.darkgray,
   cursor = "#a0d2ac",
   accent = "#8eadbd",
   error = earlysummer_colors.red2,
@@ -769,7 +769,7 @@ if vim.g.material_style == "darker" then
   material.border = "#292939"
   material.line_numbers = "#424242"
   material.highlight = "#423F6F"
-  material.disabled = "#474747"
+  material.disabled = "#4A4A4A"
   material.accent = "#FF9800"
   if vim.g.material_darker_contrast == true then
     -- Lighter theme style with high contrast
@@ -779,19 +779,19 @@ if vim.g.material_style == "darker" then
 elseif vim.g.material_style == "lighter" then
   -- Lighter theme style
 
-  material.bg = "#FAFAFA"
-  material.bg_alt = "#FFFFFF"
+  material.bg = "#EAEADA"
+  material.bg_alt = "#CFCFAF"
   material.fg = "#546E7A"
   material.text = "#94A7B0"
   material.comments = "#AABFC9"
   material.selection = "#80CBC4"
-  material.contrast = "#EEEEEE"
-  material.less_active = "#44566a"
+  material.contrast = "#DEDEDE"
+  material.less_active = "#E4E4D0"
   material.active = "#E7E7E8"
   material.border = "#D3E1E8"
   material.line_numbers = "#CFD8DC"
-  material.highlight = "#E7E7E8"
-  material.disabled = "#D2D4D5"
+  material.highlight = "#D7D7C8"
+  material.disabled = "#A2A4A5"
   material.cursor = "#272727"
   material.accent = "#00BCD4"
 

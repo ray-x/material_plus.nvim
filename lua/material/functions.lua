@@ -14,9 +14,9 @@ end
 local toggle_style = function()
   local switch = {
     "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight", "dracula",
-    "dracula_blood", "monokai"
+    "dracula_blood", "monokai", "mariana", "emerald", "middlenight_blue", "earlysummer"
   }
-  vim.g.material_style_switch = (vim.g.material_style_switch % table.getn(switch)) + 1
+  vim.g.material_style_switch = (vim.g.material_style_switch % #switch) + 1
   change_style(switch[vim.g.material_style_switch])
 end
 
@@ -29,4 +29,17 @@ local toggle_eob = function()
   vim.cmd [[colorscheme material]]
 end
 
-return {change_style = change_style, toggle_style = toggle_style, toggle_eob = toggle_eob}
+local change = function(scheme)
+  if scheme ~= nil then
+    change_style(scheme)
+  else
+    toggle_style()
+  end
+end
+
+return {
+  change_style = change_style,
+  toggle_style = toggle_style,
+  change = change,
+  toggle_eob = toggle_eob
+}

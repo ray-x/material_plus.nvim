@@ -110,7 +110,17 @@ or
 :lua require('material.functions').toggle_style()
 ```
 
+or
+
+```vim
+:Material
+```
+
 Change to specific style
+
+```vim
+:Material dracula_blood
+```
 
 ```
 lua require('material.functions').change_style("dracula_blood")
