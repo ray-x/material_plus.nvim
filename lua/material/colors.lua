@@ -577,7 +577,7 @@ local middlenight_blue_colors = {
 
 local middlenight_blue = {
   bg = "#191622",
-  bg_alt = "#202030",
+  bg_alt = "#20202a",
   bg_darker = "#140616",
   fg = "#dddddd",
   bg2 = "#201022",
@@ -681,7 +681,7 @@ local earlysummer_colors = {
 
 local earlysummer = {
   bg = "#292a38",
-  bg_alt = "#303050",
+  bg_alt = "#303040",
   bg_darker = "#201636",
   fg = "#bbccdd",
   statement = earlysummer_colors.red1,
