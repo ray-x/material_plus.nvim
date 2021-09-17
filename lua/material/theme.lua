@@ -367,24 +367,24 @@ theme.loadLSP = function()
   -- Lsp highlight groups
 
   local lsp = {
-    DiagnosticsDefaultError = {fg = material.error}, -- used for "Error" diagnostic virtual text
-    DiagnosticsSignError = {fg = material.error}, -- used for "Error" diagnostic signs in sign column
-    DiagnosticsFloatingError = {fg = material.error}, -- used for "Error" diagnostic messages in the diagnostics float
-    DiagnosticsVirtualTextError = {fg = material.error}, -- Virtual text "Error"
-    DiagnosticsUnderlineError = {style = 'undercurl', sp = material.error}, -- used to underline "Error" diagnostics.
-    DiagnosticsDefaultWarning = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
-    DiagnosticsSignWarning = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
-    DiagnosticsFloatingWarning = {fg = material.yellow}, -- used for "Warning" diagnostic messages in the diagnostics float
-    DiagnosticsVirtualTextWarning = {fg = material.yellow}, -- Virtual text "Warning"
-    DiagnosticsUnderlineWarning = {style = 'undercurl', sp = material.yellow}, -- used to underline "Warning" diagnostics.
-    DiagnosticsDefaultInfo = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
-    DiagnosticsSignInfo = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
-    DiagnosticsFloatingInfo = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
-    DiagnosticsVirtualTextInfo = {fg = material.paleblue}, -- Virtual text "Information"
-    DiagnosticsUnderlineInfo = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
-    DiagnosticsDefaultHint = {fg = material.link}, -- used for "Hint" diagnostic virtual text
-    DiagnosticsSignHint = {fg = material.link}, -- used for "Hint" diagnostic signs in sign column
-    DiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
+    DiagnosticDefaultError = {fg = material.error}, -- used for "Error" diagnostic virtual text
+    DiagnosticSignError = {fg = material.error}, -- used for "Error" diagnostic signs in sign column
+    DiagnosticFloatingError = {fg = material.error}, -- used for "Error" diagnostic messages in the diagnostics float
+    DiagnosticVirtualTextError = {fg = material.error}, -- Virtual text "Error"
+    DiagnosticUnderlineError = {style = 'undercurl', sp = material.error}, -- used to underline "Error" diagnostics.
+    DiagnosticDefaultWarn = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
+    DiagnosticSignWarn = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
+    DiagnosticFloatingWarn = {fg = material.yellow}, -- used for "Warning" diagnostic messages in the diagnostics float
+    DiagnosticVirtualTextWarn = {fg = material.yellow}, -- Virtual text "Warning"
+    DiagnosticUnderlineWarn = {style = 'undercurl', sp = material.yellow}, -- used to underline "Warning" diagnostics.
+    DiagnosticDefaultInfo = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
+    DiagnosticSignInfo = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
+    DiagnosticFloatingInfo = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
+    DiagnosticVirtualTextInfo = {fg = material.paleblue}, -- Virtual text "Information"
+    DiagnosticUnderlineInfo = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
+    DiagnosticDefaultHint = {fg = material.link}, -- used for "Hint" diagnostic virtual text
+    DiagnosticSignHint = {fg = material.link}, -- used for "Hint" diagnostic signs in sign column
+    DiagnosticUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
 
     LspDiagnosticsDefaultError = {fg = material.error}, -- used for "Error" diagnostic virtual text
     LspDiagnosticsSignError = {fg = material.error}, -- used for "Error" diagnostic signs in sign column
