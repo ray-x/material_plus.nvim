@@ -377,11 +377,11 @@ theme.loadLSP = function()
     DiagnosticsFloatingWarning = {fg = material.yellow}, -- used for "Warning" diagnostic messages in the diagnostics float
     DiagnosticsVirtualTextWarning = {fg = material.yellow}, -- Virtual text "Warning"
     DiagnosticsUnderlineWarning = {style = 'undercurl', sp = material.yellow}, -- used to underline "Warning" diagnostics.
-    DiagnosticsDefaultInformation = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
-    DiagnosticsSignInformation = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
-    DiagnosticsFloatingInformation = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
-    DiagnosticsVirtualTextInformation = {fg = material.paleblue}, -- Virtual text "Information"
-    DiagnosticsUnderlineInformation = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
+    DiagnosticsDefaultInfo = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
+    DiagnosticsSignInfo = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
+    DiagnosticsFloatingInfo = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
+    DiagnosticsVirtualTextInfo = {fg = material.paleblue}, -- Virtual text "Information"
+    DiagnosticsUnderlineInfo = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Information" diagnostics.
     DiagnosticsDefaultHint = {fg = material.link}, -- used for "Hint" diagnostic virtual text
     DiagnosticsSignHint = {fg = material.link}, -- used for "Hint" diagnostic signs in sign column
     DiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
