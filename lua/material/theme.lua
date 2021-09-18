@@ -367,17 +367,17 @@ theme.loadLSP = function()
   -- Lsp highlight groups
 
   local lsp = {
-    DiagnosticDefaultError = {fg = material.error}, -- used for "Error" diagnostic virtual text
+    DiagnosticError = {fg = material.error}, -- used for "Error" diagnostic virtual text
     DiagnosticSignError = {fg = material.error}, -- used for "Error" diagnostic signs in sign column
     DiagnosticFloatingError = {fg = material.error}, -- used for "Error" diagnostic messages in the diagnostics float
     DiagnosticVirtualTextError = {fg = material.error}, -- Virtual text "Error"
     DiagnosticUnderlineError = {style = 'undercurl', sp = material.error}, -- used to underline "Error" diagnostics.
-    DiagnosticDefaultWarn = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
+    DiagnosticWarn = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
     DiagnosticSignWarn = {fg = material.yellow}, -- used for "Warning" diagnostic signs in sign column
     DiagnosticFloatingWarn = {fg = material.yellow}, -- used for "Warning" diagnostic messages in the diagnostics float
     DiagnosticVirtualTextWarn = {fg = material.yellow}, -- Virtual text "Warning"
     DiagnosticUnderlineWarn = {style = 'undercurl', sp = material.yellow}, -- used to underline "Warning" diagnostics.
-    DiagnosticDefaultInfo = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
+    DiagnosticInfo = {fg = material.paleblue}, -- used for "Information" diagnostic virtual text
     DiagnosticSignInfo = {fg = material.paleblue}, -- used for "Information" diagnostic signs in sign column
     DiagnosticFloatingInfo = {fg = material.paleblue}, -- used for "Information" diagnostic messages in the diagnostics float
     DiagnosticVirtualTextInfo = {fg = material.paleblue}, -- Virtual text "Information"
@@ -415,7 +415,13 @@ theme.loadLSP = function()
       bg = material.disabled,
       style = 'bold,undercurl',
       sp = 'red2'
-    } -- used for highlighting "write" references
+    }, -- used for highlighting "write" references
+    LspSignatureActiveParameter = {
+      fg = material.search_fg or material.highlight,
+      bg = material.search_bg or material.yellow,
+      style = 'bold,undercurl',
+      sp = 'red2'
+    }
   }
 
   return lsp
