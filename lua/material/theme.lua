@@ -417,10 +417,10 @@ theme.loadLSP = function()
       sp = 'red2'
     }, -- used for highlighting "write" references
     LspSignatureActiveParameter = {
-      fg = material.search_fg or material.highlight,
-      bg = material.search_bg or material.yellow,
+      fg = material.search_fg or material.yellow,
+      bg = material.search_bg or material.highlight,
       style = 'bold,undercurl',
-      sp = 'red2'
+      sp = 'violet'
     }
   }
 
