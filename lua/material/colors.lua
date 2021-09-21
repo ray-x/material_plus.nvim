@@ -645,7 +645,7 @@ local earlysummer_colors = {
   pink = "#ff95b6",
   redwine = '#e95680',
   green = "#76da84",
-  blue = "#5f95ea",
+  blue = "#7fb5fa",
   blue2 = "#80e5fa",
   blue3 = "#90f5fa",
   aqua = "#66c9cf",
@@ -680,9 +680,9 @@ local earlysummer_colors = {
 }
 
 local earlysummer = {
-  bg = "#292a38",
-  bg_alt = "#303040",
-  bg_darker = "#201636",
+  bg = "#292f3d",
+  bg_alt = "#303648",
+  bg_darker = "#202336",
   fg = "#bbccdd",
   statement = earlysummer_colors.red1,
   symbol = earlysummer_colors.yellow,
@@ -714,9 +714,9 @@ local earlysummer = {
   search_fg = earlysummer_colors.orange,
   search_bg = "#303010",
   contrast = "#1b1c2b",
-  less_active = "#241f2a",
+  less_active = "#242332",
   bracket = earlysummer_colors.orange,
-  active = "#303041",
+  active = "#313043",
   more_active = "#4f5681",
   border = "#342948",
   line_numbers = "#3d4256",
@@ -780,10 +780,10 @@ elseif vim.g.material_style == "lighter" then
   -- Lighter theme style
 
   material.bg = "#EAEADA"
-  material.bg_alt = "#CFCFAF"
+  material.bg_alt = "#DFDFBF"
   material.fg = "#546E7A"
-  material.text = "#94A7A0"
-  material.comments = "#AABFC9"
+  material.text = "#749790"
+  material.comments = "#A0B0C2"
   material.selection = "#80CBC4"
   material.contrast = "#DEDEDE"
   material.less_active = "#E4E4D3"
@@ -797,8 +797,8 @@ elseif vim.g.material_style == "lighter" then
   material.parameter = "#5193a8"
 
   material.white = "#FFFFFF"
-  material.gray = "#717CB4"
-  material.black = "#000000"
+  material.gray = "#616CA4"
+  material.black = "#101010"
   material.red = "#E53935"
   material.green = "#91B859"
   material.green1 = "#71B839"
@@ -806,11 +806,11 @@ elseif vim.g.material_style == "lighter" then
   material.yellow2 = "#B69414"
   material.blue = "#6182B8"
   material.blue1 = "#5182D8"
-  material.paleblue = "#8796B0"
-  material.cyan = "#39ADB5"
-  material.purple = "#7C4DFF"
+  material.paleblue = "#7786B0"
+  material.cyan = "#399DA5"
+  material.purple = "#7C4DDF"
   material.orange = "#F76D47"
-  material.pink = "#FF5370"
+  material.pink = "#EF5370"
   material.violet = "#945eb8"
 
   material.keyword = material.orange
