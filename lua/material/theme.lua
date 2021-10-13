@@ -547,7 +547,7 @@ theme.loadPlugins = function()
 
     -- Indent Blankline
     IndentBlanklineChar = {fg = material.highlight},
-    IndentBlanklineContextChar = {fg = material.func or material.sky},
+    IndentBlanklineContextChar = {fg = material.func or material.sky, style = 'bold'},
 
     -- Nvim dap
     DapBreakpoint = {fg = material.red},

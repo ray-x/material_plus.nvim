@@ -714,7 +714,7 @@ local earlysummer = {
   search_fg = earlysummer_colors.orange,
   search_bg = "#303010",
   contrast = "#1b1c2b",
-  less_active = "#242332",
+  less_active = "#202124",
   bracket = earlysummer_colors.orange,
   active = "#313043",
   more_active = "#4f5681",
@@ -738,17 +738,13 @@ local themes = {
   "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
   "monokai", "emerald", "middlenight_blue", "earlysummer"
 }
-if vim.g.material_style_fix == nil then
+if vim.g.material_style_fix ~= true then
   vim.g.material_style_fix = true
-end
-if not vim.g.material_style_fix and vim.g.material_style == nil then
   local v = math.random(1, #themes)
   vim.g.material_style = themes[v]
-  -- print(vim.g.material_style)
+else
+  vim.g.material_style = vim.g.material_style or "mariana"
 end
-
-vim.g.material_style = vim.g.material_style or "mariana"
-
 -- print("theme", vim.g.material_style)
 
 -- Style specific colors

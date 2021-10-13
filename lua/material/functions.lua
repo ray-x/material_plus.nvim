@@ -1,6 +1,6 @@
 -- Define style_switch
 if vim.g.material_style_switch == nil then
-  vim.g.material_style_switch = 0
+  vim.g.material_style_switch = 1
 end
 
 -- Change_style takes a style name as a parameter and switches to that style
