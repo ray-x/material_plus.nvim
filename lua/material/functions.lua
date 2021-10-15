@@ -7,6 +7,11 @@ end
 local change_style = function(style)
   vim.g.material_style = style
   print("Material style: ", style)
+  if style == 'lighter' then
+    vim.cmd [[set background=light]]
+  else
+    vim.cmd [[set background=dark]]
+  end
   vim.cmd [[colorscheme material]]
 end
 

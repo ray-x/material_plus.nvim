@@ -17,8 +17,8 @@
 local util = require('material.util')
 
 -- Load the theme
-local set = function()
-  util.load()
+local set = function(theme)
+  util.load(theme)
   vim.cmd([[command! -nargs=* Material  lua require('material.functions').change(<f-args>)]])
 end
 

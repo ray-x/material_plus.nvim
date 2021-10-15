@@ -218,7 +218,7 @@ local material_dracula_blood = {
   active = "#453737",
   more_active = "#584a4e",
   border = "#414245",
-  line_numbers = "#574745",
+  line_numbers = "#5F4755",
   highlight = "#616b70",
   disabled = "#6f5456",
   cursor = "#7c44fc",
@@ -763,7 +763,7 @@ if vim.g.material_style == "darker" then
   material.active = "#2f2335"
   material.more_active = "#424252"
   material.border = "#292939"
-  material.line_numbers = "#424242"
+  material.line_numbers = "#424252"
   material.highlight = "#423F6F"
   material.disabled = "#4A4A4A"
   material.accent = "#FF9800"
@@ -825,7 +825,7 @@ elseif vim.g.material_style == "palenight" then
   material.active = "#363743"
   material.more_active = "#414863"
   material.border = "#676E95"
-  material.line_numbers = "#3A3F58"
+  material.line_numbers = "#4A4F58"
   material.highlight = "#545287"
   material.disabled = "#515772"
   material.accent = "#AB47BC"
@@ -843,7 +843,7 @@ elseif vim.g.material_style == "deep ocean" then
   material.active = "#242435"
   material.more_active = "#3A3555"
   material.border = "#312443"
-  material.line_numbers = "#3B3F51"
+  material.line_numbers = "#4B4F61"
   material.highlight = "#4F3F63"
   material.disabled = "#464B5D"
   material.accent = "#84FFFF"
@@ -863,7 +863,7 @@ elseif vim.g.material_style == "oceanic" then
   material.active = "#273d3f"
   material.more_active = "#375354"
   material.border = "#2A373E"
-  material.line_numbers = "#37474F"
+  material.line_numbers = "#475F6F"
   material.highlight = "#425B67"
   material.disabled = "#415967"
   material.accent = "#009688"

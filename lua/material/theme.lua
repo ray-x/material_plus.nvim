@@ -404,22 +404,22 @@ theme.loadLSP = function()
     LspDiagnosticsDefaultHint = {fg = material.link}, -- used for "Hint" diagnostic virtual text
     LspDiagnosticsSignHint = {fg = material.link}, -- used for "Hint" diagnostic signs in sign column
     LspDiagnosticsUnderlineHint = {style = 'undercurl', sp = material.paleblue}, -- used to underline "Hint" diagnostics.
-    LspReferenceText = {style = 'bold,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
+    LspReferenceText = {style = 'bold,italic,undercurl', sp = 'yellow'}, -- used for highlighting "text" references
     LspReferenceRead = {
       -- fg = material.accent or material.salmon,
-      style = 'bold,undercurl',
+      style = 'bold,italic,undercurl',
       sp = 'lime'
     }, -- used for highlighting "read" references
     LspReferenceWrite = {
       fg = material.keyword or "yellow",
-      bg = material.disabled,
-      style = 'bold,undercurl',
+      bg = material.highlight,
+      style = 'bold,italic,undercurl',
       sp = 'red2'
     }, -- used for highlighting "write" references
     LspSignatureActiveParameter = {
       fg = material.search_fg or material.yellow,
       bg = material.search_bg or material.highlight,
-      style = 'bold,undercurl',
+      style = 'bold,italic,undercurl',
       sp = 'violet'
     }
   }
