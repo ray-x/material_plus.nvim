@@ -37,7 +37,11 @@ util.contrast = function()
 end
 
 -- Load the theme
-function util.load()
+function util.load(theme)
+  if theme then
+    vim.g.material_style = theme
+    vim.g.material_style_fix = true
+  end
   -- Set the theme environment
   vim.cmd("hi clear")
   if vim.fn.exists("syntax_on") then
