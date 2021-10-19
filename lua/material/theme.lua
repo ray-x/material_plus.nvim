@@ -146,7 +146,11 @@ theme.loadEditor = function()
     MoreMsg = {fg = material.accent},
     NonText = {fg = material.disabled},
     Pmenu = {fg = material.text, bg = material.contrast},
-    PmenuSel = {fg = material.accent, bg = material.more_active, style = 'bold,italic'},
+    PmenuSel = {
+      fg = material.accent,
+      bg = material.more_active or material.active,
+      style = 'bold,italic'
+    },
     PmenuSbar = {fg = material.text, bg = material.contrast},
     PmenuThumb = {fg = material.fg, bg = material.accent},
     Question = {fg = material.green},
