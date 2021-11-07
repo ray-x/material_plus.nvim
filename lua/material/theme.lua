@@ -563,6 +563,25 @@ theme.loadPlugins = function()
     HopNextKey2 = {fg = material.blue},
     HopUnmatched = {fg = material.comments},
 
+    -- Lightspeed
+    LightspeedLabel = {
+      fg = material.search_fg or material.yellow,
+      bg = material.search_bg or material.highlight
+    },
+    LightspeedOverlapped = {bg = material.selection, fg = material.red},
+    LightspeedLabelDistant = {bg = material.magenta, fg = material.bg},
+    LightspeedLabelDistantOverlapped = {bg = material.magenta, fg = material.bg},
+    LightspeedShortcut = {fg = material.orange, bg = material.bg, style = "italic"},
+    LightspeedShortcutOverlapped = {fg = material.orange, style = "bold"},
+    LightspeedMaskedChar = {fg = material.red, style = "undercurl"},
+    LightspeedGreyWash = {fg = material.comment},
+    LightspeedUnlabeledMatch = {fg = material.red, style = "underline"},
+    LightspeedOneCharMatch = {fg = material.red, style = "underline"},
+    LightspeedUniqueChar = {fg = material.white, style = "underline"},
+    LightspeedPendingOpArea = {fg = material.white, style = "underline"},
+    LightspeedPendingChangeOpArea = {fg = material.white, style = "underline"},
+    LightspeedCursor = {fg = material.black, bg = material.white},
+
     -- Fern
     FernBranchText = {fg = material.blue}
   }
