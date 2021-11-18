@@ -88,7 +88,7 @@ local material_moonlight = {
   red = "#ff757f",
   green = "#2df4c0",
   yellow = "#ffc777",
-  paleblue = "#d6e7f0",
+  paleblue = "#B0C9FF",
   cyan = "#b994f1",
   blue = "#04d1f9",
   purple = "#b4a4f4",
@@ -128,7 +128,7 @@ local material_dracula = {
   red = "#ff555f",
   green = "#50fa7b",
   yellow = "#f1fa87",
-  paleblue = "#d6e7f0",
+  paleblue = "#8697b0",
   cyan = "#8be4f1",
   blue = "#04d1f9",
   purple = "#bd94f4",
@@ -183,7 +183,7 @@ local material_dracula_blood = {
   green = "#8FE067",
   teal = "#4DB380",
   yellow = "#FFC66B",
-  paleblue = "#d6e7f0",
+  paleblue = "#8677c0",
   cyan = "#299999",
   blue = "#5594EC",
   purple = "#A781BB",
@@ -269,7 +269,7 @@ local material_monokai = {
 
   salmon = "F7856E",
   teal = "#4DB380",
-  paleblue = "#d6e7f0",
+  paleblue = "#a6a7d0",
   blue = "#5594EC",
   magenta = "#D184C7",
   bg = "#262632",
@@ -365,7 +365,7 @@ local mariana_colors = {
 
   salmon = "F7856E",
   teal = "#4DB380",
-  paleblue = "#d6e7f0",
+  paleblue = "#a6a7e0",
   magenta = "#D184C7"
 }
 
@@ -469,6 +469,7 @@ local emerald_colors = {
   br_cyan = "#54CED6",
   br_white = "#FFFFFF",
 
+  link = "#80CBF4",
   salmon = "#F7856E",
   teal = "#4DB380",
   paleblue = "#d6e7f0",
@@ -572,7 +573,9 @@ local middlenight_blue_colors = {
   salmon = "F7856E",
   teal = "#4DB380",
   paleblue = "#d6e7f0",
-  magenta = "#D184C7"
+  magenta = "#D184C7",
+
+  link = "#80ABF4",
 }
 
 local middlenight_blue = {
@@ -676,7 +679,8 @@ local earlysummer_colors = {
   salmon = "F7856E",
   teal = "#4DB380",
   paleblue = "#d6e7f0",
-  magenta = "#D184C7"
+  magenta = "#D184C7",
+  link = "#80ABF4",
 }
 
 local earlysummer = {
@@ -725,7 +729,7 @@ local earlysummer = {
   cursor = "#a0d2ac",
   accent = "#8eadbd",
   error = earlysummer_colors.red2,
-  link = "#505BC4",
+  link = "#808BF4",
   type = "#66d9af",
   none = "NONE"
 }
