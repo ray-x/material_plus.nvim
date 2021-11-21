@@ -558,10 +558,10 @@ theme.loadPlugins = function()
     DapStopped = {fg = material.green},
 
     -- Hop
-    HopNextKey = {fg = material.keyword or material.func, style = 'bold'},
+    HopNextKey = {fg = material.keyword or material.func or material.red, style = 'bold'},
     HopNextKey1 = {fg = material.purple, style = 'bold'},
     HopNextKey2 = {fg = material.blue, style = 'bold'},
-    HopUnmatched = {fg = material.comments},
+    HopUnmatched = {fg = material.comments or material.gray7},
 
     -- Lightspeed
     LightspeedLabel = {
