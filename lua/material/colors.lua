@@ -1,3 +1,5 @@
+local h = tonumber(vim.fn.system('date +%H'))
+
 local material = {
   -- Common colors
 
@@ -735,7 +737,7 @@ local earlysummer = {
   none = "NONE"
 }
 
-if vim.g.material_daylight_switch and tonumber(vim.fn.system('date +%H')) < 18 then
+if vim.g.material_daylight_switch and 6 < h and h < 18 then
   earlysummer.bg = "#4F5F6F"
   earlysummer.bg_alt = "#506678"
   earlysummer.less_active = "#40515D"
@@ -760,7 +762,7 @@ local themes = {
 
 local themes_daytime = {"lighter", "monokai", "mariana", "earlysummer"}
 if vim.g.material_daylight_switch then
-  if tonumber(vim.fn.system('date +%H')) < 18 then
+  if 6 < h and h < 18 then
     themes = themes_daytime
   end
 end
