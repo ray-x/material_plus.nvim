@@ -737,31 +737,19 @@ local earlysummer = {
   none = "NONE"
 }
 
-if vim.g.material_daylight_switch and 6 < h and h < 18 then
-  earlysummer.bg = "#4F5F6F"
-  earlysummer.bg_alt = "#506678"
-  earlysummer.less_active = "#40515D"
-  earlysummer.active = "#58687F"
-  material_monokai.bg = "#4F4F3F"
-  material_monokai.less_active = "#424832"
-  material_monokai.active = "#594F53"
-
-  mariana.bg = mariana_colors.blue5
-  mariana.less_active = mariana_colors.blueB
-  mariana.active = mariana_colors.blue7
-end
-
 if not vim.g then
   error("only nvim 5.0 supported")
 end
 
 local themes = {
   "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-  "monokai", "emerald", "middlenight_blue", "earlysummer"
+  "monokai", "monokai_lighter", "mariana", "mariana_lighter", "emerald", "middlenight_blue",
+  "earlysummer", "earlysummer_lighter"
 }
 
-local themes_daytime = {"lighter", "monokai", "mariana", "earlysummer"}
-if vim.g.material_daylight_switch then
+local themes_daytime = {"lighter", "monokai_lighter", "mariana_lighter", "earlysummer_lighter"}
+
+if vim.g.material_daylight_switch and vim.g.material_style_fix ~= true then
   if 6 < h and h < 18 then
     themes = themes_daytime
   end
@@ -775,6 +763,10 @@ else
   vim.g.material_style = vim.g.material_style or "mariana"
 end
 -- print("theme", vim.g.material_style)
+
+local earlysummer_lighter = {}
+local mariana_lighter = {}
+local monokai_lighter = {}
 
 -- Style specific colors
 if vim.g.material_style == "darker" then
@@ -904,20 +896,52 @@ elseif vim.g.material_style == "dracula" then
   material = vim.tbl_extend("force", material, material_dracula)
 elseif vim.g.material_style == "dracula_blood" then
   material = vim.tbl_extend("force", material, material_dracula_blood)
-elseif vim.g.material_style == "monokai" then
+elseif vim.g.material_style == "monokai" or vim.g.material_style == "monokai_lighter" then
+  if vim.g.material_style == "monokai_lighter" then
+    material_monokai.bg = "#4F4F3F"
+    material_monokai.less_active = "#424832"
+    material_monokai.active = "#594F53"
+    material_monokai.line_numbers = "#493F23"
+    material_monokai.accent = "#696F43"
+    material_monokai.selection = "#696F43"
+    material_monokai.contrast = material_monokai.less_active
+  end
   material = vim.tbl_extend("force", material, material_monokai)
-elseif vim.g.material_style == "mariana" then
+elseif vim.g.material_style == "mariana" or vim.g.material_style == "mariana_lighter" then
+  if vim.g.material_style == "mariana_lighter" then
+    mariana.bg = mariana_colors.blue5
+    mariana.less_active = mariana_colors.blueB
+    mariana.active = mariana_colors.blue7
+    mariana.line_numbers = mariana_colors.blue7
+    mariana.accent = mariana.blue4
+    mariana.contrast = mariana.less_active
+  end
   material = vim.tbl_extend("force", material, mariana_colors)
   material = vim.tbl_extend("force", material, mariana)
+
 elseif vim.g.material_style == "emerald" then
   material = vim.tbl_extend("force", material, emerald_colors)
   material = vim.tbl_extend("force", material, emerald)
 elseif vim.g.material_style == "middlenight_blue" then
   material = vim.tbl_extend("force", material, middlenight_blue_colors)
   material = vim.tbl_extend("force", material, middlenight_blue)
-elseif vim.g.material_style == "earlysummer" then
+elseif vim.g.material_style == "earlysummer" or vim.g.material_style == "earlysummer_lighter" then
+
+  if vim.g.material_style == "earlysummer_lighter" then
+    earlysummer.bg = "#4F5F6F"
+    earlysummer.bg_alt = "#506678"
+    earlysummer.less_active = "#40515D"
+    earlysummer.active = "#58687F"
+    earlysummer.line_numbers = '#40414D'
+    earlysummer.accent = '#607180'
+    earlysummer.selection = '#607180'
+
+    earlysummer.contrast = earlysummer.less_active
+  end
+
   material = vim.tbl_extend("force", material, earlysummer_colors)
   material = vim.tbl_extend("force", material, earlysummer)
+
 elseif vim.g.material_style == "middlenight_blue" then
   material = vim.tbl_extend("force", material, middlenight_blue_colors)
   material = vim.tbl_extend("force", material, middlenight_blue)

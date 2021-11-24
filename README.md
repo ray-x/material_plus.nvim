@@ -84,7 +84,8 @@ Colorful colorscheme
 ## Nighttime and daytime
 
 Some of the scheme allow choose nighttime and day time mode, you can set material_daylight_switch to true to turn on
-this feature
+this feature. Here is an example for nighttime and daytime for earlysummer color scheme
+
 ![night time and day time](https://preview.redd.it/ng02dvlthi181.png?width=960&crop=smart&auto=webp&s=3e8c4c492077fa693925bdf70e18e90b2d81d2f8)
 
 ## Supported Plugins

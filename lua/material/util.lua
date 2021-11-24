@@ -1,6 +1,6 @@
 local util = {}
 local material = require('material.theme')
-
+local config = require('material.config').options
 -- Go trough the table and highlight the group with the color values
 util.highlight = function(group, color)
   local style = color.style and "gui=" .. color.style or "gui=NONE"
@@ -47,15 +47,24 @@ function util.load(theme)
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
   end
-  vim.o.background = "dark"
+  if theme ~= 'lighter' then
+    vim.o.background = "dark"
+  else
+    vim.o.background = "light"
+  end
   vim.o.termguicolors = true
-  vim.g.colors_name = "material"
+  if theme then
+    vim.g.colors_name = theme
+  else
+    vim.g.colors_name = "material"
+  end
 
   -- Load plugins, treesitter and lsp async
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()
-    material.loadTerminal()
-
+    if config.disable.term_colors == false then
+      material.loadTerminal()
+    end
     -- imort tables for plugins and lsp
     local plugins = material.loadPlugins()
     local lsp = material.loadLSP()
@@ -67,9 +76,13 @@ function util.load(theme)
     for group, colors in pairs(lsp) do
       util.highlight(group, colors)
     end
-    if vim.g.material_contrast == true then
-      util.contrast()
+
+    if type(config.custom_highlights) == 'table' then
+      for group, colors in pairs(config.custom_highlights) do
+        util.highlight(group, colors)
+      end
     end
+    util.contrast()
     async:close()
 
   end))

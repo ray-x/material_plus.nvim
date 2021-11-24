@@ -20,6 +20,15 @@ local util = require('material.util')
 local set = function(theme)
   util.load(theme)
   vim.cmd([[command! -nargs=* Material  lua require('material.functions').change(<f-args>)]])
+  vim.cmd([[doautocmd colorscheme]])
 end
 
-return {set = set}
+local clear = function()
+  package.loaded['material'] = nil
+  package.loaded['material.util'] = nil
+  package.loaded['material.colors'] = nil
+  package.loaded['material.theme'] = nil
+  package.loaded['material.functions'] = nil
+end
+
+return {set = set, clear = clear}
