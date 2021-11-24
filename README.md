@@ -25,6 +25,7 @@ I added following colorschemes:
   monokai, mariana, emerald, middlenight_blue randomly )
 - Tracking latest neovim/lsp/treesitter highlight updates. e.g. `NormalFloat`, `FloatShadow`, `LspReferenceRead/Write`
 - Random loading
+- Daylight mode, tune the color for daytime
 
 ## Credits:
 
@@ -80,6 +81,12 @@ Colorful colorscheme
 
 ![Earlysummer](https://user-images.githubusercontent.com/1681295/132972253-45584b1f-d2f1-46f1-a9f7-f1d5bf89ec64.jpg)
 
+## Nighttime and daytime
+
+Some of the scheme allow choose nighttime and day time mode, you can set material_daylight_switch to true to turn on
+this feature
+![night time and day time](https://preview.redd.it/ng02dvlthi181.png?width=960&crop=smart&auto=webp&s=3e8c4c492077fa693925bdf70e18e90b2d81d2f8)
+
 ## Supported Plugins
 
 All the plugins supported by material.nvim, e.g. Treesitter, LSP, Telescope, NvimTree...
@@ -100,6 +107,7 @@ let material_style="moonlight"  "load moonlight everytime or
 let material_darker_contrast=v:true
 let material_italic_keywords=false
 let material_italic_functions=false
+let material_daylight_switch=false  "this allow using brighter color
 " other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald, middlenight_blue
 ```
 

@@ -347,13 +347,14 @@ local mariana_colors = {
   blue1 = "#6699CC",
   blue2 = "#4E5A65",
   blue3 = "#343D46",
-  blue4 = "#647382",
+  blue4 = "#64738A",
   blue5 = "#5F7484",
   blue6 = "#A6ACB9",
   blue7 = "#3F4458",
   blue8 = "#2F3455",
   blue9 = "#303040",
   blueA = "#B0C0F0",
+  blueB = "#506779",
 
   cyan = "#A1EFE4",
   br_green = "#9EC400",
@@ -575,7 +576,7 @@ local middlenight_blue_colors = {
   paleblue = "#d6e7f0",
   magenta = "#D184C7",
 
-  link = "#80ABF4",
+  link = "#80ABF4"
 }
 
 local middlenight_blue = {
@@ -642,7 +643,7 @@ local earlysummer_colors = {
 
   caramel = "#ffa37a",
   lightgrey = "#64645e",
-  warmgrey = "#657150",
+  warmgrey = "#658180",
 
   brown = "#925632",
   pink = "#ff95b6",
@@ -680,7 +681,7 @@ local earlysummer_colors = {
   teal = "#4DB380",
   paleblue = "#d6e7f0",
   magenta = "#D184C7",
-  link = "#80ABF4",
+  link = "#80ABF4"
 }
 
 local earlysummer = {
@@ -734,6 +735,20 @@ local earlysummer = {
   none = "NONE"
 }
 
+if vim.g.material_daylight_switch and tonumber(vim.fn.system('date +%H')) < 18 then
+  earlysummer.bg = "#4F5F6F"
+  earlysummer.bg_alt = "#506678"
+  earlysummer.less_active = "#40515D"
+  earlysummer.active = "#58687F"
+  material_monokai.bg = "#4F4F3F"
+  material_monokai.less_active = "#424832"
+  material_monokai.active = "#594F53"
+
+  mariana.bg = mariana_colors.blue5
+  mariana.less_active = mariana_colors.blueB
+  mariana.active = mariana_colors.blue7
+end
+
 if not vim.g then
   error("only nvim 5.0 supported")
 end
@@ -742,6 +757,14 @@ local themes = {
   "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
   "monokai", "emerald", "middlenight_blue", "earlysummer"
 }
+
+local themes_daytime = {"lighter", "monokai", "mariana", "earlysummer"}
+if vim.g.material_daylight_switch then
+  if tonumber(vim.fn.system('date +%H')) < 18 then
+    themes = themes_daytime
+  end
+end
+
 if vim.g.material_style_fix ~= true then
   vim.g.material_style_fix = true
   local v = math.random(1, #themes)
@@ -781,28 +804,28 @@ elseif vim.g.material_style == "lighter" then
 
   material.bg = "#EAEADA"
   material.bg_alt = "#DFDFBF"
-  material.fg = "#546E7A"
-  material.text = "#749790"
-  material.comments = "#A0B0C2"
+  material.fg = "#345E6A"
+  material.text = "#547770"
+  material.comments = "#90A0B2"
   material.selection = "#80CBC4"
   material.contrast = "#DEDEDE"
-  material.less_active = "#E6E6D4"
-  material.active = "#E0E0D3"
-  material.more_active = "#D7D8D3"
-  material.border = "#D3E1E8"
-  material.line_numbers = "#CFD8DC"
-  material.highlight = "#D7D7C8"
+  material.less_active = "#E0E0D4"
+  material.active = "#E0D0D3"
+  material.more_active = "#C7C8A3"
+  material.border = "#A381E8"
+  material.line_numbers = "#AFC8AC"
+  material.highlight = "#C7C7A8"
   material.disabled = "#A2A4A5"
   material.cursor = "#272727"
   material.accent = "#00BCD4"
   material.parameter = "#5193a8"
 
   material.white = "#FFFFFF"
-  material.gray = "#616CA4"
-  material.black = "#101010"
+  material.gray = "#818CA4"
+  material.black = "#606040"
   material.red = "#E53935"
-  material.green = "#91B859"
-  material.green1 = "#71B839"
+  material.green = "#71A849"
+  material.green1 = "#51B829"
   material.yellow = "#F6A434"
   material.yellow2 = "#B69414"
   material.blue = "#6182B8"
@@ -813,6 +836,7 @@ elseif vim.g.material_style == "lighter" then
   material.orange = "#F76D47"
   material.pink = "#EF5370"
   material.violet = "#945eb8"
+  material.type = "#A47EE8"
 
   material.keyword = material.orange
 

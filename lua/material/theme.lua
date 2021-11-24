@@ -252,7 +252,6 @@ theme.loadTerminal = function()
   vim.g.terminal_color_13 = material.purple
   vim.g.terminal_color_14 = material.cyan
   vim.g.terminal_color_15 = material.white
-
 end
 
 theme.loadTreeSitter = function()
@@ -558,7 +557,7 @@ theme.loadPlugins = function()
     DapStopped = {fg = material.green},
 
     -- Hop
-    HopNextKey = {fg = material.keyword or material.func or material.red, style = 'bold'},
+    HopNextKey = {fg = material.keyword or material.func or material.red, style = 'bold,underline'},
     HopNextKey1 = {fg = material.purple, style = 'bold'},
     HopNextKey2 = {fg = material.blue, style = 'bold'},
     HopUnmatched = {fg = material.comments or material.gray7},
