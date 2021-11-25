@@ -743,8 +743,7 @@ end
 
 local themes = {
   "darker", "palenight", "oceanic", "deep ocean", "moonlight", "dracula", "dracula_blood",
-  "monokai", "monokai_lighter", "mariana", "mariana_lighter", "emerald", "middlenight_blue",
-  "earlysummer", "earlysummer_lighter"
+  "monokai", "monokai_lighter", "mariana", "emerald", "middlenight_blue", "earlysummer"
 }
 
 local themes_daytime = {"lighter", "monokai_lighter", "mariana_lighter", "earlysummer_lighter"}
@@ -901,19 +900,21 @@ elseif vim.g.material_style == "monokai" or vim.g.material_style == "monokai_lig
     material_monokai.bg = "#4F4F3F"
     material_monokai.less_active = "#424832"
     material_monokai.active = "#594F53"
-    material_monokai.line_numbers = "#493F23"
-    material_monokai.accent = "#696F43"
+    material_monokai.line_numbers = "#A2AF93"
+    material_monokai.accent = "#A9AF83"
     material_monokai.selection = "#696F43"
     material_monokai.contrast = material_monokai.less_active
+    material_monokai.comments = "#9E9F7D"
   end
   material = vim.tbl_extend("force", material, material_monokai)
 elseif vim.g.material_style == "mariana" or vim.g.material_style == "mariana_lighter" then
   if vim.g.material_style == "mariana_lighter" then
     mariana.bg = mariana_colors.blue5
+    mariana.bg_alt = mariana_colors.blue2
     mariana.less_active = mariana_colors.blueB
     mariana.active = mariana_colors.blue7
-    mariana.line_numbers = mariana_colors.blue7
-    mariana.accent = mariana.blue4
+    mariana.line_numbers = mariana_colors.blue6
+    mariana.accent = mariana.blueA
     mariana.contrast = mariana.less_active
   end
   material = vim.tbl_extend("force", material, mariana_colors)
@@ -932,10 +933,10 @@ elseif vim.g.material_style == "earlysummer" or vim.g.material_style == "earlysu
     earlysummer.bg_alt = "#506678"
     earlysummer.less_active = "#40515D"
     earlysummer.active = "#58687F"
-    earlysummer.line_numbers = '#40414D'
-    earlysummer.accent = '#607180'
+    earlysummer.line_numbers = '#90A1AD'
+    earlysummer.accent = '#A0B1B0'
     earlysummer.selection = '#607180'
-
+    earlysummer.comments = "#87AFB3"
     earlysummer.contrast = earlysummer.less_active
   end
 
