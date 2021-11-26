@@ -1,5 +1,4 @@
 local util = {}
-local material = require('material.theme')
 local config = require('material.config').options
 -- Go trough the table and highlight the group with the color values
 util.highlight = function(group, color)
@@ -19,7 +18,9 @@ end
 
 -- Only define Material if it's the active colorshceme
 function util.onColorScheme()
-  if vim.g.colors_name ~= "material" then
+  local schemes = require'material.functions'.all_schemes
+
+  if vim.tbl_contains(schemes, vim.g.colors_name) then
     vim.cmd [[autocmd! Material]]
     vim.cmd [[augroup! Material]]
   end
@@ -59,9 +60,11 @@ function util.load(theme)
     vim.g.colors_name = "material"
   end
 
+  local material = require('material.theme')
   -- Load plugins, treesitter and lsp async
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()
+
     if config.disable.term_colors == false then
       material.loadTerminal()
     end

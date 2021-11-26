@@ -7,6 +7,15 @@ if vim.g.material_daylight_switch == nil then
   vim.g.material_daylight_switch = false
 end
 
+local switch = {
+  "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight", "dracula",
+  "dracula_blood", "monokai", "mariana", "emerald", "middlenight_blue", "earlysummer"
+}
+local switch_daytime = {"lighter", "monokai", "mariana", "earlysummer"}
+
+local all_schemes = {}
+vim.list_extend(all_schemes, switch)
+vim.list_extend(all_schemes, switch_daytime)
 -- Change_style takes a style name as a parameter and switches to that style
 local change_style = function(style)
   vim.g.material_style = style
@@ -16,16 +25,11 @@ local change_style = function(style)
   else
     vim.cmd [[set background=dark]]
   end
-  vim.cmd [[colorscheme material]]
+  vim.cmd([[colorscheme ]] .. style)
 end
 
 -- Toggle_style takes no parameters toggles the style on every function call
 local toggle_style = function()
-  local switch = {
-    "darker", "lighter", "palenight", "oceanic", "deep ocean", "moonlight", "dracula",
-    "dracula_blood", "monokai", "mariana", "emerald", "middlenight_blue", "earlysummer"
-  }
-  local switch_daytime = {"lighter", "monokai", "mariana", "earlysummer"}
   if vim.g.material_daylight_switch then
     if tonumber(vim.fn.system('date +%H')) < 18 then
       switch = switch_daytime
@@ -56,5 +60,6 @@ return {
   change_style = change_style,
   toggle_style = toggle_style,
   change = change,
-  toggle_eob = toggle_eob
+  toggle_eob = toggle_eob,
+  all_schemes = all_schemes
 }

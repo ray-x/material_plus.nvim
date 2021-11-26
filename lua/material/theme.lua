@@ -1,4 +1,4 @@
-local material = require("material.colors")
+local material = require("material.colors").material()
 
 local theme = {}
 
