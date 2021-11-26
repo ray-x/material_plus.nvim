@@ -1,4 +1,4 @@
-local h = tonumber(vim.fn.system('date +%H'))
+local h = tonumber(os.date('%H'))
 local function material_init()
   local material = {
     -- Common colors
