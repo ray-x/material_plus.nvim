@@ -92,6 +92,7 @@ function util.load(theme)
     end
     util.contrast()
     async:close()
+    vim.cmd('doautocmd ColorScheme')
 
   end))
 
