@@ -65,6 +65,11 @@ function util.load(theme)
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()
 
+    local treesitter = material.loadTreeSitter()
+    for group, colors in pairs(treesitter) do
+      util.highlight(group, colors)
+    end
+
     if config.disable.term_colors == false then
       material.loadTerminal()
     end
@@ -93,7 +98,6 @@ function util.load(theme)
   -- load base theme
   local editor = material.loadEditor()
   local syntax = material.loadSyntax()
-  local treesitter = material.loadTreeSitter()
 
   for group, colors in pairs(editor) do
     util.highlight(group, colors)
@@ -103,9 +107,6 @@ function util.load(theme)
     util.highlight(group, colors)
   end
 
-  for group, colors in pairs(treesitter) do
-    util.highlight(group, colors)
-  end
   async:send()
 end
 

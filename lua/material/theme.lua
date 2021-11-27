@@ -541,8 +541,9 @@ theme.loadPlugins = function()
     TargetWord = {fg = material.cyan},
 
     -- BufferLine
-    BufferLineIndicatorSelected = {fg = material.accent},
+    BufferLineIndicatorSelected = {fg = material.type},
     BufferLineFill = {bg = material.bg_alt},
+    BufferLineBufferSelected = {fg = material.statement, bg = material.less_active},
 
     -- Sneak
     Sneak = {fg = material.bg, bg = material.accent},
