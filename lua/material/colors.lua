@@ -29,6 +29,7 @@ local function material_init()
     lime = '#98EE64',
     green1 = "#1aad16",
     green2 = "#77d507",
+    c = "#c988ce",
 
     yellow = "#FFCB6B",
     yellow1 = "#fbec9f",

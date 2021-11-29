@@ -92,6 +92,10 @@ this feature. Here is an example for nighttime and daytime for earlysummer color
 
 All the plugins supported by material.nvim, e.g. Treesitter, LSP, Telescope, NvimTree...
 
+`nvim-cmp`:
+
+![image](https://user-images.githubusercontent.com/1681295/143810714-20c12ba3-5835-44f1-ad9f-58bb02a63136.png =400x)
+
 ## Example Setup
 
 ```vim

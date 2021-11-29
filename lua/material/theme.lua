@@ -443,6 +443,7 @@ theme.loadPlugins = function()
 
     -- Nvim-Compe
     CompeDocumentation = {fg = material.text, bg = material.contrast},
+    CmpDocumentation = {fg = material.text, bg = material.contrast},
 
     -- Diff
     diffAdded = {fg = material.green},
@@ -580,8 +581,18 @@ theme.loadPlugins = function()
     LightspeedUniqueChar = {fg = material.white, style = "underline"},
     LightspeedPendingOpArea = {fg = material.white, style = "underline"},
     LightspeedPendingChangeOpArea = {fg = material.white, style = "underline"},
-    LightspeedCursor = {fg = material.black, bg = material.white},
+    LightspeedCursor = {fg = material.black, bg = material.blue},
 
+    -- Cmp
+    CmpItemAbbrDeprecated = {fg = material.light_gray, style = "strikethrough"},
+    CmpItemAbbrMatch = {fg = material.search_fg},
+    CmpItemAbbrMatchFuzzy = {fg = material.search_fg},
+    CmpItemKindVariable = {fg = material.variable},
+    CmpItemKindInterface = {fg = material.blue2},
+    CmpItemKindText = {fg = material.fg},
+    CmpItemKindFunction = {fg = material.func},
+    CmpItemKindMethod = {fg = material.method},
+    CmpItemKindKeyword = {fg = material.keyword},
     -- Fern
     FernBranchText = {fg = material.blue}
   }
