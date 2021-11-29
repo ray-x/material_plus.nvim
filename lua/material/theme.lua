@@ -585,8 +585,8 @@ theme.loadPlugins = function()
 
     -- Cmp
     CmpItemAbbrDeprecated = {fg = material.light_gray, style = "strikethrough"},
-    CmpItemAbbrMatch = {fg = material.search_fg},
-    CmpItemAbbrMatchFuzzy = {fg = material.search_fg},
+    CmpItemAbbrMatch = {fg = material.search_fg, bg = material.search_bg},
+    CmpItemAbbrMatchFuzzy = {fg = material.search_fg, bg = material.search_bg},
     CmpItemKindVariable = {fg = material.variable},
     CmpItemKindInterface = {fg = material.blue2},
     CmpItemKindText = {fg = material.fg},
