@@ -822,6 +822,7 @@ local function material_init()
     material.green = "#71A849"
     material.green1 = "#51B829"
     material.yellow = "#F6A434"
+    material.yellow1 = "#D6D414"
     material.yellow2 = "#B69414"
     material.blue = "#6182B8"
     material.blue1 = "#5182D8"
