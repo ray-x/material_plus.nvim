@@ -1,5 +1,9 @@
 # 🌊 material + nvim
 
+Note: deprecated, please check [starry](https://github.com/ray-x/starry.nvim)
+
+The setups is conflicted with original material.vim and material.nvim and please use starry.nvim instead
+
 A collection of material style colorschemes for neovim (Neovim 5.0+ required), written in lua.
 
 This colorscheme plugin was orignally built based on combination of
