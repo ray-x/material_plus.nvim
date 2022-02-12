@@ -1,6 +1,6 @@
 # 🌊 material + nvim
 
-Note: deprecated, please check [starry](https://github.com/ray-x/starry.nvim)
+Note: deprecated, please check its replacement [starry](https://github.com/ray-x/starry.nvim)
 
 The setups is conflicted with original material.vim and material.nvim and please use starry.nvim instead
 
